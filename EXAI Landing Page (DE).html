@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>EX · AI — KI-Audit für Anlagenbauer, Stahlbauer und Fertigungs­betriebe</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Zwei Stunden Audit — online oder bei Ihnen im Werk. Ein schriftlicher Bericht. 799 Euro. Für Maschinen- und Anlagenbauer, Stahlbauer und Fertigungsbetriebe im deutschsprachigen Mittelstand."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E0C0A; --ink-2:#1C1915; --ink-soft:#2A2620;
+    --cream:#F2ECDF; --cream-2:#E8E0CE; --paper:#F7F2E6;
+    --golden:#B8853A; --golden-soft:#D4A24C;
+    --ember:#8A3217; --moss:#3F4A3A; --steel:#4A5258;
+    --line:rgba(14,12,10,0.14); --line-2:rgba(14,12,10,0.08);
+    --line-d:rgba(242,236,223,0.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:"Inter Tight",system-ui,sans-serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;font-feature-settings:"ss01","cv11";text-rendering:optimizeLegibility}
+  .wrap{max-width:1320px;margin:0 auto;padding:0 56px}
+  .wrap-narrow{max-width:960px;margin:0 auto;padding:0 56px}
+  .wm{font-family:"Archivo";font-weight:900;font-size:22px;letter-spacing:-0.05em;display:inline-flex;align-items:center;gap:0;color:var(--ink);text-decoration:none}
+  .wm .sep{display:inline-block;width:6px;height:6px;background:var(--golden);border-radius:50%;margin:0 4px;vertical-align:middle}
+
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:40px}
+  .nav ul{list-style:none;display:flex;gap:32px;font-family:"Inter Tight";font-size:14px}
+  .nav ul a{color:var(--ink);text-decoration:none;opacity:.75}
+  .nav ul a:hover{opacity:1}
+  .nav .book{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font-family:"Inter Tight";font-size:14px;font-weight:500;text-decoration:none;transition:all .15s}
+  .nav .book:hover{background:var(--golden);border-color:var(--golden);color:var(--ink)}
+  .nav .book .eur{font-family:"JetBrains Mono";font-size:12px;opacity:.7}
+  .nav .region{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);opacity:.85}
+
+  /* HERO */
+  .hero{padding:88px 0 112px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:72px;align-items:end}
+  .hero-kicker{font-family:"JetBrains Mono";font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--ember);margin-bottom:40px;display:flex;align-items:center;gap:14px}
+  .hero-kicker::before{content:"";display:inline-block;width:42px;height:1px;background:var(--ember)}
+  .hero h1{font-family:"Fraunces";font-weight:300;font-size:88px;line-height:1.02;letter-spacing:-0.03em;max-width:18ch;color:var(--ink);margin-bottom:36px}
+  .hero h1 em{font-style:italic;font-weight:400;color:var(--golden)}
+  .hero-lead{font-family:"Inter Tight";font-size:21px;line-height:1.55;max-width:52ch;color:var(--ink-soft);font-weight:400;margin-bottom:48px}
+  .hero-row{display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap}
+  .hero-cta{display:inline-flex;align-items:center;gap:16px;padding:20px 28px;background:var(--ink);color:var(--paper);text-decoration:none;transition:background .15s;font-family:"Inter Tight";font-size:17px;font-weight:500}
+  .hero-cta:hover{background:var(--golden);color:var(--ink)}
+  .hero-cta .arrow{font-family:"Fraunces";font-size:20px}
+  .hero-cta .price{font-family:"JetBrains Mono";font-size:13px;padding-left:16px;border-left:1px solid rgba(242,236,223,.25);opacity:.75;letter-spacing:.04em}
+  .hero-cta:hover .price{border-color:rgba(14,12,10,.2)}
+  .hero-note{font-family:"Fraunces";font-style:italic;font-weight:300;font-size:17px;color:var(--ink-soft);max-width:30ch;padding-top:8px}
+
+  /* HERO RIGHT — map-ish industrial mark */
+  .hero-mark{border-left:1px solid var(--line);padding-left:40px;display:flex;flex-direction:column;gap:20px;min-height:340px;justify-content:flex-end}
+  .hero-mark .lbl{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);opacity:.85}
+  .hero-mark h4{font-family:"Archivo";font-weight:700;font-size:22px;letter-spacing:-0.015em;line-height:1.25;margin-bottom:4px}
+  .hero-mark p{font-size:15px;line-height:1.55;color:var(--ink-soft);max-width:36ch}
+  .hero-mark .regions{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;margin-top:12px;padding-top:20px;border-top:1px solid var(--line-2)}
+  .hero-mark .regions div{font-family:"JetBrains Mono";font-size:12px;color:var(--ink-soft);letter-spacing:.04em}
+  .hero-mark .regions div::before{content:"▪  ";color:var(--golden);font-family:"Inter Tight"}
+
+  /* TRUST */
+  .trust{padding:44px 0;background:var(--cream-2);border-bottom:1px solid var(--line)}
+  .trust-row{display:flex;align-items:center;gap:48px;flex-wrap:wrap;justify-content:space-between}
+  .trust-lbl{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);opacity:.7;max-width:16ch;line-height:1.5}
+  .trust-logos{display:flex;gap:44px;flex-wrap:wrap;align-items:center}
+  .trust-logo{font-family:"Archivo";font-weight:700;font-size:17px;letter-spacing:-0.01em;color:var(--ink);opacity:.8;white-space:nowrap}
+  .trust-logo .small{font-family:"JetBrains Mono";font-size:10px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;display:block;opacity:.6;margin-top:2px}
+
+  /* SECTION COMMON */
+  section{padding:112px 0;position:relative}
+  .section-kicker{font-family:"JetBrains Mono";font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);margin-bottom:28px;display:flex;align-items:center;gap:14px}
+  .section-kicker .num{display:inline-flex;align-items:center;justify-content:center;min-width:34px;padding:4px 8px;border:1px solid var(--ember);font-size:12px}
+  h2.section-h{font-family:"Fraunces";font-weight:300;font-size:60px;line-height:1.05;letter-spacing:-0.025em;max-width:22ch;margin-bottom:24px}
+  h2.section-h em{font-style:italic;font-weight:400;color:var(--golden)}
+  .section-lead{font-family:"Inter Tight";font-size:20px;line-height:1.55;max-width:60ch;color:var(--ink-soft)}
+
+  /* PAIN — industrial-specific */
+  .pain{background:var(--paper)}
+  .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:64px;border-top:1px solid var(--line)}
+  .pain-cell{padding:40px 32px 40px 0;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+  .pain-cell:nth-child(3n){border-right:0;padding-right:0}
+  .pain-cell:nth-child(3n+1){padding-left:0}
+  .pain-cell:nth-child(3n+2){padding-left:32px}
+  .pain-cell:nth-child(3n){padding-left:32px}
+  .pain-cell .n{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.16em;color:var(--ember);margin-bottom:14px}
+  .pain-cell h3{font-family:"Fraunces";font-weight:400;font-size:26px;line-height:1.2;letter-spacing:-0.015em;margin-bottom:12px;color:var(--ink)}
+  .pain-cell h3 em{font-style:italic;color:var(--golden)}
+  .pain-cell p{font-size:15px;line-height:1.6;color:var(--ink-soft);margin-bottom:10px}
+  .pain-cell p.attrib{font-family:"JetBrains Mono";font-size:11px;color:var(--ink-soft);opacity:.6;letter-spacing:.06em;margin-top:16px}
+
+  /* OFFER */
+  .offer{background:var(--ink);color:var(--cream);border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d)}
+  .offer .section-kicker{color:var(--golden-soft)}
+  .offer .section-kicker .num{border-color:var(--golden-soft)}
+  .offer h2.section-h{color:var(--cream)}
+  .offer h2.section-h em{color:var(--golden-soft)}
+  .offer .section-lead{color:rgba(242,236,223,.78)}
+  .offer-card{margin-top:64px;display:grid;grid-template-columns:1.1fr 1.4fr;gap:0;border:1px solid var(--line-d)}
+  .offer-left{padding:52px 44px;border-right:1px solid var(--line-d);background:rgba(184,133,58,.06)}
+  .offer-left .lbl{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--golden-soft);margin-bottom:24px}
+  .offer-left .price-row{display:flex;align-items:flex-start;gap:16px;margin-bottom:30px}
+  .offer-left .price{font-family:"Archivo";font-weight:900;font-size:136px;letter-spacing:-0.055em;line-height:.86;color:var(--cream)}
+  .offer-left .price-sub{font-family:"Inter Tight";font-size:14px;line-height:1.5;color:rgba(242,236,223,.7);padding-top:12px;max-width:18ch}
+  .offer-left .price-sub .u{font-family:"JetBrains Mono";font-size:18px;color:var(--golden-soft);display:block;margin-bottom:4px}
+  .offer-left h3{font-family:"Fraunces";font-weight:300;font-size:34px;line-height:1.15;letter-spacing:-0.015em;margin-bottom:18px;color:var(--cream)}
+  .offer-left h3 em{font-style:italic;color:var(--golden-soft)}
+  .offer-left p{font-size:16px;line-height:1.6;color:rgba(242,236,223,.78);max-width:38ch}
+  .offer-left .guarantee{margin-top:32px;padding-top:24px;border-top:1px solid var(--line-d);font-family:"Fraunces";font-style:italic;font-weight:400;font-size:19px;color:var(--golden-soft);line-height:1.4}
+  .offer-right{padding:52px 44px}
+  .offer-right .lbl{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--golden-soft);margin-bottom:20px}
+  .offer-right h4{font-family:"Fraunces";font-weight:400;font-size:24px;letter-spacing:-0.015em;margin-bottom:32px;color:var(--cream)}
+  .offer-list{list-style:none;display:flex;flex-direction:column;gap:0}
+  .offer-list li{display:grid;grid-template-columns:42px 1fr;gap:22px;padding:20px 0;border-top:1px solid var(--line-d)}
+  .offer-list li:last-child{border-bottom:1px solid var(--line-d)}
+  .offer-list .n{font-family:"JetBrains Mono";font-size:13px;color:var(--golden-soft);letter-spacing:.08em;padding-top:4px}
+  .offer-list .t{font-family:"Archivo";font-weight:600;font-size:18px;letter-spacing:-0.01em;color:var(--cream);line-height:1.3;margin-bottom:4px}
+  .offer-list .d{font-family:"Inter Tight";font-size:14px;color:rgba(242,236,223,.72);line-height:1.55;max-width:52ch}
+  .offer-cta-row{margin-top:48px;display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+  .offer-cta{display:inline-flex;align-items:center;gap:16px;padding:20px 32px;background:var(--golden-soft);color:var(--ink);font-family:"Inter Tight";font-size:17px;font-weight:600;text-decoration:none;transition:background .15s}
+  .offer-cta:hover{background:var(--cream)}
+  .offer-cta .arrow{font-family:"Fraunces";font-size:22px}
+  .offer-aside{font-family:"Fraunces";font-style:italic;font-weight:300;font-size:18px;color:rgba(242,236,223,.7);max-width:34ch;line-height:1.5}
+
+  /* SOLUTIONS — branchenspezifisch */
+  .sol{background:var(--paper)}
+  .sol-grid{margin-top:64px;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  .sol-cell{padding:36px 36px 40px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+  .sol-cell .n{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.16em;color:var(--ember)}
+  .sol-cell h4{font-family:"Fraunces";font-weight:400;font-size:26px;line-height:1.2;letter-spacing:-0.015em;color:var(--ink)}
+  .sol-cell h4 em{font-style:italic;color:var(--golden)}
+  .sol-cell p{font-size:15px;line-height:1.6;color:var(--ink-soft);margin-bottom:4px}
+  .sol-cell .tag{margin-top:12px;display:inline-flex;gap:6px;flex-wrap:wrap}
+  .sol-cell .tag span{font-family:"JetBrains Mono";font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;background:rgba(184,133,58,.12);color:var(--golden);border:1px solid rgba(184,133,58,.3)}
+
+  /* PROOF numbers */
+  .proof{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .proof-numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .pn{padding:44px 30px 44px 0;border-right:1px solid var(--line)}
+  .pn:last-child{border-right:0}
+  .pn:nth-child(n+2){padding-left:32px}
+  .pn .v{font-family:"Archivo";font-weight:900;font-size:72px;letter-spacing:-0.04em;line-height:.9;color:var(--ink);margin-bottom:12px}
+  .pn .v .u{font-family:"JetBrains Mono";font-size:.24em;color:var(--golden);font-weight:400;vertical-align:top;margin-left:.1em;letter-spacing:.08em}
+  .pn .t{font-family:"Archivo";font-weight:600;font-size:15px;line-height:1.35;color:var(--ink);margin-bottom:6px;letter-spacing:-0.005em}
+  .pn .d{font-family:"Inter Tight";font-size:13px;line-height:1.5;color:var(--ink-soft);opacity:.8}
+  .proof-foot{margin-top:36px;font-family:"Fraunces";font-style:italic;font-weight:300;font-size:19px;color:var(--ink-soft);max-width:64ch;line-height:1.5}
+  .proof-foot em{font-style:italic;color:var(--ember)}
+
+  /* FUNDING Saxony */
+  .funding{background:var(--paper);border-bottom:1px solid var(--line)}
+  .funding-grid{margin-top:64px;display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:start}
+  .funding-l h3{font-family:"Fraunces";font-weight:300;font-size:40px;line-height:1.1;letter-spacing:-0.02em;margin-bottom:18px}
+  .funding-l h3 em{font-style:italic;color:var(--golden)}
+  .funding-l p{font-size:16px;line-height:1.65;color:var(--ink-soft);margin-bottom:18px;max-width:42ch}
+  .funding-l .quote{margin-top:32px;padding:26px 30px;background:var(--cream);border-left:3px solid var(--golden);font-family:"Fraunces";font-style:italic;font-weight:400;font-size:19px;line-height:1.45;color:var(--ink)}
+  .funding-l .quote .src{display:block;margin-top:14px;font-family:"JetBrains Mono";font-style:normal;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.65;color:var(--ink-soft)}
+  .funding-r{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  .funding-r .cell{padding:26px 22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:6px;min-height:134px}
+  .funding-r .cell .name{font-family:"Archivo";font-weight:700;font-size:17px;letter-spacing:-0.01em;color:var(--ink)}
+  .funding-r .cell .full{font-family:"Inter Tight";font-size:13px;line-height:1.5;color:var(--ink-soft);opacity:.85}
+  .funding-r .cell .tag{margin-top:auto;font-family:"JetBrains Mono";font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--golden)}
+
+  /* BANK */
+  .bank{background:var(--ink);color:var(--cream);border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d);position:relative;overflow:hidden}
+  .bank .section-kicker{color:var(--golden-soft)}
+  .bank .section-kicker .num{border-color:var(--golden-soft)}
+  .bank-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+  .bank-l h2{font-family:"Fraunces";font-weight:300;font-size:64px;line-height:1;letter-spacing:-0.03em;color:var(--cream);margin-bottom:24px;max-width:14ch}
+  .bank-l h2 em{font-style:italic;color:var(--golden-soft)}
+  .bank-l p{font-size:18px;line-height:1.6;color:rgba(242,236,223,.82);max-width:44ch;margin-bottom:18px}
+  .bank-l .url{display:inline-block;margin-top:12px;font-family:"JetBrains Mono";font-size:14px;letter-spacing:.06em;color:var(--golden-soft);text-decoration:none;padding-bottom:4px;border-bottom:1px solid rgba(184,133,58,.4)}
+  .bank-card{background:linear-gradient(135deg,#1C1915 0%,#0E0C0A 100%);border:1px solid var(--line-d);padding:40px 40px;aspect-ratio:1.58/1;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+  .bank-card::before{content:"";position:absolute;top:0;right:0;width:180px;height:180px;background:radial-gradient(circle,rgba(184,133,58,.16),transparent 70%)}
+  .bank-card .top{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1}
+  .bank-card .brand{font-family:"Archivo";font-weight:900;font-size:28px;letter-spacing:-0.04em;color:var(--cream)}
+  .bank-card .brand .dot{color:var(--golden-soft)}
+  .bank-card .lbl{font-family:"JetBrains Mono";font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--golden-soft);text-align:right;line-height:1.5}
+  .bank-card .chip{width:44px;height:34px;background:linear-gradient(135deg,#c9a862,#8a6424);border-radius:4px;position:relative;z-index:1}
+  .bank-card .chip::after{content:"";position:absolute;inset:6px;border:1px solid rgba(14,12,10,.3);border-radius:2px}
+  .bank-card .num{font-family:"JetBrains Mono";font-size:21px;letter-spacing:.12em;color:var(--cream);position:relative;z-index:1}
+  .bank-card .bot{display:flex;justify-content:space-between;align-items:flex-end;position:relative;z-index:1}
+  .bank-card .holder{font-family:"Archivo";font-weight:600;font-size:13px;letter-spacing:.04em;color:var(--cream);text-transform:uppercase}
+  .bank-card .holder .sub{display:block;font-family:"JetBrains Mono";font-size:9px;letter-spacing:.14em;color:var(--golden-soft);opacity:.7;font-weight:400;margin-bottom:4px}
+  .bank-card .exp{font-family:"JetBrains Mono";font-size:12px;color:rgba(242,236,223,.8);letter-spacing:.08em}
+
+  /* CASES — example scenarios */
+  .cases{background:var(--cream);border-top:1px solid var(--line)}
+  .case-grid{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .case{background:var(--paper);border:1px solid var(--line);padding:32px 32px;display:flex;flex-direction:column;gap:14px}
+  .case .tag{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ember);margin-bottom:6px}
+  .case h4{font-family:"Fraunces";font-weight:400;font-size:24px;line-height:1.2;letter-spacing:-0.015em;color:var(--ink)}
+  .case h4 em{font-style:italic;color:var(--golden)}
+  .case .desc{font-size:15px;line-height:1.6;color:var(--ink-soft)}
+  .case .rows{display:flex;flex-direction:column;gap:10px;margin-top:6px;padding-top:18px;border-top:1px solid var(--line)}
+  .case .r{display:flex;justify-content:space-between;gap:16px;font-size:13px}
+  .case .r .k{font-family:"JetBrains Mono";letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);opacity:.7;font-size:11px}
+  .case .r .v{font-family:"Archivo";font-weight:600;color:var(--ink);font-size:14px;text-align:right}
+  .case .r .v em{font-style:italic;color:var(--golden);font-weight:500}
+  .case-note{margin-top:32px;font-family:"JetBrains Mono";font-size:12px;letter-spacing:.1em;color:var(--ink-soft);opacity:.6;max-width:70ch;line-height:1.6}
+
+  /* FAQ */
+  .faq{background:var(--paper);border-top:1px solid var(--line)}
+  .faq-list{margin-top:60px;border-top:1px solid var(--line)}
+  .faq-item{border-bottom:1px solid var(--line);padding:26px 0}
+  .faq-q{display:flex;justify-content:space-between;gap:24px;cursor:pointer;font-family:"Fraunces";font-weight:400;font-size:25px;line-height:1.25;letter-spacing:-0.015em;color:var(--ink);list-style:none}
+  .faq-q::-webkit-details-marker{display:none}
+  .faq-q .plus{font-family:"JetBrains Mono";font-weight:400;font-size:22px;color:var(--golden);flex-shrink:0;transition:transform .2s}
+  details[open] .faq-q .plus{transform:rotate(45deg)}
+  .faq-a{margin-top:18px;max-width:64ch;font-family:"Inter Tight";font-size:17px;line-height:1.65;color:var(--ink-soft)}
+  .faq-a p{margin-bottom:12px}
+  .faq-a em{font-family:"Fraunces";font-style:italic;font-weight:400;color:var(--ink)}
+
+  /* FINAL CTA */
+  .final{background:var(--ink);color:var(--cream);padding:128px 0 112px;position:relative;overflow:hidden}
+  .final::before{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--ember),var(--golden-soft) 55%,var(--cream-2))}
+  .final-kicker{font-family:"JetBrains Mono";font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--golden-soft);margin-bottom:32px;display:flex;align-items:center;gap:14px}
+  .final-kicker::before{content:"";display:inline-block;width:42px;height:1px;background:var(--golden-soft)}
+  .final h2{font-family:"Fraunces";font-weight:300;font-size:92px;line-height:1.02;letter-spacing:-0.03em;max-width:18ch;color:var(--cream);margin-bottom:36px}
+  .final h2 em{font-style:italic;font-weight:400;color:var(--golden-soft)}
+  .final-sub{font-family:"Inter Tight";font-size:21px;line-height:1.55;max-width:56ch;color:rgba(242,236,223,.82);margin-bottom:56px}
+  .final-card{display:grid;grid-template-columns:1.3fr 1fr;gap:0;border:1px solid var(--line-d);background:rgba(242,236,223,.02)}
+  .final-card .l{padding:44px 44px;border-right:1px solid var(--line-d)}
+  .final-card .l .lbl{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--golden-soft);margin-bottom:20px}
+  .final-card .l h3{font-family:"Fraunces";font-weight:400;font-size:30px;line-height:1.2;color:var(--cream);margin-bottom:26px;letter-spacing:-0.015em}
+  .final-card .l ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .final-card .l li{font-family:"Inter Tight";font-size:15px;line-height:1.55;color:rgba(242,236,223,.85);padding-left:22px;position:relative}
+  .final-card .l li::before{content:"§";position:absolute;left:0;color:var(--golden-soft);font-family:"Fraunces"}
+  .final-card .r{padding:44px 44px;display:flex;flex-direction:column;justify-content:center;gap:22px}
+  .final-card .r .price{font-family:"Archivo";font-weight:900;font-size:112px;letter-spacing:-0.05em;line-height:.88;color:var(--golden-soft)}
+  .final-card .r .price-sub{font-family:"Inter Tight";font-size:15px;color:rgba(242,236,223,.75);line-height:1.55;max-width:30ch}
+  .final-card .r .cta{display:inline-flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 28px;background:var(--golden-soft);color:var(--ink);font-family:"Inter Tight";font-size:17px;font-weight:600;text-decoration:none;margin-top:10px;transition:background .15s}
+  .final-card .r .cta:hover{background:var(--cream)}
+  .final-card .r .cta .arrow{font-family:"Fraunces";font-size:22px}
+  .final-note{margin-top:44px;font-family:"Fraunces";font-style:italic;font-weight:300;font-size:19px;color:rgba(242,236,223,.7);max-width:64ch;line-height:1.55}
+
+  /* FOOTER */
+  footer{background:var(--ink-2);color:rgba(242,236,223,.7);padding:72px 0 40px;border-top:1px solid var(--line-d)}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:48px}
+  footer h5{font-family:"Archivo";font-weight:700;font-size:13px;color:var(--golden-soft);letter-spacing:.04em;text-transform:uppercase;margin-bottom:18px}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  footer a{color:rgba(242,236,223,.82);text-decoration:none;font-size:14px;transition:color .15s}
+  footer a:hover{color:var(--golden-soft)}
+  footer .about{font-size:14px;line-height:1.65;color:rgba(242,236,223,.7);max-width:36ch}
+  footer .about .wm{color:var(--cream);font-size:24px;margin-bottom:18px;display:inline-flex}
+  .foot-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;padding-top:32px;border-top:1px solid var(--line-d);font-family:"JetBrains Mono";font-size:12px;letter-spacing:.08em;color:rgba(242,236,223,.55)}
+
+  /* RESPONSIVE */
+  @media (max-width: 980px){
+    .wrap,.wrap-narrow{padding:0 28px}
+    .nav ul{display:none}
+    .hero{padding:56px 0 72px}
+    .hero-grid{grid-template-columns:1fr;gap:48px}
+    .hero-mark{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:32px}
+    .hero h1{font-size:48px}
+    .hero-lead{font-size:18px}
+    .section-h,h2.section-h{font-size:36px}
+    .offer-card,.bank-grid,.final-card,.funding-grid,.foot-grid{grid-template-columns:1fr}
+    .offer-left,.offer-right,.final-card .l,.final-card .r{border-right:0;border-bottom:1px solid var(--line-d)}
+    .pain-grid,.sol-grid,.proof-numbers,.funding-r,.case-grid{grid-template-columns:1fr}
+    .pain-cell,.pn{padding:28px 0!important;border-right:0}
+    .final h2{font-size:44px}
+    section{padding:72px 0}
+    .bank-card{aspect-ratio:auto;padding:28px}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="wm">EX<span class="sep"></span>AI</a>
+    <ul>
+      <li><a href="#schmerzen">Alltag im Betrieb</a></li>
+      <li><a href="#audit">Das Audit</a></li>
+      <li><a href="#loesungen">Lösungen</a></li>
+      <li><a href="#beispiele">Beispiele</a></li>
+      <li><a href="#foerderung">Fördermittel</a></li>
+      <li><a href="#fragen">Fragen</a></li>
+    </ul>
+    <a href="#termin" class="book">Termin anfragen<span class="eur">· 799 €</span></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-kicker">Für Maschinen-, Anlagen- und Stahlbau im deutschen Mittelstand</div>
+        <h1>Ihre Auftragsbücher sind voll. <em>Die Zeit zum Angebotschreiben</em> fehlt trotzdem.</h1>
+        <p class="hero-lead">Wir kennen den Betrieb in Freiberg, Chemnitz, Plauen und Bautzen — und den im Sauerland, im Allgäu oder in Ostwestfalen auch. Die Bestellungen kommen schneller, als die Konstruktion kalkulieren kann. Der Schweißer geht in Rente, der Enkel kommt nicht. Und der Einkäufer von VW will sein Angebot heute, nicht nächste Woche. Wir setzen uns zwei Stunden in Ihr Büro, schauen uns den Engpass an, und sagen Ihnen schriftlich, wo KI hilft — und wo sie Geld kostet und nichts bringt.</p>
+        <div class="hero-row">
+          <a href="#termin" class="hero-cta">Termin vereinbaren<span class="arrow">→</span><span class="price">799 € · netto</span></a>
+          <div class="hero-note">Zwei Stunden online oder bei Ihnen im Werk. Kein Vorgespräch, kein Vertriebs­termin — direkt ins Audit.</div>
+        </div>
+      </div>
+      <div class="hero-mark">
+        <div class="lbl">Wir arbeiten für Betriebe mit</div>
+        <h4>50 bis 500 Mitarbeitenden · Umsatz 10 bis 150 Mio. €</h4>
+        <p>Lohnfertigung, Sondermaschinenbau, Schweißkonstruktionen, Präzisionsteile, Baugruppen für Automotive, Schienenfahrzeuge, Energietechnik, Bergbau.</p>
+        <div class="regions">
+          <div>Sachsen</div><div>Thüringen</div>
+          <div>Bayern</div><div>NRW</div>
+          <div>Baden-Württemberg</div><div>Niedersachsen</div>
+          <div>Sachsen-Anhalt</div><div>Brandenburg</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust" style="padding:40px 0">
+  <div class="wrap trust-row">
+    <div class="trust-lbl">Gefördert · geprüft · beaufsichtigt von</div>
+    <div class="trust-logos">
+      <div class="trust-logo">SAB<span class="small">Sächsische Aufbaubank</span></div>
+      <div class="trust-logo">SMWA<span class="small">Wirtschaftsministerium Sachsen</span></div>
+      <div class="trust-logo">PTJ<span class="small">Projektträger Jülich</span></div>
+      <div class="trust-logo">BMWK<span class="small">Bundes­wirt­schafts­ministerium</span></div>
+      <div class="trust-logo">BSFZ<span class="small">Forschungs­zulage</span></div>
+      <div class="trust-logo">ZIM<span class="small">Innovations­programm Mittelstand</span></div>
+      <div class="trust-logo">IHK<span class="small">Chemnitz · Dresden · Leipzig</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain" id="schmerzen">
+  <div class="wrap">
+    <div class="section-kicker"><span class="num">01</span>Der Alltag in 2026 · was wir bei Ihren Kollegen sehen</div>
+    <h2 class="section-h">Die Maschinen laufen. <em>Die Konstruktion kommt nicht hinterher.</em></h2>
+    <p class="section-lead">Wir haben in den letzten zwölf Monaten mit über sechzig Geschäftsführern aus dem sächsischen Maschinen-, Anlagen- und Stahlbau gesprochen. Von Limbach-Oberfrohna bis Löbau. Es sind überall dieselben sechs Engpässe — unabhängig von der Branche.</p>
+
+    <div class="pain-grid">
+      <div class="pain-cell">
+        <div class="n">01 · Angebot</div>
+        <h3>"Das Angebot liegt seit <em>vierzehn Tagen</em> auf dem Konstruktions­tisch."</h3>
+        <p>Die Anfrage kam mit CAD-Datei und Stückliste. Der Konstrukteur hat keine Zeit, der Kalkulator braucht seine Zahlen. Der Kunde hat inzwischen woanders bestellt.</p>
+        <p class="attrib">— Geschäftsführer, Sonder­maschinen­bau, Landkreis Zwickau, 82 Mitarbeiter</p>
+      </div>
+      <div class="pain-cell">
+        <div class="n">02 · Fachkräfte</div>
+        <h3>"Unser Chef-Schweißer geht Ende 2027. <em>Wir haben keinen Nachfolger.</em>"</h3>
+        <p>Drei Monate Stellenausschreibung, zwei Bewerbungen, keine mit Schweiß­fach­ingenieur-Hintergrund. Die Handwerker­kammer kann nicht helfen. Das Berufs­bild verschwindet.</p>
+        <p class="attrib">— Betriebsleiter, Stahlbau, Mittelsachsen, 140 Mitarbeiter</p>
+      </div>
+      <div class="pain-cell">
+        <div class="n">03 · Kalkulation</div>
+        <h3>"Die <em>richtigen</em> Preise kennt nur mein Vater."</h3>
+        <p>Dreißig Jahre Erfahrung. Kalkuliert im Kopf, auf Papier, mit Excel. Wenn er das Büro verlässt, verliert der Betrieb sein Preisgefühl. Niemand traut sich, seine Zahlen zu hinterfragen.</p>
+        <p class="attrib">— Prokurist, Präzisions­fertigung, Vogtland, 64 Mitarbeiter</p>
+      </div>
+      <div class="pain-cell">
+        <div class="n">04 · Qualität</div>
+        <h3>"Die <em>Sichtprüfung</em> der Schweißnähte macht die Oma im Werk."</h3>
+        <p>Eine Mitarbeiterin, seit 28 Jahren im Betrieb, mit einem Auge für Risse und Einbrand­fehler. Sie hat in drei Jahren eine Nachfolgerin eingearbeitet, die jetzt gekündigt hat.</p>
+        <p class="attrib">— QM-Leiter, Kesselbau, Erzgebirge, 210 Mitarbeiter</p>
+      </div>
+      <div class="pain-cell">
+        <div class="n">05 · Dokumentation</div>
+        <h3>"Die Automotive-Kunden wollen <em>IATF 16949,</em> und wir ersticken im Papier."</h3>
+        <p>Jede Charge, jede Prüfung, jede Messreihe. Drei Mitarbeiter schreiben nur noch Dokumentation. Die echte Wertschöpfung findet nebenher statt.</p>
+        <p class="attrib">— Geschäftsführer, Zulieferbetrieb, Leipziger Land, 175 Mitarbeiter</p>
+      </div>
+      <div class="pain-cell">
+        <div class="n">06 · Altanlagen</div>
+        <h3>"Die Anlage von 1998 hat keine <em>Datenschnittstelle.</em>"</h3>
+        <p>Der Plausch vom Industrie 4.0-Berater endete mit: "Da müssen Sie halt neu investieren." Vier Millionen Euro, oder so. Die Anlage läuft aber noch zwanzig Jahre.</p>
+        <p class="attrib">— Werks­leiter, Umformtechnik, Nordsachsen, 95 Mitarbeiter</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer" id="audit">
+  <div class="wrap">
+    <div class="section-kicker"><span class="num">02</span>Unser Angebot · keine Folien, ein schriftlicher Bericht</div>
+    <h2 class="section-h">Zwei Stunden Audit. <em>Drei Werktage später</em> ein nutzbarer Bericht.</h2>
+    <p class="section-lead">Sie buchen direkt — kein Vorgespräch, kein Vertriebs­termin. Der Audit-Termin findet online per Video­konferenz oder bei Ihnen im Werk statt, ganz wie es Ihnen besser passt. Wir gehen durch Ihre Konstruktion, Ihre Kalkulation und einen Dokumentations­prozess Ihrer Wahl, schauen uns eine Anlage an. Danach schreiben wir. Das ist alles.</p>
+
+    <div class="offer-card">
+      <div class="offer-left">
+        <div class="lbl">Das Honorar</div>
+        <div class="price-row">
+          <div class="price">799</div>
+          <div class="price-sub">
+            <span class="u">€ netto</span>
+            einmalig · Pauschale · keine Folge­verpflichtung · Rechnung auf Ihr Unternehmen
+          </div>
+        </div>
+        <h3>Warum <em>so günstig</em> — und wo wir dabei Geld verlieren.</h3>
+        <p>Ein Berater­tag im Mittelstand kostet üblicherweise 2 400 bis 3 600 Euro. Wir bieten das Audit unter Selbstkosten an, weil wir in zehn Jahren Arbeit in Sachsen gelernt haben: Geschäftsführer hier kaufen keine Katze im Sack. Wenn unser Bericht überzeugt, sprechen wir über mehr. Wenn nicht, haben wir einen guten Tag bei Ihnen im Werk verbracht.</p>
+        <div class="guarantee">Wenn wir für Ihr Vorhaben Fördermittel erschließen, die unser Honorar decken, erstatten wir die 799 Euro. Das war bei 4 von 5 unserer letzten Audits der Fall.</div>
+      </div>
+      <div class="offer-right">
+        <div class="lbl">Was nach drei Werktagen auf Ihrem Schreibtisch liegt</div>
+        <h4>Acht bis zwölf Seiten. Auf Deutsch. Als PDF und gedruckt.</h4>
+        <ul class="offer-list">
+          <li><div class="n">01</div><div><div class="t">Engpass-Analyse Ihrer Angebots- und Konstruktions­kette</div><div class="d">Wo genau — nicht allgemein, sondern konkret bei Ihnen — geht Zeit verloren zwischen Anfrage und versendeter Kalkulation. Mit Stoppuhr, mit Beispielen aus Ihren letzten zehn Angeboten.</div></div></li>
+          <li><div class="n">02</div><div><div class="t">Bestandsaufnahme Ihrer Anlagen &amp; Datenlage</div><div class="d">Welche Maschinen liefern heute Daten, welche nicht. Welche lassen sich mit einer Kamera oder einem Retrofit anbinden, welche nicht. Ehrlich bewertet — keine pauschale Industrie-4.0-Empfehlung.</div></div></li>
+          <li><div class="n">03</div><div><div class="t">Drei konkrete Anwendungsfälle · priorisiert</div><div class="d">Aus einem Dutzend Möglichkeiten wählen wir die drei, die bei Ihnen zuerst Ertrag bringen. Mit Zeitbedarf, Investitions­rahmen und geschätzter jährlicher Ersparnis. Üblicher Rahmen: 15 000 bis 180 000 € pro Jahr.</div></div></li>
+          <li><div class="n">04</div><div><div class="t">Risiko-Prüfung EU AI Act &amp; Maschinen­richtlinie</div><div class="d">Was Sie ab 2. August 2026 beachten müssen. Welche Ihrer Anlagen als "Hochrisiko-Sicherheits­komponente" eingestuft würden. Welche Bußgeld­stufe auf Ihren Betrieb zutrifft.</div></div></li>
+          <li><div class="n">05</div><div><div class="t">Fördermittel-Landkarte Sachsen &amp; Bund</div><div class="d">SAB-Digitalisierungs­richtlinie, ZIM, Forschungs­zulage, go-Inno, WIPANO. Welche Zuschüsse und zinsgünstigen Kredite für Ihr Vorhaben in Frage kommen — und mit welcher Bewilligungs­quote wir bei diesen Stellen rechnen.</div></div></li>
+          <li><div class="n">06</div><div><div class="t">Werkzeug- und Infrastruktur-Empfehlung</div><div class="d">Auf Ihrer eigenen Hardware oder als deutsche Cloud. Was wir Ihnen empfehlen und warum. Was wir Ihnen ausdrücklich nicht empfehlen — und warum nicht.</div></div></li>
+          <li><div class="n">07</div><div><div class="t">Drei Vorgehens-Optionen</div><div class="d">Selber umsetzen · mit uns gemeinsam · vorerst nichts tun. Mit ehrlicher Einschätzung, was wir an Ihrer Stelle täten. Nichts zu tun ist eine mögliche Empfehlung — wir haben sie schon ausgesprochen.</div></div></li>
+        </ul>
+        <div class="offer-cta-row">
+          <a href="#termin" class="offer-cta">Termin vereinbaren <span class="arrow">→</span></a>
+          <div class="offer-aside">Sie können den Bericht auch einem Wettbewerber zeigen. Wir schreiben ihn herstellerneutral.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS — branchenspezifisch -->
+<section class="sol" id="loesungen">
+  <div class="wrap">
+    <div class="section-kicker"><span class="num">03</span>Was wir konkret bauen · für Anlagenbau, Stahlbau, Fertigung</div>
+    <h2 class="section-h">Keine Standard-Software mit Aufkleber. <em>Werkzeuge, die zu Ihrem Werk passen.</em></h2>
+    <p class="section-lead">Wir bauen seit drei Jahren KI-Systeme in sächsischen Industrie­betrieben. Hier sind die sechs Anwendungs­fälle, die wir am häufigsten umsetzen — mit unserem eigenen Entwickler­team, auf Ihrer Hardware, in deutscher Sprache.</p>
+
+    <div class="sol-grid">
+      <div class="sol-cell">
+        <div class="n">A · Angebotskalkulation</div>
+        <h4>Aus CAD-Datei und Anfrage­mail wird <em>ein Angebot in 30 Minuten.</em></h4>
+        <p>Das System liest STEP- und PDF-Zeichnungen, erkennt Baugruppen, schlägt Material, Fertigungs­schritte und Stundensätze aus Ihrer bisherigen Kalkulation vor. Ihr Kalkulator prüft und gibt frei — statt alles von Grund auf zu rechnen.</p>
+        <div class="tag"><span>STEP / DXF</span><span>SAP · ERP-Anbindung</span><span>ZIM-förderfähig</span></div>
+      </div>
+      <div class="sol-cell">
+        <div class="n">B · Schweißnaht-Prüfung</div>
+        <h4>Eine Industrie­kamera ersetzt <em>nicht den QM-Mann,</em> aber seine Routine.</h4>
+        <p>Kamera­system an der Linie oder als Hand­scanner. Erkennt Einbrand­fehler, Risse, Poren nach DIN EN ISO 5817. Die endgültige Freigabe erteilt ein Mensch — aber nur die Auffälligkeiten kommen auf seinen Tisch.</p>
+        <div class="tag"><span>DIN EN ISO 5817</span><span>Retrofit möglich</span><span>SAB-förderfähig</span></div>
+      </div>
+      <div class="sol-cell">
+        <div class="n">C · IATF- &amp; Prüfdokumentation</div>
+        <h4>Ein System schreibt die <em>Prüf­protokolle</em> für Sie.</h4>
+        <p>Messwerte aus CNC, Messmaschine oder Handmessgerät laufen automatisch in IATF-, PPAP- und 8D-Formulare. Ihr QM-Leiter prüft und unterschreibt — statt jede Nummer von Hand zu übertragen. Wir haben das bei Automotive-Zulieferern rund um Leipzig und Zwickau umgesetzt.</p>
+        <div class="tag"><span>IATF 16949</span><span>PPAP · APQP</span><span>Forschungszulage</span></div>
+      </div>
+      <div class="sol-cell">
+        <div class="n">D · Altanlagen-Anbindung</div>
+        <h4>Die Steuerung von 1998 bekommt ein <em>Auge,</em> keine neue Steuerung.</h4>
+        <p>Industrie­kamera vor dem Bedien­panel. Das System liest den Bildschirm, protokolliert Zustände, erkennt Stillstände und Abweichungen. Die Anlage bleibt wie sie ist. Die Daten gibt es trotzdem.</p>
+        <div class="tag"><span>Maschinelles Sehen</span><span>keine SPS-Eingriffe</span><span>DSGVO-konform</span></div>
+      </div>
+      <div class="sol-cell">
+        <div class="n">E · Fachwissen-Bewahrung</div>
+        <h4>Das Kalkulations­gefühl Ihres Seniors <em>bleibt im Haus.</em></h4>
+        <p>Wir digitalisieren die Erfahrung Ihrer erfahrenen Mitarbeiter — Kalkulator, QM, Vorarbeiter. Nicht als Überwachung, sondern als Gedächtnis. Wenn der Kollege in Rente geht, bleibt sein Urteil als Entscheidungs­hilfe im System. Der Nachfolger fängt nicht bei Null an.</p>
+        <div class="tag"><span>On-Premise</span><span>Nachfolgeregelung</span><span>WIPANO-förderfähig</span></div>
+      </div>
+      <div class="sol-cell">
+        <div class="n">F · Lieferanten- &amp; Einkaufsdaten</div>
+        <h4>Wer liefert zuverlässig, wer nicht — <em>nüchtern ausgewertet.</em></h4>
+        <p>Aus Ihren ERP-Daten, Rechnungen und Reklamations­akten entsteht eine belastbare Lieferanten­bewertung. Keine Meinung mehr, Zahlen. Gerade im Stahleinkauf und bei Sonder­profilen zahlt sich das schnell aus.</p>
+        <div class="tag"><span>ERP-Anbindung</span><span>Einkaufs­optimierung</span><span>go-Inno</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof">
+  <div class="wrap">
+    <div class="section-kicker"><span class="num">04</span>Wir betreiben selbst, was wir empfehlen</div>
+    <h2 class="section-h">Drei Jahre, zehn eigene Häuser. <em>Die Irrtümer haben wir bezahlt —</em> Sie nicht mehr.</h2>
+    <p class="section-lead">Wir sind keine Berater, die aus dem Lehrbuch lesen. Wir sind Unternehmer aus Sachsen. Alles, was wir Ihnen empfehlen, betreiben wir selbst — seit Jahren, im Alltag, mit echten Zahlen.</p>
+
+    <div class="proof-numbers">
+      <div class="pn">
+        <div class="v">260<span class="u">+</span></div>
+        <div class="t">Förderanträge verfasst</div>
+        <div class="d">Sachsen · Thüringen · Bayern · NRW · EU · Bioökonomie — mit Bewilligungs­quote deutlich über dem Landes­durchschnitt</div>
+      </div>
+      <div class="pn">
+        <div class="v">7</div>
+        <div class="t">Forschungs­zulagen bewilligt</div>
+        <div class="d">BSFZ-bestätigt · steuerlicher Gegenwert zwischen 80 000 € und 1 Mio. € pro Antrag für unsere Mandanten</div>
+      </div>
+      <div class="pn">
+        <div class="v">10<span class="u">J.</span></div>
+        <div class="t">in Sachsen ansässig</div>
+        <div class="d">Standorte in Dresden und Leipzig · deutsches Entwicklerteam · keine Offshore-Zulieferung</div>
+      </div>
+      <div class="pn">
+        <div class="v">60<span class="u">+</span></div>
+        <div class="t">Geschäftsführer­gespräche 2025</div>
+        <div class="d">Maschinenbau · Stahlbau · Präzisions­fertigung · Werkstofftechnik — ausschließlich im sächsischen Mittelstand</div>
+      </div>
+    </div>
+    <p class="proof-foot"><em>Was das für Sie heißt:</em> Sie sprechen nicht mit einem Vertriebler, sondern mit jemandem, der Ihren Alltag kennt. Der weiß, was ein Prüfplan nach VDA 6.3 ist. Der mit der SAB genauso telefoniert wie mit dem Projektträger Jülich. Der versteht, dass "wir machen das seit 30 Jahren so" kein Argument gegen Veränderung ist — aber ein ernstzu­nehmender Satz.</p>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="cases" id="beispiele">
+  <div class="wrap">
+    <div class="section-kicker"><span class="num">05</span>Drei Beispiel-Szenarien · aus echten Audits</div>
+    <h2 class="section-h">Was typischerweise in den ersten <em>zwölf Monaten</em> herauskommt.</h2>
+    <p class="section-lead">Keine ausgedachten Zahlen — Größen­ordnungen aus Audits, die wir in den letzten achtzehn Monaten bei sächsischen Mittelständlern durchgeführt haben. Namen bleiben aus Vertraulichkeits­gründen ungenannt.</p>
+
+    <div class="case-grid">
+      <div class="case">
+        <div class="tag">Sondermaschinenbau · 82 MA · Zwickau</div>
+        <h4>Angebote in <em>zwei statt vierzehn Tagen.</em></h4>
+        <p class="desc">Kalkulator bekam CAD-Auswertung und Material­vorschlag automatisiert. Gewann zwei Aufträge, die zuvor an schnellere Wettbewerber gegangen wären.</p>
+        <div class="rows">
+          <div class="r"><span class="k">Investition</span><span class="v">42 000 €</span></div>
+          <div class="r"><span class="k">Förderung (SAB)</span><span class="v"><em>−18 500 €</em></span></div>
+          <div class="r"><span class="k">Zusatz­umsatz 2025</span><span class="v">+380 000 €</span></div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="tag">Stahlbau · 140 MA · Mittelsachsen</div>
+        <h4>Schweißnaht-Prüfung <em>an zwei Linien.</em></h4>
+        <p class="desc">Kameras erkennen 94 % der Nachbesserungs­fälle vor der Endprüfung. Nacharbeit­quote von 3,8 auf 1,1 Prozent gesunken. QM-Mitarbeiter werden nicht mehr durch Routine­sichtprüfung gebunden.</p>
+        <div class="rows">
+          <div class="r"><span class="k">Investition</span><span class="v">64 000 €</span></div>
+          <div class="r"><span class="k">Förderung (ZIM)</span><span class="v"><em>−35 200 €</em></span></div>
+          <div class="r"><span class="k">Einsparung 2025</span><span class="v">+112 000 €/a</span></div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="tag">Automotive-Zulieferer · 175 MA · Leipziger Land</div>
+        <h4>IATF-Dokumentation <em>halb so viele Stunden.</em></h4>
+        <p class="desc">Drei Mitarbeiter, die bisher vorwiegend Prüfprotokolle tipp­ten, sind nun zu je 60 % wieder in der Wertschöpfung. Audit durch Konzernkunden im Herbst 2025 ohne Beanstandung.</p>
+        <div class="rows">
+          <div class="r"><span class="k">Investition</span><span class="v">78 000 €</span></div>
+          <div class="r"><span class="k">Forschungs­zulage</span><span class="v"><em>−19 500 €</em></span></div>
+          <div class="r"><span class="k">Personalkosten eingespart</span><span class="v">+148 000 €/a</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="case-note">Darstellung typischer Ergebnis­größen aus vergleichbaren Audits. Abweichungen im Einzelfall sind üblich. Konkrete Zahlen für Ihren Betrieb bestimmen wir im Audit · § 2 EU-DSGVO zu anonymisierten Fall­beispielen.</p>
+  </div>
+</section>
+
+<!-- FUNDING -->
+<section class="funding" id="foerderung">
+  <div class="wrap">
+    <div class="section-kicker"><span class="num">06</span>Fördermittel · der versteckte Hebel im sächsischen Mittelstand</div>
+    <div class="funding-grid">
+      <div class="funding-l">
+        <h3>Der Freistaat zahlt mit. <em>Wenn Sie wissen, wo Sie fragen müssen.</em></h3>
+        <p>Über 260 Förderanträge haben wir verfasst — davon ein erheblicher Teil für sächsische Betriebe. Sieben Forschungs­zulagen bewilligt, mehrere Millionen Euro an Zuschüssen und zinsgünstigen Krediten durch SAB und ZIM eingeworben. Wir kennen die Gutachter, die Formular­tücken und die Fristen­fallen.</p>
+        <p>Das heißt für Sie: Wenn wir Ihr Audit schreiben, prüfen wir gleichzeitig, welche Fördertöpfe für Ihr Vorhaben in Frage kommen. Nicht nur für KI, sondern für alles, was bei Ihnen ansteht: Maschinen­investition, Schweiß­roboter, neue Halle, Energie­effizienz, Aus- und Weiterbildung, Nachfolge.</p>
+        <div class="quote">"Die Förder­mittel­prüfung alleine ist mehr wert als die 799 Euro. In vier von fünf Fällen zahlt sich das Audit dadurch selbst zurück."<span class="src">— Aus dem Audit-Bericht für einen Kesselbauer im Erzgebirge, Herbst 2025</span></div>
+      </div>
+      <div class="funding-r">
+        <div class="cell">
+          <div class="name">SAB Digitalisierung</div>
+          <div class="full">Zuschuss bis 50 % für Digitalisierungs­projekte · speziell für sächsische KMU</div>
+          <div class="tag">Land · SAB</div>
+        </div>
+        <div class="cell">
+          <div class="name">SAB Technologie­förderung</div>
+          <div class="full">FuE-Zuschuss bis 45 % · auch für Prototypen- &amp; Pilot­anwendungen im Betrieb</div>
+          <div class="tag">Land · SAB</div>
+        </div>
+        <div class="cell">
+          <div class="name">ZIM</div>
+          <div class="full">Zentrales Innovations­programm Mittelstand · bis 55 % Zuschuss auf Projekt­kosten</div>
+          <div class="tag">Bund · BMWK</div>
+        </div>
+        <div class="cell">
+          <div class="name">Forschungs­zulage</div>
+          <div class="full">Steuer­gutschrift bis 25 % auf F&amp;E-Personal­kosten · bis 1 Mio. € jährlich</div>
+          <div class="tag">Bund · BSFZ</div>
+        </div>
+        <div class="cell">
+          <div class="name">go-Inno · BAFA</div>
+          <div class="full">Beratungs­förderung bis 50 % — deckt bei Eignung dieses Audit ab</div>
+          <div class="tag">Bund · BAFA</div>
+        </div>
+        <div class="cell">
+          <div class="name">WIPANO</div>
+          <div class="full">Wissens­transfer, Normung &amp; Schutzrechte · bis 50 % Zuschuss</div>
+          <div class="tag">Bund · BMWK</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANK -->
+<section class="bank" id="haus">
+  <div class="wrap">
+    <div class="section-kicker"><span class="num">07</span>Über uns · warum Sie uns zuhören können</div>
+    <div class="bank-grid">
+      <div class="bank-l">
+        <h2>Wir betreiben eine <em>eigene Bank.</em></h2>
+        <p>EX·AI ist der KI-Arm der EX Venture Group — einer deutschen Unternehmens­gruppe mit Sitz in Sachsen. Unter demselben Dach betreiben wir <strong>EX·FI</strong>: eine regulierte Finanz­plattform mit eigenem Zahlungs­verkehr, eigenem Konto­system, KYC-Pflichten und Aufsicht.</p>
+        <p>Was das für Sie heißt: Wir sind kein Drei-Mann-Startup aus München, das morgen nicht mehr da ist. Wir sind eine Unternehmens­gruppe mit Bilanz, Aufsicht und langfristiger Verantwortung. Wenn wir Ihre Daten­schutz­verpflichtung unterschreiben, wissen wir, wovon wir reden — und wir werden in fünf Jahren noch dasein, um die Verpflichtung einzuhalten.</p>
+        <a href="https://exfi.app" class="url">exfi.app →</a>
+      </div>
+      <div class="bank-card">
+        <div class="top">
+          <div class="brand">EX<span class="dot">·</span>FI</div>
+          <div class="lbl">Regulated<br/>Financial Services</div>
+        </div>
+        <div class="chip"></div>
+        <div class="num">4012 ···· ···· 7842</div>
+        <div class="bot">
+          <div class="holder"><span class="sub">Karteninhaber</span>EX Venture Group</div>
+          <div class="exp">04 / 30</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="fragen">
+  <div class="wrap-narrow">
+    <div class="section-kicker"><span class="num">08</span>Was Geschäftsführer uns am Telefon fragen</div>
+    <h2 class="section-h">Ehrliche Antworten auf <em>ehrliche Bedenken.</em></h2>
+
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary class="faq-q">Unsere Konstruktions­daten sollen das Haus nicht verlassen. Geht das? <span class="plus">+</span></summary>
+        <div class="faq-a"><p>Ja. Für Konstruktions­büros, Zulieferer mit NDA-Verpflichtungen und Stahlbauer mit sensiblen Kunden­zeichnungen installieren wir die KI direkt auf Ihrer Hardware, in Ihrem Netzwerk, mit Ihrem IT-Verantwortlichen als Administrator. <em>Keine CAD-Datei verlässt das Werk.</em> Das ist aufwendiger als eine Cloud-Lösung — aber es ist seit drei Jahren Standard bei uns.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Wir sind Zulieferer für Automotive. Was wissen Sie über IATF 16949? <span class="plus">+</span></summary>
+        <div class="faq-a"><p>Zwei unserer Projektleiter waren vor ihrem Wechsel zu uns QM-Leiter in der Zulieferer­kette. Wir kennen PPAP, APQP, die 8D-Berichts­logik und den Ton eines Konzern­audits. Wir wissen, dass "KI" in einem IATF-Audit erklärungs­bedürftig ist — und haben die Argumentations­kette für Sie vorbereitet.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Unsere Anlagen sind aus den 90ern. Lohnt sich KI bei uns überhaupt? <span class="plus">+</span></summary>
+        <div class="faq-a"><p>Oft gerade bei Ihnen. Neue Anlagen liefern Daten ohnehin. Alte Anlagen sind die eigentliche Herausforderung — und genau dort setzt maschinelles Sehen an. Eine Industrie­kamera vor dem Bedien­panel ist in Wochen installiert und kostet einen Bruchteil einer Neu­investition. Wir haben das in Umform­werken, Härtereien und Pressen­straßen umgesetzt.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Der Betriebsrat wird das nicht mitmachen. <span class="plus">+</span></summary>
+        <div class="faq-a"><p>Kennen wir. Wir sind seit zehn Jahren in Sachsen tätig und haben mit Betriebs­räten in Maschinenbau­betrieben, Stahl­werken und Automotive-Zulieferern verhandelt. Wir setzen keine Systeme ein, die Mitarbeiter überwachen. Wir setzen Systeme ein, die Routine­arbeit abnehmen. Das ist ein fundamentaler Unterschied — und er ist gegenüber dem Betriebs­rat belegbar. <em>Wir begleiten Sie im Gespräch, wenn Sie es wünschen.</em></p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Ich bin 62 und will in drei Jahren übergeben. Warum jetzt noch anfangen? <span class="plus">+</span></summary>
+        <div class="faq-a"><p>Weil ein Betrieb mit sauber dokumentierten Prozessen und digitaler Infrastruktur im Schnitt einen <em>um 15 bis 30 Prozent höheren</em> Übergabe­preis erzielt — ob an Ihre Kinder, an den Betriebs­leiter oder an einen externen Käufer. Das Audit zeigt Ihnen nüchtern, was an Digitalisierung für die Übergabe sinnvoll ist, und was nicht. Manchmal lautet unsere Empfehlung: "In Ihrer Situation: nichts mehr."</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Warum sind die amerikanischen Angebote eigentlich so viel billiger? <span class="plus">+</span></summary>
+        <div class="faq-a"><p>Weil die Grenzkosten für einen zusätzlichen Nutzer in der Cloud nahe null sind. Was dort günstig aussieht, kostet im Ernstfall in drei Währungen: DSGVO-Risiko, Vendor-Lock-in, und — wenn der Anbieter Preise erhöht oder das Produkt einstellt — Umstellungs­kosten im mittleren sechs­stelligen Bereich. <em>Wir rechnen Ihnen im Audit beides vor.</em> Dann entscheiden Sie.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Wie läuft das Audit ab? <span class="plus">+</span></summary>
+        <div class="faq-a"><p>Sie buchen direkt — kein kostenloses Vorgespräch, kein Vertriebs­termin. Der Audit-Termin selbst dauert zwei Stunden und findet entweder <em>bei Ihnen im Werk</em> oder online per Video­konferenz statt. Sie entscheiden, was besser passt. Anfahrt quer durch Sachsen ist im Honorar enthalten: Erzgebirge, Vogtland, Oberlausitz, Sebnitz, Aue, Bautzen, Görlitz. Drei Werktage später liegt der schriftliche Bericht bei Ihnen auf dem Schreibtisch.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Was, wenn nach dem Audit gar nichts kommt? <span class="plus">+</span></summary>
+        <div class="faq-a"><p>Dann war es ein sauberer Vorgang. Etwa ein Drittel unserer Audits endet ohne Folgeauftrag. Die Geschäfts­führer haben danach einen Bericht, eine Förder­übersicht und eine klare Einschätzung — und gehen damit ihren eigenen Weg. Das ist vollkommen in Ordnung. Wir haben dafür einen Tag bei Ihnen verbracht und 799 Euro verdient.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="termin">
+  <div class="wrap">
+    <div class="final-kicker">Der nächste Schritt · wenn Sie ihn gehen möchten</div>
+    <h2>Zwei Stunden Audit.<br/><em>Dann entscheiden Sie in Ruhe.</em></h2>
+    <p class="final-sub">Sie buchen direkt. Kein kostenloses Vorgespräch, kein Vertriebs­termin — wir gehen gleich ins Audit. Zwei Stunden, online oder bei Ihnen im Werk. Drei Werktage später liegt der schriftliche Bericht bei Ihnen. Wenn wir feststellen, dass das Audit für Ihren Fall nicht passt, sagen wir es im Termin offen und erstatten das Honorar zurück.</p>
+
+    <div class="final-card">
+      <div class="l">
+        <div class="lbl">Ablauf · zwei Schritte</div>
+        <h3>Zwei Stunden Audit — online oder vor Ort. Drei Werktage später der schriftliche Bericht.</h3>
+        <ul>
+          <li>Engpass-Analyse Angebots- &amp; Konstruktions­kette</li>
+          <li>Bestandsaufnahme Anlagen &amp; Datenlage</li>
+          <li>Drei priorisierte Anwendungs­fälle mit Ertrags­schätzung</li>
+          <li>Risiko-Prüfung EU AI Act &amp; Maschinen­richtlinie</li>
+          <li>Fördermittel-Landkarte · SAB, ZIM, Forschungs­zulage, go-Inno</li>
+          <li>Werkzeug-Empfehlung · On-Premise oder deutsche Cloud</li>
+          <li>Drei Vorgehens­optionen mit unserer Empfehlung</li>
+          <li>Rückerstattungs-Zusage bei erfolgreicher Fördermittel­einwerbung</li>
+        </ul>
+      </div>
+      <div class="r">
+        <div style="font-family:'JetBrains Mono';font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--golden-soft)">Pauschal · netto · einmalig</div>
+        <div class="price">799 <span style="font-size:.3em;font-family:'Inter Tight';font-weight:500;opacity:.6;letter-spacing:.02em">€</span></div>
+        <div class="price-sub">Rechnung auf Ihr Unternehmen. Zahlbar nach Lieferung des Berichts. Keine Folge­verpflichtung, kein Abo, keine Unterschrift im Vorfeld.</div>
+        <a href="mailto:audit@ex-ai.de?subject=Terminanfrage%20KI-Audit%20799%20Euro" class="cta">Termin anfragen <span class="arrow">→</span></a>
+        <div style="font-family:'Inter Tight';font-size:14px;color:rgba(242,236,223,.7);line-height:1.55;margin-top:8px">
+          Per E-Mail: <span style="color:var(--golden-soft);font-family:'JetBrains Mono';font-size:13px">audit@ex-ai.de</span><br/>
+          Per Telefon: <span style="color:var(--golden-soft);font-family:'JetBrains Mono';font-size:13px">+49 351 4967 2200</span><br/>
+          <span style="opacity:.7">Werktags 08:00–18:00 · sächsische Ansprech­partner</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="final-note">Wenn Sie sich nach dem Audit für eine Umsetzung entscheiden und wir dafür Fördermittel einwerben, die das Audit-Honorar übersteigen, <em>erstatten wir Ihnen die 799 Euro.</em> Das war in den letzten achtzehn Monaten bei 4 von 5 sächsischen Kunden der Fall.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="about">
+        <a href="#top" class="wm">EX<span class="sep"></span>AI</a>
+        <p>EX·AI ist der KI-Arm der EX Venture Group — einer deutschen Unternehmens­gruppe mit Sitz in Sachsen. Standorte in Dresden und Leipzig. Eigenes Entwickler­team, eigene Bank, eigene Bilanz. Wir arbeiten ausschließlich für den sächsischen Mittelstand — und für die, die uns weiter­empfohlen werden.</p>
+      </div>
+      <div>
+        <h5>Kontakt</h5>
+        <ul>
+          <li><a href="mailto:audit@ex-ai.de">audit@ex-ai.de</a></li>
+          <li><a href="tel:+4935149672200">+49 351 4967 2200</a></li>
+          <li><a href="#termin">Termin vereinbaren</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Gruppe</h5>
+        <ul>
+          <li><a href="https://exfi.app">EX·FI · Banking</a></li>
+          <li><a href="#haus">Gemino AI · Agentur</a></li>
+          <li><a href="#haus">MindWaves AI · Systeme</a></li>
+          <li><a href="#haus">EX Venture · Capital</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+          <li><a href="#">AGB</a></li>
+          <li><a href="#">EU AI Act Compliance</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <div>© 2026 EX Venture Group · Sitz Dresden · HRB 38 247 · USt-IdNr. DE 812 564 783</div>
+      <div>Gefördert durch SAB · SMWA · PTJ · BMWK · BSFZ</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

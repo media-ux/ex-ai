@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+  <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#f2ecdf"></stop>
+    <stop offset="1" stop-color="#e8e0ce"></stop>
+  </linearGradient>
+  <pattern id="grid3" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0 L0 0 0 40" fill="none" stroke="#0e0c0a" stroke-width="0.5" opacity="0.12"></path>
+  </pattern>
+</defs>
+<rect width="1200" height="900" fill="url(#bg3)"></rect>
+<rect width="1200" height="900" fill="url(#grid3)"></rect>
+
+<rect x="80" y="80" width="1040" height="740" fill="#f7f2e6" stroke="#0e0c0a" stroke-width="1.5"></rect>
+
+<g stroke="#0e0c0a" stroke-width="1" fill="none">
+  <rect x="800" y="700" width="280" height="100"></rect>
+  <line x1="800" y1="730" x2="1080" y2="730"></line>
+  <line x1="800" y1="760" x2="1080" y2="760"></line>
+  <line x1="900" y1="700" x2="900" y2="800"></line>
+</g>
+<text x="810" y="722" font-family="monospace" font-size="11" fill="#0e0c0a" letter-spacing="2">EX·AI / GASIFIER X-150</text>
+<text x="810" y="752" font-family="monospace" font-size="10" fill="#0e0c0a" opacity="0.6" letter-spacing="2">SHEET 04 / 12</text>
+<text x="810" y="782" font-family="monospace" font-size="10" fill="#0e0c0a" opacity="0.6" letter-spacing="2">SCALE 1:50</text>
+<text x="910" y="722" font-family="monospace" font-size="11" fill="#8a3217" letter-spacing="2">REV B</text>
+<text x="910" y="752" font-family="monospace" font-size="10" fill="#0e0c0a" opacity="0.6">2026-04-11</text>
+<text x="910" y="782" font-family="monospace" font-size="10" fill="#0e0c0a" opacity="0.6">P. SILVEIRA</text>
+
+<g stroke="#0e0c0a" stroke-width="1.4" fill="none">
+  
+  <rect x="380" y="180" width="240" height="420"></rect>
+  <ellipse cx="500" cy="180" rx="120" ry="22"></ellipse>
+  <ellipse cx="500" cy="600" rx="120" ry="22"></ellipse>
+  
+  <line x1="380" y1="280" x2="620" y2="280" stroke-dasharray="5,3"></line>
+  <line x1="380" y1="380" x2="620" y2="380" stroke-dasharray="5,3"></line>
+  <line x1="380" y1="480" x2="620" y2="480" stroke-dasharray="5,3"></line>
+  
+  <path d="M380 220 L300 220 L300 240 L380 240 Z"></path>
+  
+  <path d="M620 540 L700 540 L700 560 L620 560 Z"></path>
+  
+  <path d="M500 180 L500 100 L380 100"></path>
+  <circle cx="380" cy="100" r="14"></circle>
+</g>
+
+<g stroke="#8a3217" stroke-width="0.8" fill="none">
+  <line x1="380" y1="640" x2="620" y2="640"></line>
+  <line x1="380" y1="635" x2="380" y2="645"></line>
+  <line x1="620" y1="635" x2="620" y2="645"></line>
+  <line x1="320" y1="180" x2="320" y2="600"></line>
+  <line x1="315" y1="180" x2="325" y2="180"></line>
+  <line x1="315" y1="600" x2="325" y2="600"></line>
+</g>
+<text x="500" y="660" text-anchor="middle" font-family="monospace" font-size="11" fill="#8a3217">2400 mm</text>
+<text x="310" y="395" text-anchor="end" font-family="monospace" font-size="11" fill="#8a3217" transform="rotate(-90 310 395)">4200 mm</text>
+
+<g stroke="#0e0c0a" stroke-width="0.8" fill="none">
+  <line x1="700" y1="220" x2="780" y2="180"></line>
+  <circle cx="700" cy="220" r="4" fill="#8a3217" stroke="none"></circle>
+  <line x1="700" y1="360" x2="780" y2="320"></line>
+  <circle cx="700" cy="360" r="4" fill="#8a3217" stroke="none"></circle>
+  <line x1="700" y1="500" x2="780" y2="460"></line>
+  <circle cx="700" cy="500" r="4" fill="#8a3217" stroke="none"></circle>
+</g>
+<text x="785" y="178" font-family="monospace" font-size="11" fill="#0e0c0a">A · Pyrolyse­zone</text>
+<text x="785" y="318" font-family="monospace" font-size="11" fill="#0e0c0a">B · Reduktions­zone</text>
+<text x="785" y="458" font-family="monospace" font-size="11" fill="#0e0c0a">C · Asche­austrag</text>
+
+<g transform="translate(120,720)">
+  <rect width="180" height="80" fill="none" stroke="#0e0c0a" stroke-width="0.8"></rect>
+  <text x="14" y="24" font-family="monospace" font-size="10" fill="#8a3217" letter-spacing="2">VALIDIERT · TRL 7</text>
+  <text x="14" y="44" font-family="monospace" font-size="10" fill="#0e0c0a" opacity="0.7">TU ZITTAU · 2025-11</text>
+  <text x="14" y="64" font-family="monospace" font-size="10" fill="#0e0c0a" opacity="0.7">FRAUNHOFER IKTS</text>
+</g>
+
+<text x="120" y="120" font-family="Georgia,serif" font-size="22" fill="#0e0c0a" font-style="italic">Modulare Vergasungsanlage</text>
+<text x="120" y="148" font-family="monospace" font-size="11" fill="#8a3217" letter-spacing="3">// FERTIGUNG · LEIPZIG</text>
+</svg>

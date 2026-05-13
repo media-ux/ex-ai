@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>EX · AI — EU AI Act · Compliance-Leitfaden für den Mittelstand</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E0C0A; --ink-2:#1C1915;
+    --cream:#F2ECDF; --cream-2:#E8E0CE;
+    --golden:#D4A24C; --ember:#B8421E; --moss:#3F4A3A;
+    --line:rgba(14,12,10,0.14);
+    --line-d:rgba(242,236,223,0.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#111;font-family:"Inter Tight",system-ui,sans-serif}
+  section{background:var(--cream);color:var(--ink);padding:56px 120px 96px;display:flex;flex-direction:column;position:relative;overflow:hidden;font-family:"Inter Tight",system-ui,sans-serif}
+  section.dark{background:var(--ink);color:var(--cream)}
+  section.golden{background:var(--golden);color:var(--ink)}
+  section.ember{background:var(--ember);color:var(--cream)}
+  section.moss{background:var(--moss);color:var(--cream)}
+
+  .chrome{position:absolute;top:44px;left:120px;right:120px;display:flex;justify-content:space-between;align-items:center;font-family:"JetBrains Mono";font-size:14px;letter-spacing:.14em;text-transform:uppercase;opacity:.55}
+  .wm{font-family:"Archivo";font-weight:900;font-size:20px;letter-spacing:-0.05em;text-transform:none;opacity:1;display:inline-flex;align-items:center;gap:0}
+  .wm .sep{display:inline-block;width:5px;height:5px;background:currentColor;border-radius:50%;margin:0 3px;vertical-align:middle}
+  .dark .wm,.ember .wm,.moss .wm{color:var(--golden)}
+  .footer-bar{position:absolute;bottom:44px;left:120px;right:120px;display:flex;justify-content:space-between;align-items:center;font-family:"JetBrains Mono";font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.5}
+  .horizon{position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--ember),var(--golden) 65%,var(--cream-2))}
+  .dark .horizon,.ember .horizon,.moss .horizon{background:linear-gradient(90deg,var(--ember),var(--golden) 65%,var(--cream))}
+
+  .eyebrow{font-family:"JetBrains Mono";font-size:16px;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);margin-bottom:28px;display:flex;align-items:center;gap:14px}
+  .dark .eyebrow,.ember .eyebrow,.moss .eyebrow{color:var(--golden)}
+  .eyebrow .chip{display:inline-flex;align-items:center;justify-content:center;width:36px;height:28px;border:1px solid currentColor;font-size:13px;font-weight:500}
+
+  h1.mega{font-family:"Archivo";font-weight:900;font-size:184px;letter-spacing:-0.05em;line-height:.88;margin-bottom:36px}
+  h1.big{font-family:"Archivo";font-weight:900;font-size:108px;letter-spacing:-0.04em;line-height:.95;margin-bottom:16px}
+  h2{font-family:"Archivo";font-weight:800;font-size:74px;letter-spacing:-0.03em;line-height:1.02;margin-bottom:8px}
+  h3{font-family:"Archivo";font-weight:700;font-size:38px;letter-spacing:-0.02em;line-height:1.1}
+  h4{font-family:"Archivo";font-weight:700;font-size:26px;letter-spacing:-0.015em;line-height:1.15}
+  .it{font-family:"Fraunces";font-style:italic;font-weight:300;letter-spacing:-0.02em}
+  .body{font-size:22px;line-height:1.48;max-width:62ch}
+  p.small{font-size:17px;line-height:1.55;max-width:60ch;opacity:.8}
+  .mono{font-family:"JetBrains Mono"}
+
+  .spread{flex:1;display:flex;flex-direction:column;justify-content:center}
+  .spread.start{justify-content:flex-start;padding-top:56px}
+
+  /* 01 COVER */
+  .s01 .cover-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;flex:1;align-items:stretch}
+  .s01 .cover-l{display:flex;flex-direction:column;justify-content:space-between;padding-top:0}
+  .s01 .c-top{display:flex;justify-content:space-between;font-family:"JetBrains Mono";font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--golden);opacity:.85}
+  .s01 .kicker{font-family:"JetBrains Mono";font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--golden);margin-bottom:32px}
+  .s01 .cite{font-family:"Fraunces";font-style:italic;font-weight:300;font-size:28px;line-height:1.35;max-width:36ch;margin-top:40px;color:var(--cream);opacity:.85}
+  .s01 .c-bot{display:flex;justify-content:space-between;font-family:"JetBrains Mono";font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.55}
+  .s01 .cover-r{position:relative;background:var(--ink-2);overflow:hidden}
+  .s01 .stamp{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:48px}
+  .s01 .stamp .eu{font-family:"JetBrains Mono";font-size:13px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;color:var(--golden)}
+  .s01 .stamp .reg{font-family:"Archivo";font-weight:900;font-size:120px;letter-spacing:-0.05em;line-height:.88;color:var(--golden)}
+  .s01 .stamp .reg .sub{display:block;font-size:22px;letter-spacing:-0.01em;opacity:.8;margin-top:12px;color:var(--cream);font-weight:600}
+  .s01 .stamp .seal{display:flex;flex-direction:column;gap:10px}
+  .s01 .stamp .seal .row{display:flex;justify-content:space-between;font-family:"JetBrains Mono";font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);opacity:.7;border-top:1px solid rgba(242,236,223,.2);padding-top:8px}
+  .s01 .stamp .circles{position:absolute;top:80px;right:48px;display:flex;flex-direction:column;gap:10px;align-items:center}
+  .s01 .stamp .circ{width:64px;height:64px;border:1px solid var(--golden);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono";font-size:11px;color:var(--golden);letter-spacing:.1em}
+
+  /* 02 TOC */
+  .s02 .toc{display:grid;grid-template-columns:repeat(2,1fr);gap:0 80px;margin-top:32px}
+  .s02 .toc .row{display:grid;grid-template-columns:60px 1fr auto;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);font-size:22px;align-items:baseline}
+  .s02 .toc .n{font-family:"JetBrains Mono";font-size:14px;letter-spacing:.14em;opacity:.6}
+  .s02 .toc .t{font-family:"Archivo";font-weight:600;font-size:22px;letter-spacing:-0.01em}
+  .s02 .toc .t em{font-family:"Fraunces";font-style:italic;font-weight:300;color:var(--ember)}
+  .s02 .toc .d{font-family:"JetBrains Mono";font-size:12px;opacity:.5;letter-spacing:.1em;text-transform:uppercase}
+
+  /* 03 STATUS QUO */
+  .s03 .compare{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:40px;border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d)}
+  .s03 .col{padding:44px 40px;border-right:1px solid var(--line-d)}
+  .s03 .col:last-child{border-right:0;background:rgba(212,162,76,.06)}
+  .s03 .col .k{font-family:"JetBrains Mono";font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--golden);margin-bottom:18px}
+  .s03 .col .m{font-family:"Archivo";font-weight:900;font-size:98px;letter-spacing:-0.04em;line-height:.92;color:var(--cream)}
+  .s03 .col.next .m{color:var(--golden)}
+  .s03 .col .sub{font-size:18px;line-height:1.5;margin-top:18px;opacity:.8;max-width:34ch}
+
+  /* 04 RISK PYRAMID */
+  .s04 .pyramid{display:flex;flex-direction:column;gap:4px;margin-top:32px}
+  .s04 .tier{border:1px solid var(--line);padding:24px 32px;display:grid;grid-template-columns:80px 1.2fr 2fr auto;gap:32px;align-items:center}
+  .s04 .tier .lvl{font-family:"JetBrains Mono";font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.55}
+  .s04 .tier h4{font-family:"Archivo";font-weight:700;font-size:26px;letter-spacing:-0.015em}
+  .s04 .tier .desc{font-size:16px;line-height:1.5;opacity:.82}
+  .s04 .tier .status{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-align:right;max-width:180px}
+  .s04 .tier.prohibited{background:rgba(184,66,30,.09);border-color:rgba(184,66,30,.35)}
+  .s04 .tier.prohibited .lvl{color:var(--ember)}
+  .s04 .tier.high{background:rgba(212,162,76,.12);border-color:rgba(212,162,76,.45)}
+  .s04 .tier.high .lvl{color:var(--ember)}
+  .s04 .tier.limited{background:transparent}
+  .s04 .tier.minimal{background:transparent;opacity:.7}
+
+  /* 05 TIMELINE */
+  .s05 .tl{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:40px;position:relative}
+  .s05 .tl::before{content:"";position:absolute;top:50px;left:4%;right:4%;height:2px;background:var(--golden);opacity:.5}
+  .s05 .tl .pt{padding:0 12px;display:flex;flex-direction:column;align-items:flex-start;position:relative}
+  .s05 .tl .dot{width:14px;height:14px;border-radius:50%;background:var(--golden);margin:44px 0 22px;position:relative;z-index:2;border:3px solid var(--ink)}
+  .s05 .tl .pt.done .dot{background:var(--ember)}
+  .s05 .tl .pt.soon .dot{background:var(--golden);box-shadow:0 0 0 4px rgba(212,162,76,.2)}
+  .s05 .tl .d{font-family:"Archivo";font-weight:800;font-size:30px;letter-spacing:-0.02em;color:var(--golden);line-height:1}
+  .s05 .tl .pt.done .d{color:var(--ember)}
+  .s05 .tl .t{font-family:"Archivo";font-weight:600;font-size:16px;line-height:1.25;margin-top:10px;letter-spacing:-0.005em}
+  .s05 .tl .s{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.55;margin-top:8px}
+  .s05 .note{margin-top:48px;padding:28px 32px;border:1px solid var(--line-d);background:rgba(212,162,76,.06);border-left:3px solid var(--golden);display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}
+  .s05 .note .lbl{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--golden)}
+  .s05 .note .tx{font-family:"Fraunces";font-style:italic;font-weight:300;font-size:22px;line-height:1.35}
+
+  /* 06 FINES */
+  .s06 .fines{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .s06 .fine{padding:40px 36px 40px 0;border-right:1px solid var(--line);position:relative}
+  .s06 .fine:last-child{border-right:0}
+  .s06 .fine .tier{font-family:"JetBrains Mono";font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ember);margin-bottom:14px}
+  .s06 .fine .num{font-family:"Archivo";font-weight:900;font-size:130px;letter-spacing:-0.05em;line-height:.85;color:var(--ember)}
+  .s06 .fine .num .u{font-size:.32em;vertical-align:top;margin-left:.08em;opacity:.85}
+  .s06 .fine .or{font-family:"JetBrains Mono";font-size:14px;letter-spacing:.12em;text-transform:uppercase;opacity:.55;margin:14px 0 6px}
+  .s06 .fine .pct{font-family:"Archivo";font-weight:800;font-size:48px;letter-spacing:-0.03em;color:var(--ink);line-height:1}
+  .s06 .fine .pct .u{font-size:.4em;opacity:.7}
+  .s06 .fine .lbl{font-family:"Archivo";font-weight:600;font-size:19px;margin-top:20px;line-height:1.3;max-width:30ch}
+  .s06 .fine .src{font-family:"JetBrains Mono";font-size:12px;opacity:.55;margin-top:14px;letter-spacing:.08em}
+  .s06 .sme{margin-top:40px;padding:28px 36px;background:var(--ink);color:var(--cream);display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center}
+  .s06 .sme .h{font-family:"Archivo";font-weight:800;font-size:28px;color:var(--golden);letter-spacing:-0.02em}
+  .s06 .sme .t{font-size:17px;line-height:1.5;opacity:.88}
+  .s06 .sme .t strong{color:var(--golden)}
+
+  /* 07 OBLIGATIONS */
+  .s07 .oblig{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:28px}
+  .s07 .ob{border:1px solid var(--line);padding:20px 20px;display:flex;flex-direction:column;gap:6px;min-height:160px}
+  .s07 .ob .art{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ember);opacity:.85}
+  .s07 .ob h4{font-family:"Archivo";font-weight:700;font-size:18px;letter-spacing:-0.01em;line-height:1.15}
+  .s07 .ob p{font-size:13px;line-height:1.45;opacity:.82;margin-top:2px}
+
+  /* 08 INCIDENTS */
+  .s08 .inc-wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:64px;margin-top:40px;align-items:start}
+  .s08 .inc{display:flex;flex-direction:column;gap:0}
+  .s08 .row{display:grid;grid-template-columns:110px 1fr;gap:32px;padding:28px 0;border-bottom:1px solid var(--line-d);align-items:baseline}
+  .s08 .row:last-child{border-bottom:0}
+  .s08 .row .d{font-family:"Archivo";font-weight:900;font-size:64px;letter-spacing:-0.04em;line-height:.9;color:var(--golden)}
+  .s08 .row .d .u{font-size:.28em;opacity:.7;margin-left:4px;letter-spacing:.05em}
+  .s08 .row .desc h4{font-family:"Archivo";font-weight:700;font-size:22px;letter-spacing:-0.015em;margin-bottom:4px}
+  .s08 .row .desc p{font-size:15px;line-height:1.5;opacity:.82}
+  .s08 .aside{padding:36px 36px 36px 36px;border:1px solid var(--line-d);background:rgba(242,236,223,.03)}
+  .s08 .aside .lbl{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--golden);margin-bottom:18px}
+  .s08 .aside h4{font-family:"Fraunces";font-style:italic;font-weight:300;font-size:28px;letter-spacing:-0.01em;line-height:1.25;margin-bottom:24px}
+  .s08 .aside p{font-size:15px;line-height:1.55;opacity:.85;margin-bottom:14px}
+
+  /* 09 OMNIBUS */
+  .s09 .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:36px;align-items:start}
+  .s09 .card{padding:36px 36px;border:1px solid var(--line);background:rgba(14,12,10,.02);display:flex;flex-direction:column;gap:14px}
+  .s09 .card.warn{border-color:rgba(184,66,30,.4);background:rgba(184,66,30,.06)}
+  .s09 .card .k{font-family:"JetBrains Mono";font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ember)}
+  .s09 .card h3{font-family:"Archivo";font-weight:800;font-size:40px;letter-spacing:-0.02em;line-height:1.02}
+  .s09 .card h3 .it{color:var(--ember)}
+  .s09 .card p{font-size:16px;line-height:1.55}
+  .s09 .card ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:4px}
+  .s09 .card li{font-size:15px;line-height:1.45;padding-left:18px;position:relative}
+  .s09 .card li::before{content:"";position:absolute;left:0;top:.65em;width:8px;height:1px;background:currentColor;opacity:.55}
+  .s09 .stance{margin-top:32px;padding:26px 32px;background:var(--ink);color:var(--cream);display:flex;gap:32px;align-items:center}
+  .s09 .stance .lbl{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--golden);white-space:nowrap}
+  .s09 .stance .q{font-family:"Fraunces";font-style:italic;font-weight:300;font-size:22px;line-height:1.35}
+
+  /* 10 SME */
+  .s10 .sme-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:40px}
+  .s10 .b{padding:36px 40px;border-right:1px solid var(--line-d);border-bottom:1px solid var(--line-d)}
+  .s10 .b:nth-child(2n){border-right:0}
+  .s10 .b:nth-last-child(-n+2){border-bottom:0}
+  .s10 .b .k{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--golden);margin-bottom:12px}
+  .s10 .b h4{font-family:"Archivo";font-weight:700;font-size:26px;letter-spacing:-0.015em;margin-bottom:12px;line-height:1.1}
+  .s10 .b p{font-size:15px;line-height:1.55;opacity:.88}
+  .s10 .b p strong{color:var(--golden)}
+  .s10 .def{margin-top:28px;font-family:"JetBrains Mono";font-size:13px;letter-spacing:.1em;opacity:.6;line-height:1.55}
+
+  /* 11 PATH (stairs-like) */
+  .s11 .path{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:40px;align-items:stretch}
+  .s11 .stage{border:1px solid var(--line);padding:28px 28px 30px;display:flex;flex-direction:column;gap:12px;min-height:360px}
+  .s11 .stage.active{background:var(--golden);color:var(--ink);border-color:var(--golden)}
+  .s11 .stage .lvl{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.55}
+  .s11 .stage h4{font-family:"Archivo";font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1.1}
+  .s11 .stage .when{font-family:"Archivo";font-weight:800;font-size:22px;color:var(--ember);letter-spacing:-0.01em}
+  .s11 .stage.active .when{color:var(--ink)}
+  .s11 .stage ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:6px}
+  .s11 .stage li{font-size:14px;line-height:1.45;padding-left:14px;position:relative;opacity:.88}
+  .s11 .stage li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:1px;background:currentColor;opacity:.55}
+
+  /* 12 HOW WE HELP */
+  .s12 .help{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;margin-top:36px;align-items:start}
+  .s12 .lead p{font-size:22px;line-height:1.5;margin-bottom:20px}
+  .s12 .lead p .it{font-family:"Fraunces";font-style:italic;font-weight:300;color:var(--golden)}
+  .s12 .svc{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line-d)}
+  .s12 .svc .r{display:grid;grid-template-columns:56px 1fr auto;gap:24px;padding:20px 0;border-bottom:1px solid var(--line-d);align-items:baseline}
+  .s12 .svc .n{font-family:"JetBrains Mono";font-size:14px;opacity:.55;letter-spacing:.14em}
+  .s12 .svc .t{font-family:"Archivo";font-weight:600;font-size:20px;letter-spacing:-0.005em}
+  .s12 .svc .p{font-family:"JetBrains Mono";font-size:13px;opacity:.7;letter-spacing:.06em;color:var(--golden)}
+
+  /* 13 CTA */
+  .s13{padding:56px 120px 96px;position:relative}
+  .s13 .spread.start{padding-top:120px}
+  .s13 .cta-head{margin-top:20px}
+  .s13 .offer{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:48px;align-items:start}
+  .s13 .price-big{font-family:"Archivo";font-weight:900;font-size:220px;color:var(--golden);letter-spacing:-0.06em;line-height:.82;display:flex;align-items:flex-start;gap:20px}
+  .s13 .price-big .u{font-size:22px;font-family:"Inter Tight";font-weight:500;color:var(--cream);letter-spacing:.02em;line-height:1.3;margin-top:18px;opacity:.75;white-space:nowrap;text-transform:uppercase}
+  .s13 .contact{border-top:1px solid var(--line-d);padding-top:28px;display:flex;flex-direction:column;gap:12px}
+  .s13 .contact .kbd{font-family:"JetBrains Mono";font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--golden);margin-bottom:4px}
+  .s13 .contact .l{font-family:"Archivo";font-weight:700;font-size:26px;letter-spacing:-0.01em}
+  .s13 .contact .v{font-family:"Inter Tight";font-size:17px;opacity:.8}
+  .s13 .sig{font-family:"Archivo";font-weight:900;font-size:88px;letter-spacing:-0.06em;color:var(--golden);margin-top:32px;margin-bottom:40px;line-height:.85;display:inline-flex;align-items:center;gap:0}
+  .s13 .sig .sep{display:inline-block;width:16px;height:16px;background:currentColor;border-radius:50%;margin:0 10px;vertical-align:middle}
+
+  /* 14 COLOPHON */
+  .s14 .cfn{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;margin-top:40px;align-items:start}
+  .s14 .src h4{font-family:"Archivo";font-weight:700;font-size:22px;margin-bottom:16px;letter-spacing:-0.015em}
+  .s14 .src ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .s14 .src li{font-family:"JetBrains Mono";font-size:13px;line-height:1.5;opacity:.75;letter-spacing:.03em;padding-left:14px;position:relative}
+  .s14 .src li::before{content:"§";position:absolute;left:0;color:var(--golden);opacity:.7}
+  .s14 .disc{padding:28px 32px;border:1px solid var(--line-d);background:rgba(242,236,223,.04)}
+  .s14 .disc .k{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--golden);margin-bottom:14px}
+  .s14 .disc p{font-size:15px;line-height:1.6;opacity:.85;margin-bottom:12px}
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+
+<!-- ===================== 01 · COVER ===================== -->
+<section class="s01 dark" data-label="Cover · EU AI Act">
+  <div class="cover-grid">
+    <div class="cover-l">
+      <div class="c-top">
+        <span class="wm">EX<span class="sep"></span>AI</span>
+        <span>Compliance-Briefing · April 2026</span>
+      </div>
+      <div>
+        <div class="kicker">Ein kostenloser Leitfaden für den deutschen Mittelstand</div>
+        <h1 class="mega">Der EU<br/>AI Act.<br/><span class="it">In Klartext.</span></h1>
+        <div class="cite">Was ab 2. August 2026 gilt — was Sie heute tun müssen, was Sie getrost verschieben können, und wo die Bußgelder wirklich anfangen.</div>
+      </div>
+      <div class="c-bot">
+        <span>Gemino AI · MindWaves AI · Geprüfter Stand: 22.04.2026</span>
+        <span>01 · 14</span>
+      </div>
+    </div>
+    <div class="cover-r">
+      <div class="stamp">
+        <div>
+          <div class="eu">Regulation (EU) 2024/1689</div>
+          <div class="reg" style="margin-top:16px">2024<br/>1689<span class="sub">In Kraft seit 1. August 2024</span></div>
+        </div>
+        <div class="seal">
+          <div class="row"><span>Risiko-Klassen</span><span>4</span></div>
+          <div class="row"><span>Bußgeld-Stufen</span><span>3</span></div>
+          <div class="row"><span>Max. Strafe</span><span>€35 Mio · 7 %</span></div>
+          <div class="row"><span>Annex III binden­d ab</span><span>02.08.2026</span></div>
+        </div>
+      </div>
+      <div class="circles">
+        <div class="circ">EU</div>
+        <div class="circ">DE</div>
+      </div>
+    </div>
+  </div>
+  <div class="horizon"></div>
+</section>
+
+<!-- ===================== 02 · TOC ===================== -->
+<section class="s02" data-label="Inhalt">
+  <div class="chrome"><span class="wm">EX<span class="sep"></span>AI</span><span>§ 00 · Inhalt</span></div>
+  <div class="spread start">
+    <div class="eyebrow"><span class="chip">00</span>Was Sie in diesem Dokument finden</div>
+    <h2 style="max-width:22ch">Vierzehn Seiten. <span class="it">Keine Angst-Rhetorik.</span><br/>Nur was gilt — und was zu tun ist.</h2>
+    <div class="toc">
+      <div>
+        <div class="row"><div class="n">01</div><div class="t">Cover</div><div class="d">22.04.2026</div></div>
+        <div class="row"><div class="n">02</div><div class="t">Inhalt</div><div class="d">hier</div></div>
+        <div class="row"><div class="n">03</div><div class="t">Der Stand — <em>Fristen heute</em></div><div class="d">bindend</div></div>
+        <div class="row"><div class="n">04</div><div class="t">Die vier Risiko-Klassen</div><div class="d">Art. 6–7</div></div>
+        <div class="row"><div class="n">05</div><div class="t">Zeitachse — <em>was wann</em></div><div class="d">2024–2030</div></div>
+        <div class="row"><div class="n">06</div><div class="t">Bußgelder — <em>drei Stufen</em></div><div class="d">Art. 99</div></div>
+        <div class="row"><div class="n">07</div><div class="t">Hochrisiko-Pflichten</div><div class="d">Art. 8–17</div></div>
+      </div>
+      <div>
+        <div class="row"><div class="n">08</div><div class="t">Meldepflichten bei Vorfällen</div><div class="d">Art. 73</div></div>
+        <div class="row"><div class="n">09</div><div class="t">Digital Omnibus — <em>Vorsicht</em></div><div class="d">in Verhandlung</div></div>
+        <div class="row"><div class="n">10</div><div class="t">Was für KMU anders ist</div><div class="d">Art. 99 (6)</div></div>
+        <div class="row"><div class="n">11</div><div class="t">Der Fahrplan — <em>120 Tage</em></div><div class="d">Stufe 1–4</div></div>
+        <div class="row"><div class="n">12</div><div class="t">Was EX·AI für Sie tut</div><div class="d">Leistungen</div></div>
+        <div class="row"><div class="n">13</div><div class="t">KI-Audit buchen</div><div class="d">799 €</div></div>
+        <div class="row"><div class="n">14</div><div class="t">Quellen &amp; Haftungsausschluss</div><div class="d">§§</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar"><span>Ein Dokument. Kein Ersatz für Rechtsberatung.</span><span>02 · 14</span></div>
+  <div class="horizon"></div>
+</section>
+
+<!-- ===================== 03 · STATUS QUO ===================== -->
+<section class="s03 dark" data-label="Der Stand · Fristen">
+  <div class="chrome"><span class="wm">EX<span class="sep"></span>AI</span><span>§ 01 · Der Stand</span></div>
+  <div class="spread start">
+    <div class="eyebrow"><span class="chip">01</span>Was heute schon gilt · Was bald kommt</div>
+    <h2 style="max-width:26ch">Der EU AI Act ist <span class="it">bereits Gesetz.</span><br/>Drei Fristen haben Sie verpasst. Eine nicht.</h2>
+    <div class="compare">
+      <div class="col">
+        <div class="k">Bereits wirksam</div>
+        <div class="m">02.02.25</div>
+        <div class="sub">Verbotene KI-Praktiken, KI-Kompetenz-Pflicht. Bußgelder bis 35 Mio. € / 7 %.</div>
+      </div>
+      <div class="col">
+        <div class="k">Bereits wirksam</div>
+        <div class="m">02.08.25</div>
+        <div class="sub">GPAI-Modell-Pflichten, nationale Behörden operativ, Bußgeldregime aktiv.</div>
+      </div>
+      <div class="col next">
+        <div class="k">Noch 103 Tage</div>
+        <div class="m">02.08.26</div>
+        <div class="sub">Hochrisiko-Systeme Annex III — Artikel 9–15 und 26 werden bindend.</div>
+      </div>
+      <div class="col">
+        <div class="k">In 15 Monaten</div>
+        <div class="m">02.08.27</div>
+        <div class="sub">Hochrisiko-Produkte Annex I — Sicherheitskomponenten in Maschinen, Medizinprodukten, Fahrzeugen.</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar"><span>Quelle: Regulation (EU) 2024/1689 · Art. 113.</span><span>03 · 14</span></div>
+  <div class="horizon"></div>
+</section>
+
+<!-- ===================== 04 · RISK PYRAMID ===================== -->
+<section class="s04" data-label="Die vier Risiko-Klassen">
+  <div class="chrome"><span class="wm">EX<span class="sep"></span>AI</span><span>§ 02 · Risiko-Klassen</span></div>
+  <div class="spread start">
+    <div class="eyebrow"><span class="chip">02</span>So klassifiziert der EU AI Act</div>
+    <h2 style="max-width:24ch">Vier Klassen. <span class="it">Nicht jede trifft Sie —</span><br/>aber jede sollten Sie kennen.</h2>
+    <div class="pyramid">
+      <div class="tier prohibited">
+        <div class="lvl">Klasse 01</div>
+        <h4>Verboten<br/><span style="font-family:'Fraunces';font-style:italic;font-weight:300;color:var(--ember)">Unakzeptabel</span></h4>
+        <div class="desc">Social Scoring, manipulative Techniken, Emotions-Erkennung am Arbeitsplatz / in Schulen, biometrische Echtzeit-Identifikation im öffentlichen Raum.</div>
+        <div class="status" style="color:var(--ember)"><strong>Bereits verboten<br/>seit 02.02.2025</strong></div>
+      </div>
+      <div class="tier high">
+        <div class="lvl">Klasse 02</div>
+        <h4>Hohes Risiko<br/><span style="font-family:'Fraunces';font-style:italic;font-weight:300;color:var(--ember)">Annex III / Annex I</span></h4>
+        <div class="desc">Biometrie, kritische Infrastruktur, Bildung, Beschäftigung, Kredit-Scoring, Strafverfolgung, Migration, Justiz, demokratische Prozesse — plus Sicherheits-Komponenten in regulierten Produkten.</div>
+        <div class="status" style="color:var(--golden)"><strong>Annex III · 02.08.2026<br/>Annex I · 02.08.2027</strong></div>
+      </div>
+      <div class="tier limited">
+        <div class="lvl">Klasse 03</div>
+        <h4>Begrenztes Risiko<br/><span style="font-family:'Fraunces';font-style:italic;font-weight:300;opacity:.75">Transparenz</span></h4>
+        <div class="desc">Chatbots, Deepfakes, Emotions-Erkennung, biometrische Kategorisierung. Nutzer müssen erkennen können, dass sie mit KI sprechen.</div>
+        <div class="status" style="opacity:.85"><strong>Wirksam seit<br/>02.08.2025</strong></div>
+      </div>
+      <div class="tier minimal">
+        <div class="lvl">Klasse 04</div>
+        <h4>Minimales Risiko</h4>
+        <div class="desc">Alle übrigen KI-Systeme — Spam-Filter, Empfehlungsalgorithmen, Standard-Automatisierungen. Keine spezifischen Pflichten.</div>
+        <div class="status"><strong>Freiwillige<br/>Verhaltens­kodizes</strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar"><span>Nicht geraten werden muss. Die Klasse ergibt sich aus Einsatzzweck, nicht aus Technologie.</span><span>04 · 14</span></div>
+  <div class="horizon"></div>
+</section>
+
+<!-- ===================== 05 · TIMELINE ===================== -->
+<section class="s05 dark" data-label="Zeitachse">
+  <div class="chrome"><span class="wm">EX<span class="sep"></span>AI</span><span>§ 03 · Zeitachse</span></div>
+  <div class="spread start">
+    <div class="eyebrow"><span class="chip">03</span>Von Inkrafttreten bis Alt­systeme</div>
+    <h2 style="max-width:24ch">Sechs Daten. <span class="it">Im Kalender.</span></h2>
+    <div class="tl">
+      <div class="pt done"><div class="dot"></div><div class="d">01.08.24</div><div class="t">Inkrafttreten</div><div class="s">Regulation veröffentlicht</div></div>
+      <div class="pt done"><div class="dot"></div><div class="d">02.02.25</div><div class="t">Verbote aktiv</div><div class="s">Art. 5 · Bußgelder</div></div>
+      <div class="pt done"><div class="dot"></div><div class="d">02.08.25</div><div class="t">GPAI &amp; Behörden</div><div class="s">Art. 53–55 · Enforcement</div></div>
+      <div class="pt soon"><div class="dot"></div><div class="d">02.08.26</div><div class="t">Annex III bindend</div><div class="s">Art. 9–15 · Art. 26</div></div>
+      <div class="pt"><div class="dot"></div><div class="d">02.08.27</div><div class="t">Annex I bindend</div><div class="s">Produkt-Sicherheit</div></div>
+      <div class="pt"><div class="dot"></div><div class="d">02.08.30</div><div class="t">Altsysteme Public</div><div class="s">Vor 2026 in Betrieb</div></div>
+    </div>
+    <div class="note">
+      <div class="lbl">Warnung<br/>Omnibus</div>
+      <div class="tx">Der Digital Omnibus (Nov. 2025) <strong style="font-weight:500">schlägt Verschiebungen vor</strong> — bindend bleibt bis zu einer formalen Verabschiedung der 02.08.2026. Kanzleien raten einheitlich: planen Sie gegen die Originalfrist.</div>
+    </div>
+  </div>
+  <div class="footer-bar"><span>Quelle: Art. 113 · Pressemitteilung EU-Kommission vom 19.11.2025.</span><span>05 · 14</span></div>
+  <div class="horizon"></div>
+</section>
+
+<!-- ===================== 06 · FINES ===================== -->
+<section class="s06" data-label="Bußgelder">
+  <div class="chrome"><span class="wm">EX<span class="sep"></span>AI</span><span>§ 04 · Bußgelder</span></div>
+  <div class="spread start">
+    <div class="eyebrow"><span class="chip">04</span>Drei Stufen · Art. 99 der Verordnung</div>
+    <h2 style="max-width:26ch">Die Zahlen, die Sie sich <span class="it">merken sollten.</span></h2>
+    <div class="fines">
+      <div class="fine">
+        <div class="tier">Stufe 01 · Verbotene Praktiken</div>
+        <div class="num">35<span class="u">Mio €</span></div>
+        <div class="or">oder</div>
+        <div class="pct">7<span class="u"> %</span></div>
+        <div class="lbl">weltweiter Konzernumsatz — je nachdem, was höher ist.</div>
+        <div class="src">Art. 99 (3) · Turnover berechnet auf Konzernebene</div>
+      </div>
+      <div class="fine">
+        <div class="tier">Stufe 02 · Hochrisiko-Verstöße</div>
+        <div class="num">15<span class="u">Mio €</span></div>
+        <div class="or">oder</div>
+        <div class="pct">3<span class="u"> %</span></div>
+        <div class="lbl">weltweiter Konzernumsatz — je nachdem, was höher ist.</div>
+        <div class="src">Art. 99 (4) · Art. 8–15, 22–26, 31, 33, 34, 50</div>
+      </div>
+      <div class="fine">
+        <div class="tier">Stufe 03 · Falsche Angaben</div>
+        <div class="num">7,5<span class="u">Mio €</span></div>
+        <div class="or">oder</div>
+        <div class="pct">1<span class="u"> %</span></div>
+        <div class="lbl">falsche oder irreführende Angaben an Behörden oder benannte Stellen.</div>
+        <div class="src">Art. 99 (5)</div>
+      </div>
+    </div>
+    <div class="sme">
+      <div class="h">Für KMU</div>
+      <div class="t">Für kleine und mittlere Unternehmen gilt: <strong>der niedrigere</strong> der beiden Werte (€ oder %), nicht der höhere. 3 % von 10 Mio. € Umsatz = 300 000 € — und die <strong>Pflichten selbst sind identisch.</strong> <em>Art. 99 (6).</em></div>
+    </div>
+  </div>
+  <div class="footer-bar"><span>Die Behörde setzt den konkreten Betrag innerhalb des Rahmens fest — Schwere, Dauer, Kooperation, Unternehmensgröße zählen.</span><span>06 · 14</span></div>
+  <div class="horizon"></div>
+</section>
+
+<!-- ===================== 07 · OBLIGATIONS ===================== -->
+<section class="s07" data-label="Hochrisiko-Pflichten">
+  <div class="chrome"><span class="wm">EX<span class="sep"></span>AI</span><span>§ 05 · Pflichten</span></div>
+  <div class="spread start">
+    <div class="eyebrow"><span class="chip">05</span>Wenn Ihr System Hochrisiko ist · Art. 8–17</div>
+    <h2 style="max-width:24ch">Elf Pflichten. <span class="it">In Worte gefasst,</span><br/>nicht in Paragraphen.</h2>
+    <div class="oblig">
+      <div class="ob"><div class="art">Art. 9 · Risiko-Management</div><h4>Laufendes Risiko-System</h4><p>Kein Einmal-Dokument — ein fortlaufender Prozess über den gesamten Lebenszyklus. Identifikation, Minderung, Aktualisierung auf Basis von Betriebsdaten.</p></div>
+      <div class="ob"><div class="art">Art. 10 · Daten­qualität</div><h4>Saubere Trainings­daten</h4><p>Relevant, repräsentativ, möglichst fehlerfrei. Bias-Prüfungen dokumentiert. Herkunft und Version nachvollziehbar.</p></div>
+      <div class="ob"><div class="art">Art. 11 · Doku</div><h4>Technische Dokumentation</h4><p>Nach Annex IV. Architektur, Designentscheidungen, Leistungskennzahlen, Grenzen — so, dass Behörden ohne Reverse-Engineering prüfen können.</p></div>
+      <div class="ob"><div class="art">Art. 12 · Logs</div><h4>Automatische Protokollierung</h4><p>Ereignisse, Eingaben, Ausgaben, Nutzer-Identität. Mindestens <strong>6 Monate</strong> Aufbewahrung, wenn keine andere Rechtsnorm mehr verlangt.</p></div>
+      <div class="ob"><div class="art">Art. 13 · Transparenz</div><h4>Verständliche Bedienung</h4><p>Deployer müssen Ausgaben interpretieren können. Klare Gebrauchsanweisung, Unsicherheits­angaben, Grenzen der Nutzung offenlegen.</p></div>
+      <div class="ob"><div class="art">Art. 14 · Aufsicht</div><h4>Menschliche Kontrolle</h4><p>Zugewiesene Personen müssen eingreifen, unterbrechen, stoppen können. Dokumentierte Eingriffs-Protokolle und Ausfall-Verfahren.</p></div>
+      <div class="ob"><div class="art">Art. 15 · Robustheit</div><h4>Genauigkeit &amp; Sicherheit</h4><p>Leistungs-Metriken, Test­ergebnisse, Schwachstellen-Assessments, Cybersecurity — zweckangemessen und nachgewiesen.</p></div>
+      <div class="ob"><div class="art">Art. 17 · QMS</div><h4>Qualitäts­management-System</h4><p>Dokumentierte Abläufe, interne Audits, Management-Reviews. Kein Zertifikat — ein gelebter Prozess.</p></div>
+      <div class="ob"><div class="art">Art. 43 · Konformität</div><h4>Konformitäts­bewertung</h4><p>Annex III meist <strong>Selbstbewertung</strong> (Annex VI). Annex I <strong>durch benannte Stelle</strong>. Immer vor Marktzugang.</p></div>
+      <div class="ob"><div class="art">Art. 49 · EU-Register</div><h4>EU-KI-Datenbank</h4><p>Registrierung vor Inverkehrbringen. Identität, Version, Zweck, betroffene Personengruppen, Einsatzländer.</p></div>
+      <div class="ob"><div class="art">Art. 72 · Monitoring</div><h4>Post-Market-Monitoring</h4><p>Aktive, systematische Sammlung von Leistungsdaten nach Einsatz. Monitoring-Plan, regelmäßige Reviews, Update-Protokoll.</p></div>
+      <div class="ob"><div class="art">Art. 26 · Deployer</div><h4>Pflichten des Anwenders</h4><p>FRIA für öffentl. Einrichtungen &amp; kritische Dienste · Mitarbeiter­information vor Einsatz · Logs mind. 6 Monate · Kooperation mit Anbieter.</p></div>
+    </div>
+  </div>
+  <div class="footer-bar"><span>Für Annex-III-Systeme vor dem 2. August 2026 zu erfüllen · für Annex-I-Systeme vor dem 2. August 2027.</span><span>07 · 14</span></div>
+  <div class="horizon"></div>
+</section>
+
+<!-- ===================== 08 · INCIDENTS ===================== -->
+<section class="s08 dark" data-label="Meldepflichten">
+  <div class="chrome"><span class="wm">EX<span class="sep"></span>AI</span><span>§ 06 · Vorfälle</span></div>
+  <div class="spread start">
+    <div class="eyebrow"><span class="chip">06</span>Wenn etwas passiert · Art. 73</div>
+    <h2 style="max-width:22ch">Die Uhr läuft. <span class="it">Ab Kenntnis —</span><br/>nicht ab Tageslicht.</h2>
+    <div class="inc-wrap">
+      <div class="inc">
+        <div class="row"><div class="d">2<span class="u">Tage</span></div><div class="desc"><h4>Störung kritischer Infrastruktur</h4><p>Bei Vorfällen, die kritische Infrastruktur gefährden — etwa Energie, Gesundheit, Verkehr.</p></div></div>
+        <div class="row"><div class="d">10<span class="u">Tage</span></div><div class="desc"><h4>Vorfall mit Todesfolge</h4><p>Wenn Menschenleben durch den Vorfall betroffen sind — Meldung an die national zuständige Behörde.</p></div></div>
+        <div class="row"><div class="d">15<span class="u">Tage</span></div><div class="desc"><h4>Schwerer Vorfall · Standard</h4><p>Alle übrigen ernsten Vorfälle gemäß Art. 3 Nr. 49 — Meldung an Behörde und Anbieter.</p></div></div>
+      </div>
+      <div class="aside">
+        <div class="lbl">Realität in deutschen Mittelständlern</div>
+        <h4>„Wir haben keinen KI-Notfallplan."</h4>
+        <p>Ohne definierten Prozess sind 2 Tage kaum zu schaffen. Die meisten Unternehmen entdecken Vorfälle erst durch Kundenbeschwerden.</p>
+        <p>Integrieren Sie KI-Incidents in Ihr bestehendes IT-Notfall-Playbook. Klären Sie Zuständigkeit, Eskalations­wege und Kommunikations­kanäle — <em>bevor</em> es passiert.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar"><span>Fristen laufen ab Kenntnis · EX·AI baut das Meldeverfahren auf Wunsch für Sie.</span><span>08 · 14</span></div>
+  <div class="horizon"></div>
+</section>
+
+<!-- ===================== 09 · OMNIBUS ===================== -->
+<section class="s09" data-label="Digital Omnibus">
+  <div class="chrome"><span class="wm">EX<span class="sep"></span>AI</span><span>§ 07 · Omnibus</span></div>
+  <div class="spread start">
+    <div class="eyebrow"><span class="chip">07</span>Der Vorschlag · der noch kein Gesetz ist</div>
+    <h2 style="max-width:26ch">Brüssel diskutiert eine <span class="it">Verschiebung.</span><br/>Sie sollten sie nicht einplanen.</h2>
+    <div class="split">
+      <div class="card">
+        <div class="k">Stand der Verhandlungen</div>
+        <h3>Was der Omnibus <span class="it">vorschlägt</span></h3>
+        <ul>
+          <li>Annex III: Verschiebung von 08.2026 → 12.2027</li>
+          <li>Annex I: Verschiebung von 08.2027 → 08.2028</li>
+          <li>KMU-Vorteile ausgedehnt auf Small Mid-Caps (bis 499 MA, 100 Mio. €)</li>
+          <li>Vereinfachte Post-Market-Dokumentation</li>
+          <li>Streichung Registrierung für Niedrig-Risiko­systeme in Hochrisiko-Bereichen</li>
+        </ul>
+      </div>
+      <div class="card warn">
+        <div class="k">Was heute gilt</div>
+        <h3>Warum Sie trotzdem <span class="it">jetzt anfangen.</span></h3>
+        <p>Der Omnibus wurde am 19. November 2025 von der Kommission vorgeschlagen. Das Parlament hat im März 2026 seine Position angenommen (569 Ja-Stimmen). Trilog-Verhandlungen laufen — politische Einigung angezielt bis <strong>28. April 2026.</strong></p>
+        <p><strong>Bis zur formalen Verabschiedung im Amtsblatt bleibt der 2. August 2026 verbindlich.</strong> Orrick, WilmerHale, DLA Piper raten einhellig: planen gegen die Originalfrist.</p>
+      </div>
+    </div>
+    <div class="stance">
+      <div class="lbl">Unsere<br/>Position</div>
+      <div class="q">„Wenn der Omnibus kommt, haben Sie Luft. Wenn er kommt und Sie haben nichts getan, sind Sie compliant. Wenn er nicht kommt und Sie haben nichts getan, sind Sie Stufe-02-exponiert — 15 Mio. € oder 3 %."</div>
+    </div>
+  </div>
+  <div class="footer-bar"><span>Quelle: Pressemitteilung EU-Kommission · Parlaments-Beschluss 06.03.2026 · Trilog ongoing.</span><span>09 · 14</span></div>
+  <div class="horizon"></div>
+</section>
+
+<!-- ===================== 10 · SME PROVISIONS ===================== -->
+<section class="s10 golden" data-label="KMU-Sonderregeln">
+  <div class="chrome"><span class="wm" style="color:var(--ink)">EX<span class="sep"></span>AI</span><span style="color:var(--ink)">§ 08 · Für KMU</span></div>
+  <div class="spread start">
+    <div class="eyebrow" style="color:var(--ink)"><span class="chip">08</span>Was für kleine und mittlere Unternehmen anders ist</div>
+    <h2 style="max-width:26ch">Erleichterungen — <span class="it">aber keine Ausnahme.</span></h2>
+    <div class="sme-grid">
+      <div class="b">
+        <div class="k" style="color:var(--ink);opacity:.7">Art. 99 (6)</div>
+        <h4>Niedrigerer Wert gilt</h4>
+        <p>Für KMU zählt bei Bußgeldern immer der <strong>niedrigere</strong> der beiden Werte (€ oder %). Bei 10 Mio. € Umsatz sind 3 % = 300 000 €, nicht 15 Mio. €.</p>
+      </div>
+      <div class="b">
+        <div class="k" style="color:var(--ink);opacity:.7">Art. 99 (1)</div>
+        <h4>Verhältnismäßigkeit</h4>
+        <p>Behörden müssen die <strong>wirtschaftliche Leistungs­fähigkeit</strong> von KMU und Start-ups bei der Sanktionierung berücksichtigen. Keine Existenz-Vernichtung für Dokumentations­lücken.</p>
+      </div>
+      <div class="b">
+        <div class="k" style="color:var(--ink);opacity:.7">Art. 57</div>
+        <h4>Regulatorische Sandkästen</h4>
+        <p>Mitgliedstaaten richten mindestens <strong>einen KI-Sandbox pro Land</strong> ein — für KMU kostenfrei nutzbar zum Testen vor voller Compliance.</p>
+      </div>
+      <div class="b">
+        <div class="k" style="color:var(--ink);opacity:.7">Art. 60</div>
+        <h4>Realwelt-Tests erlaubt</h4>
+        <p>KMU können unter Aufsicht <strong>in realen Bedingungen testen</strong> — bevor die volle Konformitäts­bewertung vorliegt.</p>
+      </div>
+    </div>
+    <div class="def" style="color:var(--ink);opacity:.7">KMU-Definition (EU-Empfehlung): &lt; 250 Mitarbeitende · ≤ 50 Mio. € Umsatz ODER ≤ 43 Mio. € Bilanzsumme · Digital Omnibus erweitert auf SMC (&lt; 500 MA · ≤ 100 Mio. €) — nicht geltendes Recht.</div>
+  </div>
+  <div class="footer-bar" style="color:var(--ink);opacity:.6"><span>Die Pflichten sind identisch — nur die Strafen und Unterstützungs-Instrumente unterscheiden sich.</span><span>10 · 14</span></div>
+</section>
+
+<!-- ===================== 11 · PATH ===================== -->
+<section class="s11 dark" data-label="Fahrplan 120 Tage">
+  <div class="chrome"><span class="wm">EX<span class="sep"></span>AI</span><span>§ 09 · Fahrplan</span></div>
+  <div class="spread start">
+    <div class="eyebrow"><span class="chip">09</span>Vier Stufen · von heute bis zur Frist</div>
+    <h2 style="max-width:26ch">Wir verkaufen keine <span class="it">Transformation.</span> Wir bauen eine Treppe.</h2>
+    <div class="path">
+      <div class="stage active">
+        <div class="lvl">Stufe 01 · Tag 1–14</div>
+        <h4>Inventur</h4>
+        <div class="when">Woche 1–2</div>
+        <ul>
+          <li>KI-Systeme katalogisieren</li>
+          <li>Risiko-Klasse je System</li>
+          <li>Audit verbotener Praktiken</li>
+          <li>GPAI-Nutzung prüfen</li>
+          <li>Deployer- vs. Anbieter­status klären</li>
+        </ul>
+      </div>
+      <div class="stage">
+        <div class="lvl">Stufe 02 · Tag 15–45</div>
+        <h4>Fundament</h4>
+        <div class="when">Woche 3–7</div>
+        <ul>
+          <li>Technische Doku nach Annex IV</li>
+          <li>Risiko-Management-System</li>
+          <li>Logging implementieren</li>
+          <li>Menschliche Aufsicht-Protokoll</li>
+          <li>Vorfall-Response-Workflow</li>
+        </ul>
+      </div>
+      <div class="stage">
+        <div class="lvl">Stufe 03 · Tag 46–90</div>
+        <h4>Konformität</h4>
+        <div class="when">Woche 8–14</div>
+        <ul>
+          <li>Konformitäts­bewertung</li>
+          <li>EU-Datenbank-Registrierung</li>
+          <li>Post-Market-Monitoring-Plan</li>
+          <li>FRIA (wo relevant)</li>
+          <li>Betriebsrat­information</li>
+        </ul>
+      </div>
+      <div class="stage">
+        <div class="lvl">Stufe 04 · ab Tag 91</div>
+        <h4>Betrieb</h4>
+        <div class="when">Dauerhaft</div>
+        <ul>
+          <li>Kontinuierliches Monitoring</li>
+          <li>Log-Auswertung</li>
+          <li>QMS-Audits</li>
+          <li>Behörden-Kommunikation</li>
+          <li>Re-Assessment bei Änderung</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar"><span>Jede Stufe liefert ein prüfbares Ergebnis. Jede Stufe ist abgeschlossen bezahlt.</span><span>11 · 14</span></div>
+  <div class="horizon"></div>
+</section>
+
+<!-- ===================== 12 · HOW WE HELP ===================== -->
+<section class="s12" data-label="Wie EX·AI hilft">
+  <div class="chrome"><span class="wm">EX<span class="sep"></span>AI</span><span>§ 10 · Unsere Rolle</span></div>
+  <div class="spread start">
+    <div class="eyebrow"><span class="chip">10</span>Was EX·AI konkret für Sie übernimmt</div>
+    <h2 style="max-width:22ch">Ein Partner — <span class="it">von Audit bis Betrieb.</span></h2>
+    <div class="help">
+      <div class="lead">
+        <p>Wir sind <span class="it">kein Rechtsberater</span> — und wollen keiner werden. Wir sind die Ingenieure und Prozess-Architekten, die Ihre KI-Systeme regulier­ungs­konform bauen, dokumentieren und betreiben.</p>
+        <p>Unsere Juristen arbeiten ergänzend zu Ihrer Hauskanzlei. Ihre TOMs entwerfen wir in Abstimmung mit Ihrem Datenschutz­beauftragten. Ihr Audit teilen wir mit Ihrem Wirtschafts­prüfer.</p>
+        <p style="color:var(--ember);margin-top:28px;font-family:'Fraunces';font-style:italic;font-weight:300;font-size:26px;line-height:1.3">Wir bauen. Sie entscheiden.<br/>Niemand hält Sie für dumm.</p>
+      </div>
+      <div class="svc">
+        <div class="r"><div class="n">01</div><div class="t">KI-System-Inventur &amp; Risiko-Klassifikation</div><div class="p">Stufe 01</div></div>
+        <div class="r"><div class="n">02</div><div class="t">Technische Dokumentation nach Annex IV</div><div class="p">Stufe 02</div></div>
+        <div class="r"><div class="n">03</div><div class="t">Risiko-Management-System (Art. 9)</div><div class="p">Stufe 02</div></div>
+        <div class="r"><div class="n">04</div><div class="t">Logging-Architektur &amp; Aufsichts-Protokolle</div><div class="p">Stufe 02</div></div>
+        <div class="r"><div class="n">05</div><div class="t">Vorfall-Response (2/10/15 Tage)</div><div class="p">Stufe 02</div></div>
+        <div class="r"><div class="n">06</div><div class="t">Konformitäts­bewertung &amp; EU-Registrierung</div><div class="p">Stufe 03</div></div>
+        <div class="r"><div class="n">07</div><div class="t">FRIA &amp; Betriebsrats­information</div><div class="p">Stufe 03</div></div>
+        <div class="r"><div class="n">08</div><div class="t">Post-Market-Monitoring &amp; QMS-Betrieb</div><div class="p">Stufe 04</div></div>
+        <div class="r"><div class="n">09</div><div class="t">Hosting: EU, Deutschland oder On-Premise</div><div class="p">alle Stufen</div></div>
+        <div class="r"><div class="n">10</div><div class="t">Fördermittel-Check · Land, Bund &amp; EU · Zuschüsse und Kredite</div><div class="p">Audit</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar"><span>Geförderte Aufträge möglich · Hosting in DE oder bei Ihnen im Haus.</span><span>12 · 14</span></div>
+  <div class="horizon"></div>
+</section>
+
+<!-- ===================== 13 · CTA ===================== -->
+<section class="s13 dark" data-label="KI-Audit · CTA">
+  <div class="chrome"><span class="wm">EX<span class="sep"></span>AI</span><span>§ 11 · Erster Schritt</span></div>
+  <div class="spread start">
+    <div class="eyebrow"><span class="chip">FIN</span>Ein Audit · ein Bericht · ein klarer Kopf</div>
+    <h1 class="big cta-head" style="max-width:20ch">Fangen Sie mit<br/>dem <span class="it">Audit</span> an.</h1>
+    <div class="offer">
+      <div>
+        <div class="mono" style="font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--golden);margin-bottom:12px">Compliance-Audit · Festpreis</div>
+        <div class="price-big">799<span class="u">€ netto<br/>Stand-der-Compliance<br/>Bericht in 72 Std.</span></div>
+        <p class="small" style="opacity:.75;margin-top:20px;max-width:38ch">Wir prüfen Ihre KI-Systeme gegen Annex III, Annex I und Art. 5. Sie erhalten einen priorisierten Handlungsplan — bezifferte Risiken, realistische Aufwände, Förderoptionen.</p>
+      </div>
+      <div class="contact">
+        <div class="kbd">So erreichen Sie uns</div>
+        <div class="l">Gemino AI · Frankfurt</div>
+        <div class="v mono">+49 69 1744 2200 · compliance@gemino.ai</div>
+        <div style="height:8px"></div>
+        <div class="l">MindWaves AI · München</div>
+        <div class="v mono">+49 89 2154 8811 · hallo@mindwaves.ai</div>
+        <div style="height:8px"></div>
+        <div class="kbd" style="margin-top:12px">Audit direkt buchen</div>
+        <div class="v mono" style="color:var(--golden)">ex-ai.de/compliance-audit  →  799 €</div>
+      </div>
+    </div>
+    <div class="sig">EX<span class="sep"></span>AI</div>
+  </div>
+  <div class="footer-bar"><span>Teil der EX Venture Group · Intelligence · Capital · Finance · Education</span><span>13 · 14</span></div>
+  <div class="horizon"></div>
+</section>
+
+<!-- ===================== 14 · COLOPHON ===================== -->
+<section class="s14" data-label="Quellen · Haftung">
+  <div class="chrome"><span class="wm">EX<span class="sep"></span>AI</span><span>§ 12 · Quellen</span></div>
+  <div class="spread start">
+    <div class="eyebrow"><span class="chip">12</span>Wie dieses Dokument geprüft wurde</div>
+    <h2 style="max-width:24ch">Kein Marketing. <span class="it">Quellen offen.</span></h2>
+    <div class="cfn">
+      <div class="src">
+        <h4>Rechts- und Primär­quellen</h4>
+        <ul>
+          <li>Regulation (EU) 2024/1689 vom 13.06.2024 · Amtsblatt L 2024/1689</li>
+          <li>Art. 5 · Verbotene KI-Praktiken</li>
+          <li>Art. 6, 7 · Risiko-Klassifikation · Annex I &amp; III</li>
+          <li>Art. 8–17 · Anbieter-Pflichten Hochrisiko</li>
+          <li>Art. 26 · Deployer-Pflichten</li>
+          <li>Art. 43 · Konformitäts­bewertung</li>
+          <li>Art. 49 · EU-Datenbank-Registrierung</li>
+          <li>Art. 57, 60 · Sandkästen &amp; Realwelt-Tests</li>
+          <li>Art. 72 · Post-Market-Monitoring</li>
+          <li>Art. 73 · Meldung schwerer Vorfälle</li>
+          <li>Art. 99 · Bußgelder (Stufen 1–3, KMU-Absatz)</li>
+          <li>Art. 113 · Inkrafttreten &amp; Fristen</li>
+          <li>Digital Omnibus on AI · Kommissions­vorschlag 19.11.2025</li>
+          <li>Parlaments-Position · 06.03.2026 (569 Ja-Stimmen)</li>
+        </ul>
+      </div>
+      <div class="disc">
+        <div class="k">Haftungs­ausschluss · Stand 22.04.2026</div>
+        <p>Dieses Dokument ist ein redaktioneller Compliance-Überblick von EX·AI — <strong>keine Rechtsberatung.</strong> Jede Darstellung wurde gegen den Original-Regulations­text und anerkannte juristische Analysen (u. a. Orrick, WilmerHale, DLA Piper) geprüft.</p>
+        <p>Die Klassifikation Ihres konkreten Systems hängt von Einsatz­zweck, Branche und Kontext ab. Für eine verbindliche Einordnung empfehlen wir das Compliance-Audit (799 €) oder die Rücksprache mit Ihrer Kanzlei.</p>
+        <p>Irrtümer, Tippfehler und Gesetzes­änderungen nach dem 22. April 2026 vorbehalten. Dokument-Version 1.0. Nächste Prüfung: nach Abschluss der Omnibus-Trilog-Verhandlungen.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar"><span>© EX·AI · Gemino AI &amp; MindWaves AI · Teil der EX Venture Group · ex-ai.de</span><span>14 · 14</span></div>
+  <div class="horizon"></div>
+</section>
+
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+</body>
+</html>

@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>EX · AI — Corporate Identity</title>
+<meta name="viewport" content="width=1440" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* EX family palette — warm, golden-hour */
+    --ink:#0E0C0A;
+    --ink-2:#1C1915;
+    --cream:#F2ECDF;
+    --cream-2:#E8E0CE;
+    --golden:#D4A24C;   /* primary accent */
+    --ember:#B8421E;    /* secondary accent */
+    --moss:#3F4A3A;     /* tertiary */
+    --line:rgba(14,12,10,0.14);
+    --line-dark:rgba(242,236,223,0.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--cream);color:var(--ink);font-family:"Inter Tight",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  section{position:relative}
+  .wrap{max-width:1360px;margin:0 auto;padding:0 56px}
+
+  nav.top{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:1px solid var(--line)}
+  nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  nav.top .ident{display:flex;align-items:center;gap:14px;font-family:"Archivo";font-weight:800;letter-spacing:-0.01em;font-size:20px}
+  nav.top .ident .dot{width:10px;height:10px;background:var(--golden);border-radius:50%}
+  nav.top ul{display:flex;gap:28px;list-style:none;font-size:13px;font-weight:500}
+  nav.top ul a{text-decoration:none;opacity:.7}
+  nav.top .meta{font-family:"JetBrains Mono";font-size:11px;opacity:.55;letter-spacing:.02em}
+
+  /* Hero */
+  .hero{padding:120px 0 96px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .hero .eyebrow{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.55;margin-bottom:40px;display:flex;align-items:center;gap:12px}
+  .hero .eyebrow .chip{padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--ember)}
+  .hero h1{font-family:"Archivo";font-weight:800;font-size:180px;line-height:.88;letter-spacing:-0.045em;margin-bottom:32px}
+  .hero h1 .it{font-family:"Fraunces";font-style:italic;font-weight:400;letter-spacing:-0.03em;color:var(--ember)}
+  .hero .row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-top:72px;padding-top:40px;border-top:1px solid var(--line)}
+  .hero .row p{font-size:18px;line-height:1.45;max-width:56ch}
+  .hero .row .k{font-family:"JetBrains Mono";font-size:10px;letter-spacing:.16em;opacity:.5;text-transform:uppercase;margin-bottom:10px}
+  .hero .row .v{font-family:"Archivo";font-weight:600;font-size:15px}
+  .hero .row .v em{font-family:"Fraunces";font-style:italic;font-weight:400;color:var(--ember)}
+
+  /* golden horizon bar in hero */
+  .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--ember) 0%,var(--golden) 60%,var(--cream-2) 100%)}
+
+  /* Family chain */
+  .family{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .family .cell{flex:1;min-width:180px;padding:22px 24px;border-right:1px solid var(--line);font-family:"JetBrains Mono";font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:flex;flex-direction:column;gap:6px}
+  .family .cell:last-child{border-right:none}
+  .family .cell .name{font-family:"Archivo";font-weight:800;font-size:15px;letter-spacing:-0.01em;text-transform:none;color:var(--ink)}
+  .family .cell .sub{opacity:.55;font-size:10px}
+  .family .cell.active{background:var(--ink);color:var(--cream)}
+  .family .cell.active .name{color:var(--golden)}
+
+  /* Section headers */
+  .sec-head{display:grid;grid-template-columns:120px 1fr auto;gap:48px;align-items:baseline;padding:80px 0 48px}
+  .sec-head .num{font-family:"JetBrains Mono";font-size:12px;opacity:.5;letter-spacing:.12em}
+  .sec-head h2{font-family:"Archivo";font-weight:700;font-size:52px;letter-spacing:-0.03em;line-height:1}
+  .sec-head h2 em{font-family:"Fraunces";font-style:italic;font-weight:400;color:var(--ember)}
+  .sec-head .note{font-family:"JetBrains Mono";font-size:11px;opacity:.55;letter-spacing:.08em;text-align:right;max-width:240px;line-height:1.55}
+
+  /* Unified palette band */
+  .palette-band{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .pb{padding:36px 28px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between}
+  .pb .top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+  .pb .name{font-family:"Archivo";font-weight:700;font-size:22px;letter-spacing:-0.02em}
+  .pb .role{font-family:"JetBrains Mono";font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.65}
+  .pb .hex{font-family:"JetBrains Mono";font-size:11px;opacity:.7;letter-spacing:.04em}
+  .pb .use{font-family:"JetBrains Mono";font-size:10px;line-height:1.6;opacity:.7}
+
+  /* 3-direction grid */
+  .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .col{background:var(--cream);padding:56px 40px;min-height:100px}
+  .col.dark{background:var(--ink);color:var(--cream);border-color:var(--line-dark)}
+  .col.cream-2{background:var(--cream-2)}
+  .col .tag{display:flex;align-items:center;gap:10px;font-family:"JetBrains Mono";font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.75;margin-bottom:24px}
+  .col .tag .chip{padding:3px 8px;border:1px solid currentColor;border-radius:999px;opacity:.6}
+  .col h3{font-weight:700;letter-spacing:-0.02em;margin-bottom:8px}
+  .col .subtitle{font-size:13px;opacity:.65;margin-bottom:32px;line-height:1.45}
+
+  .dA h3{font-family:"Archivo";font-size:36px}
+  .dB h3{font-family:"Space Grotesk";font-size:34px;font-weight:500;letter-spacing:-0.02em}
+  .dC h3{font-family:"Fraunces";font-weight:500;font-style:italic;font-size:38px;letter-spacing:-0.02em}
+
+  /* Logo cards */
+  .logo-card{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:20px;overflow:hidden}
+  .lc-ink{background:var(--ink);color:var(--cream)}
+  .lc-cream{background:var(--cream);color:var(--ink)}
+  .lc-cream2{background:var(--cream-2);color:var(--ink)}
+  .lc-golden{background:var(--golden);color:var(--ink)}
+  .lc-ember{background:var(--ember);color:var(--cream)}
+  .lc-moss{background:var(--moss);color:var(--cream)}
+  .lc-grid{position:absolute;inset:0;background-image:linear-gradient(currentColor 1px,transparent 1px),linear-gradient(90deg,currentColor 1px,transparent 1px);background-size:24px 24px;opacity:.05;pointer-events:none}
+
+  /* Direction A — Monolith */
+  .lock-A{font-family:"Archivo";font-weight:900;letter-spacing:-0.06em;line-height:.85;font-size:96px;display:inline-flex;align-items:baseline;gap:.22em}
+  .lock-A .sep{display:inline-block;width:.09em;height:.09em;background:currentColor;border-radius:50%;vertical-align:.32em;margin:0 .02em;transform:translateY(-.06em)}
+
+  /* Direction B — Signal */
+  .lock-B{display:flex;align-items:center;gap:16px;font-family:"Space Grotesk";font-weight:500;font-size:68px;letter-spacing:-0.02em}
+  .lock-B .mark{width:64px;height:64px;flex-shrink:0}
+  .lock-B .dot{display:inline-block;width:.1em;height:.1em;border-radius:50%;background:currentColor;vertical-align:.35em;margin:0 .08em}
+
+  /* Direction C — Atlas */
+  .lock-C{display:flex;align-items:center;gap:20px;font-family:"Fraunces";font-weight:400;font-size:84px;letter-spacing:-0.03em;line-height:.9}
+  .lock-C .mark{width:78px;height:78px;flex-shrink:0}
+  .lock-C .sep{display:inline-block;width:.09em;height:.09em;background:currentColor;border-radius:50%;vertical-align:.4em;margin:0 .08em}
+
+  .variant-label{position:absolute;top:10px;left:12px;font-family:"JetBrains Mono";font-size:9px;letter-spacing:.12em;opacity:.55;text-transform:uppercase;z-index:2}
+
+  .specs{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;font-family:"JetBrains Mono";font-size:11px;opacity:.8;padding-top:24px;border-top:1px solid var(--line)}
+  .col.dark .specs{border-color:var(--line-dark)}
+  .specs .k{opacity:.55;letter-spacing:.08em;text-transform:uppercase}
+
+  /* Type strip */
+  .type-strip{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin:6px 0 20px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .col.dark .type-strip{border-color:var(--line-dark)}
+  .ts-item{display:flex;flex-direction:column;gap:4px}
+  .ts-item .lbl{font-family:"JetBrains Mono";font-size:9px;opacity:.5;letter-spacing:.1em;text-transform:uppercase}
+
+  /* Clearspace */
+  .clearspace{position:relative;padding:40px;display:flex;align-items:center;justify-content:center}
+  .cs-box{position:relative;padding:48px}
+  .cs-rule{position:absolute;inset:0;border:1px dashed currentColor;opacity:.35}
+  .cs-label{position:absolute;font-family:"JetBrains Mono";font-size:10px;letter-spacing:.08em;opacity:.55}
+  .cs-label.top{top:-6px;left:50%;transform:translate(-50%,-100%);padding:0 8px}
+  .cs-label.left{left:-6px;top:50%;transform:translate(-100%,-50%) rotate(-90deg);transform-origin:right center;white-space:nowrap}
+
+  /* Misuse */
+  .misuse{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:16px}
+  .mis{position:relative;aspect-ratio:1.5;background:var(--cream);display:flex;align-items:center;justify-content:center;padding:18px;overflow:hidden;color:var(--ink);border:1px solid var(--line)}
+  .mis::after{content:"";position:absolute;inset:0;border-top:1.5px solid var(--ember);transform:rotate(-16deg);transform-origin:left top;width:160%;left:-30%;top:50%}
+  .mis .lbl{position:absolute;bottom:8px;left:10px;font-family:"JetBrains Mono";font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--ember);font-weight:600}
+
+  /* Applications */
+  .apps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .app{background:var(--cream);padding:40px;min-height:320px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+  .app .lbl{font-family:"JetBrains Mono";font-size:10px;letter-spacing:.12em;opacity:.5;text-transform:uppercase}
+
+  /* Biz card */
+  .biz{aspect-ratio:1.75;display:flex;flex-direction:column;justify-content:space-between;padding:22px;font-family:"JetBrains Mono";font-size:10px;line-height:1.5}
+  .biz .name{font-family:"Archivo";font-weight:700;font-size:16px;letter-spacing:-0.01em;margin-bottom:2px}
+  .biz .role{opacity:.65}
+  .biz .bottom{display:flex;justify-content:space-between;align-items:flex-end}
+  .biz .logo-mark{font-family:"Archivo";font-weight:900;font-size:22px;letter-spacing:-0.05em}
+
+  /* Voice */
+  .voice{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .voice .v{background:var(--cream);padding:40px}
+  .voice h4{font-family:"Archivo";font-weight:700;font-size:22px;letter-spacing:-0.01em;margin-bottom:18px;display:flex;align-items:baseline;gap:10px}
+  .voice h4 .num{font-family:"JetBrains Mono";font-size:11px;opacity:.5;font-weight:400}
+  .voice p{font-size:14px;line-height:1.55;margin-bottom:12px}
+  .voice .do,.voice .dont{display:flex;gap:10px;font-family:"JetBrains Mono";font-size:11px;line-height:1.55;padding:6px 0}
+  .voice .do{color:var(--moss)}
+  .voice .dont{color:var(--ember)}
+
+  footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:60px;font-family:"JetBrains Mono";font-size:11px;opacity:.65;letter-spacing:.08em}
+  footer .wrap{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+
+  .label-xs{font-family:"JetBrains Mono";font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.55;margin-bottom:12px}
+
+  .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;overflow:hidden;white-space:nowrap;font-family:"JetBrains Mono";font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.8;background:var(--cream-2)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:40px 0 60px}
+  .twocol h3{font-family:"Archivo";font-weight:700;font-size:28px;letter-spacing:-0.02em;margin-bottom:12px}
+  .twocol p{font-size:15px;line-height:1.55;max-width:52ch;opacity:.85}
+
+  .pull{padding:96px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;background:var(--ink);color:var(--cream)}
+  .pull blockquote{font-family:"Fraunces";font-weight:300;font-size:72px;line-height:1.02;letter-spacing:-0.025em;max-width:22ch;margin:0 auto}
+  .pull blockquote em{font-style:italic;font-weight:400;color:var(--golden)}
+  .pull cite{display:block;margin-top:32px;font-family:"JetBrains Mono";font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.55;font-style:normal}
+
+  /* Pairings */
+  .pairings{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .pair{padding:32px 24px;min-height:180px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;font-family:"JetBrains Mono";font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+  .pair .big{font-family:"Archivo";font-weight:900;font-size:40px;letter-spacing:-0.05em;text-transform:none}
+  .pair .big .sep{display:inline-block;width:.09em;height:.09em;background:currentColor;border-radius:50%;vertical-align:.32em;margin:0 .02em}
+  .pair .note{opacity:.7;line-height:1.5}
+
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <div class="ident"><span class="dot"></span>EX · AI — Corporate Identity</div>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#palette">Palette</a></li>
+      <li><a href="#directions">Directions</a></li>
+      <li><a href="#clearspace">Clearspace &amp; Misuse</a></li>
+      <li><a href="#voice">Voice</a></li>
+      <li><a href="#apps">Applications</a></li>
+    </ul>
+    <div class="meta">v 03 · APR 2026 · INTERNAL</div>
+  </div>
+</nav>
+
+<section class="hero" id="overview">
+  <div class="wrap">
+    <div class="eyebrow">
+      <span class="chip">EX Family</span>
+      <span>Brand Guidelines · Vol. III · Aligned to Parent</span>
+    </div>
+    <h1>Intelligence<br/><span class="it">infrastructure.</span></h1>
+    <div class="row">
+      <p>EX · AI designs and operates high-accuracy AI systems — for research, media, education and enterprise. This volume aligns the EX · AI identity to the EX Venture parent palette: warm ink, cream ground, golden-hour accent.</p>
+      <div>
+        <div class="k">Name treatments</div>
+        <div class="v">EX AI <em>(spaced)</em><br/>EX·AI <em>(interpunct)</em></div>
+      </div>
+      <div>
+        <div class="k">Family relation</div>
+        <div class="v">Sibling to <em>EX · Venture</em>, <em>EX · FI</em>, <em>EX · Academy</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Family chain -->
+<div class="family">
+  <div class="cell active">
+    <div class="sub">Intelligence Infrastructure</div>
+    <div class="name">EX · AI</div>
+    <div class="sub" style="opacity:.5">This document</div>
+  </div>
+  <div class="cell">
+    <div class="sub">Venture Infrastructure</div>
+    <div class="name">EX · Venture</div>
+    <div class="sub" style="opacity:.5">Parent</div>
+  </div>
+  <div class="cell">
+    <div class="sub">Financial Infrastructure</div>
+    <div class="name">EX · FI</div>
+    <div class="sub" style="opacity:.5">Sibling</div>
+  </div>
+  <div class="cell">
+    <div class="sub">Knowledge Infrastructure</div>
+    <div class="name">EX · Academy</div>
+    <div class="sub" style="opacity:.5">Sibling</div>
+  </div>
+</div>
+
+<div class="ticker">
+  <div class="wrap" style="display:flex;gap:40px;white-space:nowrap;overflow:hidden">
+    <span>Research</span><span style="opacity:.35">/</span>
+    <span>AI Media &amp; Marketing</span><span style="opacity:.35">/</span>
+    <span>AI Education</span><span style="opacity:.35">/</span>
+    <span>Full-Service Engineering</span><span style="opacity:.35">/</span>
+    <span>4 Continents</span><span style="opacity:.35">/</span>
+    <span>Authoritative · Warm · Confident</span><span style="opacity:.35">/</span>
+    <span>High-Accuracy Systems</span>
+  </div>
+</div>
+
+<!-- =============== UNIFIED PALETTE =============== -->
+<section id="palette">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">§ 01</div>
+      <h2>The EX Family <em>palette.</em></h2>
+      <div class="note">One warm, golden-hour palette carried across all three directions — so EX · AI reads as a sibling to the parent.</div>
+    </div>
+  </div>
+
+  <div class="palette-band">
+    <div class="pb" style="background:var(--ink);color:var(--cream)">
+      <div class="top">
+        <div>
+          <div class="role" style="color:var(--golden)">Primary · 01</div>
+          <div class="name" style="margin-top:6px">Ink</div>
+        </div>
+        <div class="hex">#0E0C0A</div>
+      </div>
+      <div class="use">70% of surface.<br/>Text, grounds, gravity.</div>
+    </div>
+    <div class="pb" style="background:var(--cream);color:var(--ink);border-left:0">
+      <div class="top">
+        <div>
+          <div class="role">Primary · 02</div>
+          <div class="name" style="margin-top:6px">Cream</div>
+        </div>
+        <div class="hex">#F2ECDF</div>
+      </div>
+      <div class="use">Paper ground.<br/>Never pure white.</div>
+    </div>
+    <div class="pb" style="background:var(--golden);color:var(--ink)">
+      <div class="top">
+        <div>
+          <div class="role">Accent · 01</div>
+          <div class="name" style="margin-top:6px">Golden Hour</div>
+        </div>
+        <div class="hex">#D4A24C</div>
+      </div>
+      <div class="use">The signature.<br/>Headlines, marks, CTA.</div>
+    </div>
+    <div class="pb" style="background:var(--ember);color:var(--cream)">
+      <div class="top">
+        <div>
+          <div class="role" style="color:var(--cream)">Accent · 02</div>
+          <div class="name" style="margin-top:6px">Ember</div>
+        </div>
+        <div class="hex" style="opacity:.85">#B8421E</div>
+      </div>
+      <div class="use" style="opacity:.85">Energy, alert,<br/>editorial callout.</div>
+    </div>
+    <div class="pb" style="background:var(--moss);color:var(--cream)">
+      <div class="top">
+        <div>
+          <div class="role" style="color:var(--cream);opacity:.8">Tertiary</div>
+          <div class="name" style="margin-top:6px">Moss</div>
+        </div>
+        <div class="hex" style="opacity:.85">#3F4A3A</div>
+      </div>
+      <div class="use" style="opacity:.85">Research, cleantech,<br/>long-form editorial.</div>
+    </div>
+  </div>
+
+  <div class="wrap" style="padding:40px 56px 0">
+    <div class="label-xs">Approved Pairings</div>
+  </div>
+
+  <div class="pairings">
+    <div class="pair" style="background:var(--ink);color:var(--cream)">
+      <div class="big" style="color:var(--golden)">EX<span class="sep"></span>AI</div>
+      <div class="note">Ink + Golden.<br/>Primary executive lockup.</div>
+    </div>
+    <div class="pair" style="background:var(--cream);color:var(--ink)">
+      <div class="big">EX<span class="sep"></span>AI</div>
+      <div class="note">Cream + Ink.<br/>Document default.</div>
+    </div>
+    <div class="pair" style="background:var(--golden);color:var(--ink)">
+      <div class="big">EX<span class="sep"></span>AI</div>
+      <div class="note">Golden + Ink.<br/>Hero moments, posters.</div>
+    </div>
+    <div class="pair" style="background:var(--ember);color:var(--cream)">
+      <div class="big">EX<span class="sep"></span>AI</div>
+      <div class="note">Ember + Cream.<br/>Sparingly — annual cover.</div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== DIRECTIONS =============== -->
+<section id="directions">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">§ 02</div>
+      <h2>Three directions, <em>one palette.</em></h2>
+      <div class="note">Each direction keeps the EX family colors but applies them with its own voice. Two wordmark treatments per direction: spaced and interpunct.</div>
+    </div>
+  </div>
+
+  <div class="trio" id="logo">
+
+    <!-- ============ A — MONOLITH ============ -->
+    <div class="col dA dark">
+      <div class="tag"><span class="chip">A</span> Monolith · For the Boardroom</div>
+      <h3 style="color:var(--golden)">EX · AI<sup style="font-family:Fraunces;font-style:italic;font-weight:300;opacity:.6;font-size:.35em;vertical-align:top">™</sup></h3>
+      <div class="subtitle">A heavy, architectural wordmark in Archivo Black. Ink ground with Golden Hour as the signature color. For investor decks, research papers, executive stages.</div>
+
+      <div class="logo-card lc-ink" style="position:relative">
+        <div class="lc-grid"></div>
+        <span class="variant-label">01 · Spaced</span>
+        <div class="lock-A" style="font-size:104px;color:var(--golden)">EX&nbsp;AI</div>
+      </div>
+      <div class="logo-card lc-ink" style="position:relative">
+        <div class="lc-grid"></div>
+        <span class="variant-label">02 · Interpunct</span>
+        <div class="lock-A" style="font-size:108px;color:var(--golden)">EX<span class="sep"></span>AI</div>
+      </div>
+
+      <div class="label-xs" style="color:var(--cream);opacity:.6">Color variants · interpunct lockup</div>
+      <div class="logo-card lc-golden" style="aspect-ratio:6/2">
+        <div class="lock-A" style="font-size:56px">EX<span class="sep"></span>AI</div>
+      </div>
+      <div class="logo-card lc-cream" style="aspect-ratio:6/2">
+        <div class="lock-A" style="font-size:56px">EX<span class="sep"></span>AI</div>
+      </div>
+      <div class="logo-card lc-ember" style="aspect-ratio:6/2">
+        <div class="lock-A" style="font-size:56px">EX<span class="sep"></span>AI</div>
+      </div>
+
+      <div class="specs" style="margin-top:8px">
+        <div class="k">Family</div><div>Archivo Black</div>
+        <div class="k">Weight</div><div>900 / -6% tracking</div>
+        <div class="k">Primary</div><div>Ink + Golden</div>
+        <div class="k">Interpunct</div><div>Ø = 0.09em · y = .32em</div>
+      </div>
+    </div>
+
+    <!-- ============ B — SIGNAL ============ -->
+    <div class="col dB">
+      <div class="tag"><span class="chip">B</span> Signal · For the Lab</div>
+      <h3>ex · ai<span style="color:var(--ember);opacity:.7">→</span></h3>
+      <div class="subtitle">Technical, lowercase. The arrow is a signal vector. Cream ground with Ember as the active color — the "live" state of an operating system.</div>
+
+      <div class="logo-card lc-cream" style="position:relative">
+        <div class="lc-grid"></div>
+        <span class="variant-label">01 · Spaced</span>
+        <div class="lock-B">
+          <svg class="mark" viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="3.5">
+            <circle cx="36" cy="36" r="32"/>
+            <path d="M18 36 L54 36" />
+            <path d="M42 24 L54 36 L42 48" />
+          </svg>
+          ex&nbsp;ai<span style="color:var(--ember)">→</span>
+        </div>
+      </div>
+
+      <div class="logo-card lc-cream" style="position:relative">
+        <div class="lc-grid"></div>
+        <span class="variant-label">02 · Interpunct</span>
+        <div class="lock-B">
+          <svg class="mark" viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="3.5">
+            <circle cx="36" cy="36" r="32"/>
+            <path d="M18 36 L54 36" />
+            <path d="M42 24 L54 36 L42 48" />
+          </svg>
+          ex<span class="dot"></span>ai<span style="color:var(--ember)">→</span>
+        </div>
+      </div>
+
+      <div class="label-xs">Color variants</div>
+      <div class="logo-card lc-ink" style="aspect-ratio:6/2">
+        <div class="lock-B" style="font-size:40px;color:var(--golden)">
+          <svg class="mark" viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="4" style="width:40px;height:40px">
+            <circle cx="36" cy="36" r="32"/>
+            <path d="M18 36 L54 36" />
+            <path d="M42 24 L54 36 L42 48" />
+          </svg>
+          ex<span class="dot"></span>ai<span style="color:var(--cream)">→</span>
+        </div>
+      </div>
+      <div class="logo-card lc-moss" style="aspect-ratio:6/2">
+        <div class="lock-B" style="font-size:40px;color:var(--cream)">
+          <svg class="mark" viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="4" style="width:40px;height:40px">
+            <circle cx="36" cy="36" r="32"/>
+            <path d="M18 36 L54 36" />
+            <path d="M42 24 L54 36 L42 48" />
+          </svg>
+          ex&nbsp;ai<span style="color:var(--golden)">→</span>
+        </div>
+      </div>
+
+      <div class="specs" style="margin-top:8px">
+        <div class="k">Family</div><div>Space Grotesk 500</div>
+        <div class="k">Case</div><div>Lowercase only</div>
+        <div class="k">Active color</div><div>Ember arrow</div>
+        <div class="k">Cap ≙ mark Ø</div><div>1:1 ratio</div>
+      </div>
+    </div>
+
+    <!-- ============ C — ATLAS ============ -->
+    <div class="col dC cream-2">
+      <div class="tag"><span class="chip">C</span> Atlas · For the World</div>
+      <h3 style="color:var(--ember)">Ex · Ai</h3>
+      <div class="subtitle">Editorial Fraunces with an orbit mark. Cream + ink + golden — for admissions, public-facing education, long-form editorial and press.</div>
+
+      <div class="logo-card lc-cream2" style="position:relative">
+        <div class="lc-grid"></div>
+        <span class="variant-label">01 · Spaced</span>
+        <div class="lock-C">
+          <svg class="mark" viewBox="0 0 84 84" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="42" cy="42" r="38"/>
+            <ellipse cx="42" cy="42" rx="38" ry="14" transform="rotate(-22 42 42)"/>
+            <circle cx="72" cy="30" r="3.5" fill="var(--golden)" stroke="none"/>
+          </svg>
+          Ex&nbsp;Ai
+        </div>
+      </div>
+
+      <div class="logo-card lc-cream2" style="position:relative">
+        <div class="lc-grid"></div>
+        <span class="variant-label">02 · Interpunct</span>
+        <div class="lock-C">
+          <svg class="mark" viewBox="0 0 84 84" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="42" cy="42" r="38"/>
+            <ellipse cx="42" cy="42" rx="38" ry="14" transform="rotate(-22 42 42)"/>
+            <circle cx="72" cy="30" r="3.5" fill="var(--golden)" stroke="none"/>
+          </svg>
+          Ex<span class="sep"></span>Ai
+        </div>
+      </div>
+
+      <div class="label-xs">Color variants</div>
+      <div class="logo-card lc-ink" style="aspect-ratio:6/2">
+        <div class="lock-C" style="font-size:50px;color:var(--cream)">
+          <svg class="mark" viewBox="0 0 84 84" fill="none" stroke="var(--golden)" stroke-width="1.5" style="width:50px;height:50px">
+            <circle cx="42" cy="42" r="38"/>
+            <ellipse cx="42" cy="42" rx="38" ry="14" transform="rotate(-22 42 42)"/>
+            <circle cx="72" cy="30" r="3.5" fill="var(--golden)" stroke="none"/>
+          </svg>
+          Ex<span class="sep"></span>Ai
+        </div>
+      </div>
+
+      <div class="logo-card lc-golden" style="aspect-ratio:6/2">
+        <div class="lock-C" style="font-size:50px">
+          <svg class="mark" viewBox="0 0 84 84" fill="none" stroke="currentColor" stroke-width="1.5" style="width:50px;height:50px">
+            <circle cx="42" cy="42" r="38"/>
+            <ellipse cx="42" cy="42" rx="38" ry="14" transform="rotate(-22 42 42)"/>
+            <circle cx="72" cy="30" r="3.5" fill="currentColor" stroke="none"/>
+          </svg>
+          Ex&nbsp;Ai
+        </div>
+      </div>
+
+      <div class="specs" style="margin-top:8px">
+        <div class="k">Family</div><div>Fraunces 400 / Italic</div>
+        <div class="k">Support</div><div>Inter Tight 400/600</div>
+        <div class="k">Orbit node</div><div>Golden Hour</div>
+        <div class="k">Construction</div><div>Cap-height = mark Ø</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Typography trio -->
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">§ 03</div>
+      <h2>Typography. <em>Three voices,</em> one palette.</h2>
+      <div class="note">One display family per direction, JetBrains Mono for captions and data across all three.</div>
+    </div>
+  </div>
+
+  <div class="trio">
+    <div class="col dA">
+      <div class="tag"><span class="chip">A</span> Archivo · JetBrains Mono</div>
+      <div class="type-strip">
+        <div class="ts-item"><span class="lbl">Display / 72</span><span style="font-family:Archivo;font-weight:900;font-size:72px;letter-spacing:-0.04em;line-height:1">Systems.</span></div>
+      </div>
+      <div class="type-strip">
+        <div class="ts-item"><span class="lbl">H1 / 40</span><span style="font-family:Archivo;font-weight:700;font-size:40px;letter-spacing:-0.03em">High-accuracy, everywhere.</span></div>
+      </div>
+      <div class="type-strip">
+        <div class="ts-item"><span class="lbl">Body / 16</span><span style="font-family:'Inter Tight';font-weight:400;font-size:16px;line-height:1.45;max-width:46ch">EX · AI partners with research labs, marketing organisations and universities to ship AI systems that are accurate at the seam.</span></div>
+      </div>
+      <div class="type-strip">
+        <div class="ts-item"><span class="lbl">Mono / 12</span><span style="font-family:'JetBrains Mono';font-size:12px;letter-spacing:.06em;color:var(--ember)">FIG.01 · TRAINING LOSS · 2026-Q2</span></div>
+      </div>
+    </div>
+
+    <div class="col dB">
+      <div class="tag"><span class="chip">B</span> Space Grotesk · JetBrains Mono</div>
+      <div class="type-strip">
+        <div class="ts-item"><span class="lbl">Display / 72</span><span style="font-family:'Space Grotesk';font-weight:500;font-size:72px;letter-spacing:-0.03em;line-height:1">accuracy.</span></div>
+      </div>
+      <div class="type-strip">
+        <div class="ts-item"><span class="lbl">H1 / 40</span><span style="font-family:'Space Grotesk';font-weight:500;font-size:40px;letter-spacing:-0.02em">we build the stack.</span></div>
+      </div>
+      <div class="type-strip">
+        <div class="ts-item"><span class="lbl">Body / 16</span><span style="font-family:'Space Grotesk';font-weight:400;font-size:16px;line-height:1.5;max-width:46ch">From data curation through eval harness, the infrastructure is ours and the numbers are yours to audit.</span></div>
+      </div>
+      <div class="type-strip">
+        <div class="ts-item"><span class="lbl">Mono / 12</span><span style="font-family:'JetBrains Mono';font-size:12px;letter-spacing:.06em;color:var(--ember)">// ops/inference/p95 &lt; 240ms</span></div>
+      </div>
+    </div>
+
+    <div class="col dC">
+      <div class="tag"><span class="chip">C</span> Fraunces · Inter Tight</div>
+      <div class="type-strip">
+        <div class="ts-item"><span class="lbl">Display / 72</span><span style="font-family:Fraunces;font-style:italic;font-weight:400;font-size:72px;letter-spacing:-0.03em;line-height:1;color:var(--ember)">learning.</span></div>
+      </div>
+      <div class="type-strip">
+        <div class="ts-item"><span class="lbl">H1 / 40</span><span style="font-family:Fraunces;font-weight:500;font-size:40px;letter-spacing:-0.02em">A school for the machine age.</span></div>
+      </div>
+      <div class="type-strip">
+        <div class="ts-item"><span class="lbl">Body / 16</span><span style="font-family:'Inter Tight';font-weight:400;font-size:16px;line-height:1.55;max-width:46ch">EX · AI Academy prepares engineers, researchers and the families behind them for a world that hasn't finished arriving.</span></div>
+      </div>
+      <div class="type-strip">
+        <div class="ts-item"><span class="lbl">Caption / 12</span><span style="font-family:'JetBrains Mono';font-size:12px;letter-spacing:.06em;color:var(--ember)">COHORT 07 · INTAKE AUTUMN 2026</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== CLEARSPACE / MISUSE =============== -->
+<section id="clearspace">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">§ 04</div>
+      <h2>Construction, <em>clearspace,</em> misuse.</h2>
+      <div class="note">The logo has opinions. These are them.</div>
+    </div>
+  </div>
+
+  <div class="trio">
+    <div class="col dA dark">
+      <div class="tag"><span class="chip">A</span> Clearspace — 1× cap-height</div>
+      <div class="clearspace">
+        <div class="cs-box">
+          <div class="cs-rule"></div>
+          <div class="lock-A" style="font-size:64px;color:var(--golden)">EX<span class="sep"></span>AI</div>
+          <span class="cs-label top">1× X</span>
+          <span class="cs-label left">1× X</span>
+        </div>
+      </div>
+      <div class="label-xs" style="color:var(--cream);opacity:.6">Minimum Size</div>
+      <div style="display:flex;align-items:center;gap:24px;padding:14px 0 28px;font-family:'JetBrains Mono';font-size:11px;opacity:.8">
+        <span style="font-family:Archivo;font-weight:900;font-size:12px;letter-spacing:-0.05em;color:var(--golden)">EX·AI</span>
+        <span>12px / 0.12in</span>
+        <span style="opacity:.4">—</span>
+        <span style="font-family:Archivo;font-weight:900;font-size:24px;letter-spacing:-0.05em;color:var(--golden)">EX·AI</span>
+        <span>24px / print</span>
+      </div>
+      <div class="label-xs" style="color:var(--cream);opacity:.6">Misuse</div>
+      <div class="misuse">
+        <div class="mis"><div class="lock-A" style="font-size:24px;color:#6C3CC2">EX<span class="sep"></span>AI</div><span class="lbl">No off-palette colors</span></div>
+        <div class="mis"><div class="lock-A" style="font-size:24px;transform:skewX(-12deg)">EX<span class="sep"></span>AI</div><span class="lbl">No distortion</span></div>
+        <div class="mis"><div class="lock-A" style="font-size:24px">ex ai</div><span class="lbl">Never lowercase</span></div>
+        <div class="mis"><div class="lock-A" style="font-size:24px;font-family:Georgia,serif;font-weight:700">EX·AI</div><span class="lbl">No substitutions</span></div>
+      </div>
+    </div>
+
+    <div class="col dB">
+      <div class="tag"><span class="chip">B</span> Clearspace — 1× mark diameter</div>
+      <div class="clearspace">
+        <div class="cs-box">
+          <div class="cs-rule"></div>
+          <div class="lock-B" style="font-size:30px">
+            <svg class="mark" viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="4" style="width:30px;height:30px">
+              <circle cx="36" cy="36" r="32"/>
+              <path d="M18 36 L54 36" />
+              <path d="M42 24 L54 36 L42 48" />
+            </svg>
+            ex<span class="dot"></span>ai<span style="color:var(--ember)">→</span>
+          </div>
+          <span class="cs-label top">1× Ø</span>
+          <span class="cs-label left">1× Ø</span>
+        </div>
+      </div>
+      <div class="label-xs">Minimum Size</div>
+      <div style="display:flex;align-items:center;gap:20px;padding:14px 0 28px;font-family:'JetBrains Mono';font-size:11px;opacity:.8">
+        <svg viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="5" style="width:16px;height:16px"><circle cx="36" cy="36" r="32"/><path d="M18 36 L54 36"/><path d="M42 24 L54 36 L42 48"/></svg>
+        <span>16px mark</span>
+        <span style="opacity:.4">—</span>
+        <svg viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="4" style="width:28px;height:28px"><circle cx="36" cy="36" r="32"/><path d="M18 36 L54 36"/><path d="M42 24 L54 36 L42 48"/></svg>
+        <span>28px lockup</span>
+      </div>
+      <div class="label-xs">Misuse</div>
+      <div class="misuse">
+        <div class="mis"><div class="lock-B" style="font-size:18px;gap:6px"><svg viewBox="0 0 72 72" fill="currentColor" style="width:20px;height:20px"><circle cx="36" cy="36" r="32"/></svg>ex ai</div><span class="lbl">Mark never filled</span></div>
+        <div class="mis"><div class="lock-B" style="font-size:18px">EX AI<span>→</span></div><span class="lbl">Never uppercase</span></div>
+        <div class="mis"><div class="lock-B" style="font-size:18px;gap:6px"><svg viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="4" style="width:34px;height:34px"><circle cx="36" cy="36" r="32"/><path d="M18 36 L54 36"/><path d="M42 24 L54 36 L42 48"/></svg>ex<span class="dot"></span>ai<span>→</span></div><span class="lbl">Preserve mark ratio</span></div>
+        <div class="mis"><div class="lock-B" style="font-size:18px"><span style="opacity:.4">←</span>ex ai</div><span class="lbl">Arrow direction fixed</span></div>
+      </div>
+    </div>
+
+    <div class="col dC cream-2">
+      <div class="tag"><span class="chip">C</span> Clearspace — 1× orbit radius</div>
+      <div class="clearspace">
+        <div class="cs-box">
+          <div class="cs-rule"></div>
+          <div class="lock-C" style="font-size:44px">
+            <svg class="mark" viewBox="0 0 84 84" fill="none" stroke="currentColor" stroke-width="1.5" style="width:42px;height:42px">
+              <circle cx="42" cy="42" r="38"/>
+              <ellipse cx="42" cy="42" rx="38" ry="14" transform="rotate(-22 42 42)"/>
+              <circle cx="72" cy="30" r="3.5" fill="var(--golden)" stroke="none"/>
+            </svg>
+            Ex<span class="sep"></span>Ai
+          </div>
+          <span class="cs-label top">1× r</span>
+          <span class="cs-label left">1× r</span>
+        </div>
+      </div>
+      <div class="label-xs">Minimum Size</div>
+      <div style="display:flex;align-items:center;gap:20px;padding:14px 0 28px;font-family:'JetBrains Mono';font-size:11px;opacity:.8">
+        <span style="font-family:Fraunces;font-size:14px">Ex·Ai</span>
+        <span>14px digital</span>
+        <span style="opacity:.4">—</span>
+        <span style="font-family:Fraunces;font-size:28px">Ex·Ai</span>
+        <span>28px print</span>
+      </div>
+      <div class="label-xs">Misuse</div>
+      <div class="misuse">
+        <div class="mis"><span style="font-family:Fraunces;font-size:24px">EX AI</span><span class="lbl">Title-case only</span></div>
+        <div class="mis"><span style="font-family:Fraunces;font-size:24px;font-weight:800">Ex·Ai</span><span class="lbl">Never heavy weights</span></div>
+        <div class="mis"><span style="font-family:'Inter Tight';font-weight:700;font-size:24px">Ex·Ai</span><span class="lbl">Never sans in wordmark</span></div>
+        <div class="mis">
+          <svg viewBox="0 0 84 84" fill="none" stroke="currentColor" stroke-width="4" style="width:36px;height:36px"><circle cx="42" cy="42" r="38"/></svg>
+          <span class="lbl">Don't simplify mark</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== PULL QUOTE =============== -->
+<section class="pull">
+  <div class="wrap">
+    <blockquote>A brand is the <em>signature</em> of a system that keeps its word.</blockquote>
+    <cite>— EX · AI Identity Principles, §0</cite>
+  </div>
+</section>
+
+<!-- =============== VOICE =============== -->
+<section id="voice">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">§ 05</div>
+      <h2>Voice. <em>How EX · AI</em> sounds.</h2>
+      <div class="note">Three audiences, one voice. Adjust register, not character.</div>
+    </div>
+  </div>
+
+  <div class="voice">
+    <div class="v">
+      <h4><span class="num">01</span> Authoritative</h4>
+      <p>We name what we know, and we name what we don't. No hedging either way. If a result is 94.2%, that's what we print — not "world-class".</p>
+      <div class="do">✓ "Accuracy: 94.2% on MMLU-Pro."</div>
+      <div class="dont">✗ "Groundbreaking, best-in-class performance."</div>
+    </div>
+    <div class="v">
+      <h4><span class="num">02</span> Warm</h4>
+      <p>When we speak to students, parents and first-time customers, we slow down. Short sentences. Real nouns. No jargon unless we define it one line later.</p>
+      <div class="do">✓ "You'll learn to build the model, then to break it."</div>
+      <div class="dont">✗ "Leverage SOTA architectures across the stack."</div>
+    </div>
+    <div class="v">
+      <h4><span class="num">03</span> Confident</h4>
+      <p>Short verbs. Active voice. We describe what we've done or are doing now, with a date attached.</p>
+      <div class="do">✓ "Shipped to 14 research labs in 2025."</div>
+      <div class="dont">✗ "Looking forward to potentially partnering."</div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== APPLICATIONS =============== -->
+<section id="apps">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">§ 06</div>
+      <h2>Applications. <em>In the wild.</em></h2>
+      <div class="note">Stationery, digital surfaces and editorial across the three directions — all in the EX family palette.</div>
+    </div>
+  </div>
+
+  <!-- ROW 1 — Business cards -->
+  <div class="apps">
+    <div class="app" style="background:var(--ink);color:var(--cream);padding:0">
+      <div class="biz" style="background:var(--ink);color:var(--cream);aspect-ratio:1.75;margin:auto;width:84%">
+        <div>
+          <div class="name">Dr. Aria Okafor</div>
+          <div class="role">Head of Research · EX · AI Systems</div>
+        </div>
+        <div class="bottom">
+          <div style="font-family:JetBrains Mono;font-size:9px;line-height:1.6;opacity:.7">
+            aria.okafor@ex-ai.co<br/>
+            +1 415 000 0142<br/>
+            SF · Singapore · Lagos · Bali
+          </div>
+          <div class="logo-mark" style="color:var(--golden)">EX<span style="display:inline-block;width:.09em;height:.09em;background:currentColor;border-radius:50%;vertical-align:.32em;margin:0 .02em"></span>AI</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="app" style="background:var(--cream-2);color:var(--ink);padding:0">
+      <div class="biz" style="background:var(--cream-2);color:var(--ink);aspect-ratio:1.75;margin:auto;width:84%;font-family:'Space Grotesk'">
+        <div>
+          <div class="name" style="font-family:'Space Grotesk';font-weight:500">mira chen</div>
+          <div class="role" style="font-family:'JetBrains Mono';font-size:10px">staff engineer · systems</div>
+        </div>
+        <div class="bottom">
+          <div style="font-family:'JetBrains Mono';font-size:9px;line-height:1.6;opacity:.7">
+            mira@ex-ai.co<br/>
+            /labs/mira<br/>
+            london · seoul · sf
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-family:'Space Grotesk';font-weight:500;font-size:18px">
+            <svg viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="5" style="width:18px;height:18px"><circle cx="36" cy="36" r="32"/><path d="M18 36 L54 36"/><path d="M42 24 L54 36 L42 48"/></svg>
+            ex·ai<span style="color:var(--ember)">→</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="app" style="background:var(--cream);color:var(--ink);padding:0;border-top:6px solid var(--golden)">
+      <div class="biz" style="background:var(--cream);color:var(--ink);aspect-ratio:1.75;margin:auto;width:84%">
+        <div>
+          <div class="name" style="font-family:Fraunces;font-weight:500">Prof. Leila Haidari</div>
+          <div class="role" style="font-family:Fraunces;font-style:italic;font-weight:300">Dean · EX · AI Academy</div>
+        </div>
+        <div class="bottom">
+          <div style="font-family:'JetBrains Mono';font-size:9px;line-height:1.6;opacity:.7">
+            leila@ex-ai.co<br/>
+            Cohort enquiries: +44 20 0000<br/>
+            Bali · London · Tokyo
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <svg viewBox="0 0 84 84" fill="none" stroke="var(--ink)" stroke-width="2" style="width:22px;height:22px">
+              <circle cx="42" cy="42" r="38"/>
+              <ellipse cx="42" cy="42" rx="38" ry="14" transform="rotate(-22 42 42)"/>
+              <circle cx="72" cy="30" r="3.5" fill="var(--golden)" stroke="none"/>
+            </svg>
+            <span style="font-family:Fraunces;font-size:22px">Ex·Ai</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROW 2 — Posters / hero moments -->
+  <div class="apps">
+    <div class="app" style="background:var(--ink);color:var(--cream);padding:40px;min-height:460px">
+      <div class="lbl" style="color:var(--golden);opacity:.9">Poster · A2 · Investor Day</div>
+      <div style="font-family:Archivo;font-weight:900;font-size:86px;line-height:.88;letter-spacing:-0.05em;margin-top:40px;color:var(--cream)">
+        Systems<br/>that<br/><span style="font-family:Fraunces;font-style:italic;font-weight:300;color:var(--golden)">keep</span><br/>their<br/>word.
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:24px">
+        <div style="font-family:'JetBrains Mono';font-size:11px;opacity:.7">EX · AI · Annual Review · 2026</div>
+        <div style="font-family:Archivo;font-weight:900;font-size:22px;letter-spacing:-0.05em;color:var(--golden)">EX<span style="display:inline-block;width:.09em;height:.09em;background:currentColor;border-radius:50%;vertical-align:.32em;margin:0 .02em"></span>AI</div>
+      </div>
+    </div>
+
+    <div class="app" style="background:var(--ink);color:var(--cream);padding:0;min-height:460px">
+      <div style="padding:28px 28px 20px;border-bottom:1px solid var(--line-dark);display:flex;align-items:center;justify-content:space-between">
+        <div style="display:flex;align-items:center;gap:10px">
+          <svg viewBox="0 0 72 72" fill="none" stroke="var(--golden)" stroke-width="5" style="width:20px;height:20px"><circle cx="36" cy="36" r="32"/><path d="M18 36 L54 36"/><path d="M42 24 L54 36 L42 48"/></svg>
+          <span style="font-family:'Space Grotesk';font-weight:500;font-size:18px;color:var(--golden)">ex·ai<span style="color:var(--ember)">→</span></span>
+          <span style="font-family:'JetBrains Mono';font-size:10px;opacity:.4;margin-left:12px">/console</span>
+        </div>
+        <div style="font-family:'JetBrains Mono';font-size:10px;opacity:.5">18:42:07 UTC</div>
+      </div>
+      <div style="padding:28px;flex:1;display:flex;flex-direction:column;gap:18px;font-family:'JetBrains Mono';font-size:11px;line-height:1.7">
+        <div style="font-family:'Space Grotesk';font-weight:500;font-size:22px;letter-spacing:-0.02em;color:var(--cream)">accuracy.live</div>
+        <div style="display:grid;grid-template-columns:1fr auto;gap:6px 20px;opacity:.9">
+          <span>research · hallucination rate</span><span style="color:var(--golden)">0.42%</span>
+          <span>media · brand-safety</span><span style="color:var(--golden)">99.81%</span>
+          <span>education · graded throughput</span><span style="color:var(--golden)">14.2k/hr</span>
+          <span>infrastructure · p95</span><span style="color:var(--golden)">218ms</span>
+        </div>
+        <div style="margin-top:8px;height:56px;background:linear-gradient(180deg,transparent 50%,rgba(212,162,76,0.18));border-top:1px solid var(--golden);position:relative">
+          <span style="position:absolute;top:6px;left:8px;opacity:.5;font-size:9px;letter-spacing:.1em">ACCURACY · 30D</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="app" style="background:var(--cream);color:var(--ink);padding:40px;min-height:460px;border-left:6px solid var(--golden)">
+      <div class="lbl">Editorial · Admissions Brochure</div>
+      <div style="font-family:Fraunces;font-style:italic;font-weight:300;font-size:52px;letter-spacing:-0.02em;line-height:1;margin-top:32px;color:var(--ember)">A school for<br/>the machine age.</div>
+      <p style="font-family:'Inter Tight';font-size:14px;line-height:1.6;max-width:36ch;margin-top:20px;opacity:.85">EX · AI Academy prepares engineers and the families behind them for a world that hasn't finished arriving. Three campuses, one cohort.</p>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:28px">
+        <div style="font-family:'JetBrains Mono';font-size:10px;letter-spacing:.08em;opacity:.6">COHORT 07 · AUTUMN 2026 · BALI</div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <svg viewBox="0 0 84 84" fill="none" stroke="var(--ink)" stroke-width="2" style="width:24px;height:24px">
+            <circle cx="42" cy="42" r="38"/>
+            <ellipse cx="42" cy="42" rx="38" ry="14" transform="rotate(-22 42 42)"/>
+            <circle cx="72" cy="30" r="3.5" fill="var(--golden)" stroke="none"/>
+          </svg>
+          <span style="font-family:Fraunces;font-size:24px">Ex·Ai</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">§ 07</div>
+      <h2>Family alignment &amp; <em>final notes.</em></h2>
+      <div class="note">One palette, four entities, one signature.</div>
+    </div>
+
+    <div class="twocol" style="border-top:1px solid var(--line)">
+      <div>
+        <h3>Parent alignment</h3>
+        <p>EX · AI adopts the EX Venture parent palette — ink, cream, golden hour, ember, moss — so the four infrastructure entities (Venture, AI, Fi, Academy) read as siblings. Differentiation lives in typography and mark construction, not in color.</p>
+      </div>
+      <div>
+        <h3>Recommendation</h3>
+        <p>Primary lockup: <strong>Direction A · Monolith</strong> in <strong>Ink + Golden Hour</strong> — the executive face of intelligence infrastructure. Secondary: <strong>Direction B · Signal</strong> for the console, <strong>Direction C · Atlas</strong> for Academy and long-form editorial. The interpunct <strong>EX · AI</strong> is the primary treatment — matching parent naming; the spaced <strong>EX AI</strong> is used in body copy and titles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>EX · AI · Corporate Identity · v03 · APR 2026</div>
+    <div>Family-aligned palette · Three directions · Two treatments</div>
+  </div>
+</footer>
+
+</body>
+</html>
