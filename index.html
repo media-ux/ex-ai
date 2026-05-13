@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>EX Venture — Über uns · Vision · Stellen</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="EX Venture ist die Mutter­gruppe von EX·AI, EX·Marketing, EX·Finance, EX·Fördermittel, EX·Engineering und EX·Academy. Sitz in Leipzig und Dresden, Ausbildungs­standort in Südost­asien."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0E0C0A;--ink-2:#1C1915;--ink-soft:#2A2620;--cream:#F2ECDF;--cream-2:#E8E0CE;--paper:#F7F2E6;--golden:#B8853A;--golden-soft:#D4A24C;--ember:#8A3217;--moss:#3F4A3A;--steel:#B8853A;--steel-soft:#D4A24C;--line:rgba(14,12,10,0.14);--line-2:rgba(14,12,10,0.08);--line-d:rgba(242,236,223,0.16)}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Inter Tight",system-ui,sans-serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;font-feature-settings:"ss01","cv11";text-rendering:optimizeLegibility}
+.wrap{max-width:1320px;margin:0 auto;padding:0 56px}
+.wrap-n{max-width:960px;margin:0 auto;padding:0 56px}
+.wm{font-family:"Archivo";font-weight:900;font-size:22px;letter-spacing:-0.05em;display:inline-flex;align-items:center;color:var(--ink);text-decoration:none}
+.wm .sep{display:inline-block;width:6px;height:6px;background:var(--steel);border-radius:50%;margin:0 4px;vertical-align:middle}
+.wm .arm{font-family:"JetBrains Mono";font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-left:14px;padding-left:14px;border-left:1px solid var(--line);align-self:center;line-height:1}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:32px}
+.nav ul.main{list-style:none;display:flex;gap:22px;font-family:"Inter Tight";font-size:14px;align-items:center}
+.nav ul.main > li{position:relative}
+.nav ul.main a{color:var(--ink);text-decoration:none;opacity:.75;display:inline-flex;align-items:center;gap:6px}
+.nav ul.main a:hover,.nav ul.main a.current{opacity:1;color:var(--steel)}
+.nav ul.main .has-sub > a::after{content:"▾";font-size:10px;opacity:.6;margin-left:2px}
+.nav ul.main li:hover .sub,.nav ul.main li:focus-within .sub{display:block}
+.nav ul.main .has-sub{padding-bottom:14px;margin-bottom:-14px}
+.nav ul.main .sub{display:none;position:absolute;top:100%;left:-16px;background:var(--paper);border:1px solid var(--line);min-width:220px;padding:10px 0;box-shadow:0 12px 32px rgba(14,12,10,.08)}
+.nav ul.main .sub li{list-style:none}
+.nav ul.main .sub a{display:block;padding:10px 20px;opacity:.8;white-space:nowrap}
+.nav ul.main .sub a:hover{opacity:1;background:var(--cream);color:var(--ink)}
+.nav .book{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font-family:"Inter Tight";font-size:14px;font-weight:500;text-decoration:none;transition:all .15s}
+.nav .book:hover{background:var(--steel);border-color:var(--steel)}
+
+/* COMMON */
+.kicker{font-family:"JetBrains Mono";font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--steel);margin-bottom:24px;display:flex;align-items:center;gap:14px}
+.kicker .n{display:inline-flex;align-items:center;justify-content:center;padding:4px 8px;border:1px solid var(--steel);font-size:12px}
+h1.display{font-family:"Fraunces";font-weight:300;font-size:108px;line-height:.98;letter-spacing:-0.035em;color:var(--ink)}
+h1.display em{font-style:italic;font-weight:400;color:var(--steel)}
+h2.sec{font-family:"Fraunces";font-weight:300;font-size:64px;line-height:1.04;letter-spacing:-0.028em;color:var(--ink)}
+h2.sec em{font-style:italic;font-weight:400;color:var(--steel)}
+.lead{font-family:"Inter Tight";font-size:20px;line-height:1.55;color:var(--ink-soft);max-width:62ch}
+.btn-d{display:inline-flex;align-items:center;gap:14px;padding:18px 26px;background:var(--ink);color:var(--paper);text-decoration:none;font-family:"Inter Tight";font-size:16px;font-weight:500;transition:background .15s}
+.btn-d:hover{background:var(--steel);color:var(--paper)}
+.btn-d .arr{font-family:"Fraunces";font-size:20px}
+.btn-d .pr{font-family:"JetBrains Mono";font-size:12px;padding-left:14px;margin-left:4px;border-left:1px solid rgba(242,236,223,.3);opacity:.8}
+section{padding:120px 0}
+
+/* HERO */
+.hero{padding:104px 0 140px;border-bottom:1px solid var(--line)}
+.hero-kicker{font-family:"JetBrains Mono";font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--steel);margin-bottom:56px;display:flex;align-items:center;gap:14px}
+.hero-kicker::before{content:"";display:inline-block;width:42px;height:1px;background:var(--steel)}
+.hero h1{max-width:18ch;margin-bottom:48px}
+.hero-lead{font-family:"Fraunces";font-weight:300;font-size:28px;line-height:1.35;max-width:52ch;color:var(--ink-soft);margin-bottom:56px;letter-spacing:-0.015em}
+.hero-lead em{font-style:italic;color:var(--ink);font-weight:400}
+.hero-row{display:flex;gap:40px;align-items:center;flex-wrap:wrap}
+.hero-note{font-family:"Fraunces";font-style:italic;font-weight:300;font-size:17px;color:var(--ink-soft);max-width:32ch}
+.hero-meta{border-top:1px solid var(--line);margin-top:88px;padding-top:32px;display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+.hero-meta .cell .k{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);margin-bottom:10px}
+.hero-meta .cell .v{font-family:"Archivo";font-weight:800;font-size:36px;letter-spacing:-0.02em;color:var(--ink);margin-bottom:4px;line-height:1}
+.hero-meta .cell .t{font-family:"Inter Tight";font-size:13px;color:var(--ink-soft);line-height:1.45;margin-top:8px}
+
+/* ABOUT */
+.about{background:var(--cream);border-bottom:1px solid var(--line)}
+.about-head{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:start;margin-bottom:72px}
+.about h2{max-width:16ch}
+.about .prose{font-family:"Inter Tight";font-size:18px;line-height:1.7;color:var(--ink-soft);max-width:62ch}
+.about .prose p{margin-bottom:22px}
+.about .prose p:last-child{margin-bottom:0}
+.about .prose em{font-style:italic;color:var(--ink);font-weight:500}
+.founders{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.founder{padding:32px 28px 36px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper);min-height:240px;display:flex;flex-direction:column;gap:10px}
+.founder .role{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.16em;color:var(--steel)}
+.founder h4{font-family:"Fraunces";font-weight:400;font-size:26px;line-height:1.15;letter-spacing:-0.02em;color:var(--ink)}
+.founder h4 em{font-style:italic;color:var(--steel)}
+.founder p{font-family:"Inter Tight";font-size:14px;line-height:1.55;color:var(--ink-soft);margin-top:auto}
+
+/* GROUP — the portfolio */
+.group{background:var(--paper)}
+.group .head{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:end;margin-bottom:72px}
+.group h2{max-width:16ch}
+.group-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.co{padding:36px 32px 40px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--cream);display:flex;flex-direction:column;gap:14px;min-height:280px}
+.co .lbl{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.16em;color:var(--steel)}
+.co h4{font-family:"Fraunces";font-weight:400;font-size:28px;line-height:1.15;letter-spacing:-0.02em;color:var(--ink)}
+.co h4 em{font-style:italic;color:var(--steel)}
+.co p{font-family:"Inter Tight";font-size:14.5px;line-height:1.55;color:var(--ink-soft);margin-top:auto}
+.co .loc{margin-top:auto;padding-top:14px;border-top:1px solid var(--line-2);font-family:"JetBrains Mono";font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+
+/* VISION */
+.vision{background:var(--ink);color:var(--cream);padding:128px 0}
+.vision .kicker{color:var(--steel-soft)}
+.vision .kicker .n{border-color:var(--steel-soft)}
+.vision h2{color:var(--cream);max-width:16ch;margin-bottom:56px}
+.vision h2 em{color:var(--steel-soft)}
+.vision-row{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:start}
+.v-prose{font-family:"Fraunces";font-weight:300;font-size:30px;line-height:1.32;letter-spacing:-0.02em;color:var(--cream);text-wrap:pretty}
+.v-prose em{font-style:italic;color:var(--steel-soft);font-weight:400}
+.v-prose p{margin-bottom:24px}
+.v-prose p:last-child{margin-bottom:0}
+.principles{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line-d)}
+.principle{padding:24px 0;border-bottom:1px solid var(--line-d);display:grid;grid-template-columns:60px 1fr;gap:24px}
+.principle .n{font-family:"JetBrains Mono";font-size:13px;letter-spacing:.14em;color:var(--steel-soft);padding-top:6px}
+.principle h4{font-family:"Fraunces";font-weight:400;font-size:24px;line-height:1.2;letter-spacing:-0.018em;color:var(--cream);margin-bottom:8px}
+.principle h4 em{font-style:italic;color:var(--steel-soft)}
+.principle p{font-family:"Inter Tight";font-size:15px;line-height:1.55;color:rgba(242,236,223,.72)}
+
+/* TIMELINE */
+.timeline{background:var(--paper)}
+.timeline .head{margin-bottom:56px}
+.timeline h2{max-width:18ch}
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.tl-cell{padding:28px 24px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:220px;display:flex;flex-direction:column;gap:10px}
+.tl-cell:nth-child(odd){background:var(--cream)}
+.tl-cell .y{font-family:"Archivo";font-weight:800;font-size:44px;letter-spacing:-0.02em;color:var(--steel);line-height:1}
+.tl-cell h5{font-family:"Fraunces";font-weight:400;font-size:20px;line-height:1.2;letter-spacing:-0.015em;color:var(--ink)}
+.tl-cell h5 em{font-style:italic;color:var(--steel)}
+.tl-cell p{font-family:"Inter Tight";font-size:13.5px;line-height:1.55;color:var(--ink-soft);margin-top:auto}
+
+/* JOBS */
+.jobs{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.jobs .head{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:end;margin-bottom:56px}
+.jobs h2{max-width:16ch}
+.jobs-list{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.job{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:32px;align-items:center;padding:28px 0;border-bottom:1px solid var(--line);transition:padding .15s;color:var(--ink);text-decoration:none}
+.job *{text-decoration:none}
+.job:hover{padding-left:20px}
+.job .pos h4{font-family:"Fraunces";font-weight:400;font-size:22px;line-height:1.2;letter-spacing:-0.015em;color:var(--ink);margin-bottom:4px}
+.job .pos h4 em{font-style:italic;color:var(--steel)}
+.job .pos .co-name{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.16em;color:var(--steel);text-transform:uppercase}
+.job .loc,.job .type{font-family:"Inter Tight";font-size:14px;color:var(--ink-soft)}
+.job .loc strong,.job .type strong{color:var(--ink);font-weight:500;display:block;font-family:"JetBrains Mono";font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);margin-bottom:4px}
+.job .arr{font-family:"Fraunces";font-size:22px;color:var(--ink);opacity:.3}
+.job:hover .arr{opacity:1;color:var(--steel)}
+
+/* CONTACT BLOCK */
+.contact{background:var(--paper)}
+.contact .row{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+.contact h2{max-width:14ch;margin-bottom:24px}
+.contact .prose p{font-family:"Inter Tight";font-size:17px;line-height:1.65;color:var(--ink-soft);margin-bottom:20px;max-width:58ch}
+.offices{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
+.jobs-note{padding:36px 32px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}
+.jobs-note p{font-family:"Inter Tight";font-size:17px;line-height:1.7;color:var(--ink-soft);max-width:68ch;margin-bottom:14px}
+.jobs-note p:last-child{margin-bottom:0}
+.jobs-note p a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--steel);text-underline-offset:4px}
+.jobs-note .meta{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+.office{padding:24px 24px 28px;border:1px solid var(--line);background:var(--cream)}
+.office .lbl{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.14em;color:var(--steel);margin-bottom:8px}
+.office h5{font-family:"Fraunces";font-weight:400;font-size:22px;letter-spacing:-0.015em;margin-bottom:10px;color:var(--ink)}
+.office h5 em{font-style:italic;color:var(--steel)}
+.office p{font-family:"Inter Tight";font-size:14px;line-height:1.6;color:var(--ink-soft)}
+
+/* FINAL CTA */
+.cta-final{background:var(--ink);color:var(--cream);text-align:center}
+.cta-final .kicker{color:var(--steel-soft);justify-content:center}
+.cta-final .kicker .n{border-color:var(--steel-soft)}
+.cta-final h2{color:var(--cream);max-width:26ch;margin:0 auto 32px}
+.cta-final h2 em{color:var(--steel-soft)}
+.cta-final .lead{color:rgba(242,236,223,.78);margin:0 auto 48px;max-width:60ch}
+.cta-final .links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;align-items:center}
+.cta-final .btn-d{background:var(--steel);color:var(--cream)}
+.cta-final .btn-d:hover{background:var(--cream);color:var(--ink)}
+.cta-final .phone{font-family:"JetBrains Mono";font-size:14px;color:rgba(242,236,223,.6);letter-spacing:.04em;margin-top:20px}
+
+/* FOOTER */
+footer{background:var(--ink-2);color:rgba(242,236,223,.7);padding:72px 0 40px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:48px}
+footer h5{font-family:"Archivo";font-weight:700;font-size:13px;color:var(--steel-soft);letter-spacing:.04em;text-transform:uppercase;margin-bottom:18px}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+footer a{color:rgba(242,236,223,.82);text-decoration:none;font-size:14px;transition:color .15s}
+footer a:hover{color:var(--steel-soft)}
+footer .about-foot{font-size:14px;line-height:1.65;max-width:38ch}
+footer .about-foot .wm{color:var(--cream);font-size:24px;margin-bottom:18px;display:inline-flex}
+.foot-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;padding-top:32px;border-top:1px solid var(--line-d);font-family:"JetBrains Mono";font-size:12px;letter-spacing:.08em;color:rgba(242,236,223,.55)}
+
+@media (max-width:980px){
+  .wrap,.wrap-n{padding:0 24px}
+  .nav ul.main{display:none}
+  h1.display{font-size:44px}
+  h2.sec{font-size:34px}
+  section{padding:72px 0}
+  .foot-grid{grid-template-columns:1fr}
+  .hero-lead{font-size:20px}
+  .hero-meta{grid-template-columns:1fr 1fr;gap:28px}
+  .about-head,.group .head,.jobs .head,.vision-row,.contact .row{grid-template-columns:1fr;gap:40px}
+  .founders,.group-grid,.tl,.offices{grid-template-columns:1fr}
+  .tl-cell{border-right:none}
+  .v-prose{font-size:22px}
+  .job{grid-template-columns:1fr;gap:8px;padding:20px 0}
+}
+
+.hero-strip{position:relative;height:420px;overflow:hidden;background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hero-strip img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.3) sepia(.22) saturate(.9) contrast(1.04) brightness(.82)}
+.hero-strip::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,12,10,.72) 0%,rgba(14,12,10,.28) 45%,rgba(14,12,10,.1) 75%,rgba(74,82,88,.28) 100%);pointer-events:none}
+.hero-strip .overlay{position:absolute;inset:0;display:flex;align-items:center;z-index:2}
+.hero-strip .overlay .wrap{width:100%}
+.hero-strip .ov-inner{max-width:540px;color:var(--cream)}
+.hero-strip .ov-inner .kk{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--golden-soft);margin-bottom:22px;display:flex;align-items:center;gap:14px}
+.hero-strip .ov-inner .kk::before{content:"";display:inline-block;width:32px;height:1px;background:var(--golden-soft)}
+.hero-strip .ov-inner h3{font-family:"Fraunces";font-weight:300;font-size:36px;line-height:1.18;letter-spacing:-0.022em;color:var(--cream)}
+.hero-strip .ov-inner h3 em{font-style:italic;color:var(--golden-soft);font-weight:400}
+.hero-strip .meta{position:absolute;right:28px;bottom:22px;font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,236,223,.72);z-index:2;text-align:right;line-height:1.6}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="wm">EX<span class="sep"></span>AI<span class="arm">· Venture</span></a>
+        <ul class="main">
+      <li class="has-sub"><a href="index.html">Beratung</a>
+        <ul class="sub">
+          <li><a href="index.html">KI-Prüfung</a></li>
+          <li><a href="ex-engineering.html">Technik</a></li>
+          <li><a href="branchen.html">Branchen</a></li>
+          <li><a href="index.html#bundeslaender">Bundesländer</a></li>
+        </ul>
+      </li>
+      <li><a href="ex-marketing.html">Marketing</a></li>
+      <li class="has-sub"><a href="ex-finance.html">Finanzen</a>
+        <ul class="sub">
+          <li><a href="ex-finance.html">Banking</a></li>
+          <li><a href="ex-foerdermittel.html">Fördermittel</a></li>
+        </ul>
+      </li>
+      <li><a href="ex-partners.html">Partner</a></li>
+      <li class="has-sub"><a href="ex-venture.html" class="current">EX Venture</a>
+        <ul class="sub">
+          <li><a href="ex-venture.html#about">Über uns</a></li>
+          <li><a href="ex-venture.html#vision">Vision</a></li>
+          <li><a href="ex-venture.html#jobs">Stellen</a></li>
+          <li><a href="ex-academy.html">Ausbildung</a></li>
+        </ul>
+      </li>
+    </ul>
+    <a href="#contact" class="book">Kontakt</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-kicker">Unternehmens­gruppe · Leipzig &amp; Dresden · Ausbildungs­standort Südost­asien</div>
+    <h1 class="display">Wer wir sind <em>und was wir tun.</em></h1>
+    <p class="hero-lead">EX Venture ist die Mutter­gruppe von sechs Schwester­marken — EX·AI, EX·Marketing, EX·Finance, EX·Fördermittel, EX·Engineering und EX·Academy. Wir beraten deutsche Betriebe in KI, Finanzen und Technik, wir bilden Nachwuchs aus, und wir bauen, was wir empfehlen. <em>Inhaber­geführt aus Leipzig und Dresden.</em></p>
+    <div class="hero-row">
+      <a href="#contact" class="btn-d">Sprechen Sie mit uns <span class="arr">→</span><span class="pr">Antwort binnen 24 Stunden</span></a>
+      <div class="hero-note">Für Kunden, Partner, Bewerber und alle, die uns kennen­lernen wollen.</div>
+    </div>
+    <div class="hero-meta">
+      <div class="cell">
+        <div class="k">Schwester­marken</div>
+        <div class="v">6</div>
+        <div class="t">EX·AI, EX·Marketing, EX·Finance, EX·Fördermittel, EX·Engineering, EX·Academy. Jede mit eigenem Auftrag.</div>
+      </div>
+      <div class="cell">
+        <div class="k">Team­mitglieder</div>
+        <div class="v">84</div>
+        <div class="t">Gruppen­weit, Stand 2026. Dazu Absolventinnen und Absolventen der Academy in operativen Rollen.</div>
+      </div>
+      <div class="cell">
+        <div class="k">Sitz</div>
+        <div class="v">DE</div>
+        <div class="t">Leipzig und Dresden. Ausbildungs­standort der Academy in Südost­asien. Wir reisen zu Kunden in ganz Deutschland.</div>
+      </div>
+      <div class="cell">
+        <div class="k">Erfahrung</div>
+        <div class="v">10<em> J.</em></div>
+        <div class="t">Zehn Jahre Aufbau der Gruppe. Inhaber­geführt. Keine Finanz­investoren, kein Börsen­gang auf der Tages­ordnung.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HERO STRIP IMAGE -->
+<section class="hero-strip" aria-label="Stammsitz Leipzig">
+  <img src="https://images.unsplash.com/photo-1560969184-10fe8719e047?w=1800&q=80&auto=format&fit=crop" alt="Blick über eine mitteldeutsche Stadt im Abendlicht — Standort Leipzig" loading="eager"/>
+  <div class="overlay">
+    <div class="wrap">
+      <div class="ov-inner">
+        <div class="kk">Wo wir sitzen</div>
+        <h3>Leipzig und Dresden. <em>Ausbildung in Südost­asien.</em></h3>
+      </div>
+    </div>
+  </div>
+  <div class="meta">Stammsitz · Leipzig<br/>2026</div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-head">
+      <div>
+        <div class="kicker"><span class="n">01</span>Über uns</div>
+        <h2 class="sec">Was eine <em>Gruppe zusammenhält.</em></h2>
+      </div>
+      <div class="prose">
+        <p>EX Venture ist aus einer einfachen Beobachtung entstanden: Viele deutsche Mittel­ständler haben gute Produkte, gute Leute, gute Bücher — aber keine Struktur, mit der sie neue Themen aufnehmen können. KI. Förderung. Neue Ingenieur-Aufgaben. Neue Kunden­ansprache. Alles gleich­zeitig, alles neu, alles ohne eigenes Team.</p>
+        <p>Unsere Antwort: eine Gruppe aus kleinen, fokussierten Unternehmen, die jeweils ein Thema wirklich können. Mit einer gemeinsamen Liefer­struktur im Hinter­grund — und mit Menschen, die selber gebaut haben, was sie jetzt weiter­geben. Wir sind Unter­nehmer zuerst, Berater danach.</p>
+        <p>Die Gruppe wird inhaber­geführt. Keine Finanz­investoren, kein Börsen­gang auf der Tages­ordnung, keine Ausstiegs­pläne. <em>Wir bauen, um zu bleiben.</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GROUP -->
+<section class="group" id="group">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="kicker"><span class="n">02</span>Die Gruppe</div>
+        <h2 class="sec">Sechs Firmen <em>unter einem Dach.</em></h2>
+      </div>
+      <p class="lead">Jede Firma hat ihren eigenen Auftrag. Keine ist nur Beiwerk. Alle nutzen dieselbe Liefer­struktur und teilen sich Ausbildung und Akquise. So wächst die Gruppe, ohne dass eine Firma schwer wird.</p>
+    </div>
+    <div class="group-grid">
+      <div class="co">
+        <div class="lbl">KI · Prüfung &amp; Strategie</div>
+        <h4>EX·<em>AI</em></h4>
+        <p>Unsere Eingangs­beratung. Die KI-Prüfung (799&nbsp;€) ist die Tagess­tür in die Gruppe. Rund 60 KI-Projekte im deutschen Mittelstand.</p>
+        <div class="loc">Leipzig · Dresden</div>
+      </div>
+      <div class="co">
+        <div class="lbl">Marketing · Video &amp; Social</div>
+        <h4>EX·<em>Marketing</em></h4>
+        <p>Video­produktion, LinkedIn, Kalt­ansprache, Webseiten, KI-Verkaufs­strecken. 60 Kanäle betreut, über 2&nbsp;Mio. YouTube-Views.</p>
+        <div class="loc">Leipzig · Dresden</div>
+      </div>
+      <div class="co">
+        <div class="lbl">Finanzen · FCA-reguliert</div>
+        <h4>EX·<em>Finance</em></h4>
+        <p>Zahlungs­infrastruktur und Investor Relations. EX Financial Ltd, UK, FCA-reguliert. <em>Kein Kredit­geschäft, keine Einlagen.</em></p>
+        <div class="loc">London · Leipzig</div>
+      </div>
+      <div class="co">
+        <div class="lbl">Fördermittel</div>
+        <h4>EX·<em>Fördermittel</em></h4>
+        <p>Eigene Antrags­abteilung. 260+ Anträge, 67 Bewilligungen, rund 19&nbsp;Mio.&nbsp;€ platziert. Sieben Forschungs­zulagen erfolgreich.</p>
+        <div class="loc">Leipzig · Dresden</div>
+      </div>
+      <div class="co">
+        <div class="lbl">Technik · Ingenieur­wesen</div>
+        <h4>EX·<em>Engineering</em></h4>
+        <p>Digitale Zwillinge, Bild­verarbeitung, robotische Labore, Forschungs-KI. Für Anlagen­bauer und produzierende Betriebe.</p>
+        <div class="loc">Dresden</div>
+      </div>
+      <div class="co">
+        <div class="lbl">Ausbildung · Talent</div>
+        <h4>EX·<em>Academy</em></h4>
+        <p>Unsere Talent­schmiede in Südost­asien. Über 210 Absolventinnen und Absolventen ausgebildet — viele heute in operativen Rollen der Gruppe.</p>
+        <div class="loc">Südost­asien</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="vision" id="vision">
+  <div class="wrap">
+    <div class="kicker"><span class="n">03</span>Vision</div>
+    <h2 class="sec">Wofür wir <em>jeden Morgen aufstehen.</em></h2>
+    <div class="vision-row">
+      <div class="v-prose">
+        <p>Der deutsche Mittelstand hat gebaut, was die Welt kennt. Maschinen, Autos, Medizin­technik, Anlagen. Was dem Mittelstand heute fehlt, ist nicht Qualität oder Fleiß — es ist die Zeit, sich neben dem Tages­geschäft auch noch neue Werkzeuge anzueignen.</p>
+        <p>Wir sehen unsere Aufgabe darin, diese Zeit zurück­zu­geben. Wir nehmen Firmen die Grund­arbeit ab, damit sie sich darauf konzentrieren können, was sie können. <em>Wir wollen, dass deutsche Betriebe in zehn Jahren noch da sind.</em> Das ist alles.</p>
+      </div>
+      <div class="principles">
+        <div class="principle">
+          <div class="n">01</div>
+          <div>
+            <h4>Ergebnis vor <em>Eindruck.</em></h4>
+            <p>Keine Folien­schlachten, keine Buzzwords. Wir liefern ein Dokument, ein Werk­stück, einen Plan. Was wirkt, zählt. Was glänzt, zählt nicht.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="n">02</div>
+          <div>
+            <h4>Eigene <em>Haut.</em></h4>
+            <p>Wir empfehlen nichts, was wir nicht selbst einsetzen. Unsere sechs Firmen sind auch Labor. Was bei uns nicht funktioniert, bieten wir Kunden nicht an.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="n">03</div>
+          <div>
+            <h4>Kleines Team, <em>klarer Kopf.</em></h4>
+            <p>Wir stellen lieber zehn gute Leute ein als hundert mittel­mäßige. Wer bei uns arbeitet, trägt Verantwortung — vom ersten Tag an.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="n">04</div>
+          <div>
+            <h4>Lang­fristig <em>denken.</em></h4>
+            <p>Kein Verkauf der Firma, kein Ausstieg, kein Quartals­druck. Wir planen in Jahr­zehnten, nicht in Quartalen. Das macht Entscheidungen einfacher.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="n">05</div>
+          <div>
+            <h4>Für den <em>Mittelstand.</em></h4>
+            <p>Wir sind für Familien­betriebe und Kapital­gesellschaften bis etwa 500 Mit­arbeitende gemacht. Für Konzerne sind wir zu klein. Für Einzel­betriebe zu groß. Das ist Absicht.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline">
+  <div class="wrap">
+    <div class="head">
+      <div class="kicker"><span class="n">04</span>Unser Weg</div>
+      <h2 class="sec">Zehn Jahre <em>Aufbau.</em></h2>
+    </div>
+    <div class="tl">
+      <div class="tl-cell">
+        <div class="y">Anfang</div>
+        <h5>Gründung <em>in Sachsen.</em></h5>
+        <p>Beginn als kleine Beratung für den deutschen Mittelstand. Inhaber­geführt, ohne Finanz­investoren.</p>
+      </div>
+      <div class="tl-cell">
+        <div class="y">Wachstum</div>
+        <h5>EX·Academy <em>in Südost­asien.</em></h5>
+        <p>Aufbau einer eigenen Talent­schmiede. Über 210 Auszubildende ausgebildet, viele heute in operativen Rollen der Gruppe.</p>
+      </div>
+      <div class="tl-cell">
+        <div class="y">Aufstellung</div>
+        <h5>Sechs <em>Schwester­marken.</em></h5>
+        <p>EX·AI, EX·Marketing, EX·Finance, EX·Fördermittel, EX·Engineering, EX·Academy — jede mit eigenem Auftrag, gemeinsame Liefer­struktur.</p>
+      </div>
+      <div class="tl-cell">
+        <div class="y">2026</div>
+        <h5>Heute. <em>Und morgen.</em></h5>
+        <p>84 Team­mitglieder, rund 60 KI-Projekte, 67 bewilligte Förder­anträge, etwa 19&nbsp;Mio.&nbsp;€ platziert. Wir bauen, um zu bleiben.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOBS -->
+<section class="jobs" id="jobs">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="kicker"><span class="n">05</span>Stellen</div>
+        <h2 class="sec">Wer bei uns <em>gerade fehlt.</em></h2>
+      </div>
+      <p class="lead">Wir stellen fest ein. Wir stellen langsam ein. Wir suchen Leute, die auch in zehn Jahren noch da sein wollen. Bewerbungen gern als kurze E-Mail mit Lebenslauf — Anschreiben erwartet keiner. Wer passt, wird innerhalb einer Woche angerufen.</p>
+    </div>
+    <div class="jobs-list">
+      <div class="jobs-note">
+        <p>Konkrete Stellen schreiben wir aus, sobald wir sie wirklich besetzen. Wer zu uns passt, schreibt uns auch ohne Ausschreibung — wir melden uns binnen einer Woche, wenn etwas zueinander passt. Bewerbungen an <a href="/cdn-cgi/l/email-protection#ed808889848cad88959b888399989f88c38e82"><span class="__cf_email__" data-cfemail="93fef6f7faf2d3f6ebe5f6fde7e6e1f6bdf0fc">[email&#160;protected]</span></a>, kurze E-Mail mit Lebenslauf. Anschreiben erwartet niemand.</p>
+        <p class="meta">Schwer­punkte: Beratung &middot; Fördermittel &middot; Video &amp; Social &middot; Ingenieur­wesen &middot; Ausbildung (Südost­asien).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="row">
+      <div>
+        <div class="kicker"><span class="n">06</span>Kontakt</div>
+        <h2 class="sec">Wie Sie <em>uns erreichen.</em></h2>
+      </div>
+      <div>
+        <div class="prose">
+          <p>Egal, ob Sie Kunde werden wollen, Partner werden wollen, bei uns arbeiten wollen oder einfach nur eine Frage haben — schreiben Sie uns. Wir antworten in der Regel am selben Werk­tag, spätestens am nächsten.</p>
+          <p>Wenn es schnell gehen soll, rufen Sie einfach an. Tagsüber geht immer jemand ran.</p>
+        </div>
+        <div class="offices">
+          <div class="office">
+            <div class="lbl">SITZ · DEUTSCHLAND</div>
+            <h5>Leipzig</h5>
+            <p>Stamm­sitz der Gruppe.<br/>Termine nach Vereinbarung.<br/><a href="/cdn-cgi/l/email-protection#ff929a9b969ebf9a87899a918b8a8d9ad19c90"><span class="__cf_email__" data-cfemail="c4a9a1a0ada584a1bcb2a1aab0b1b6a1eaa7ab">[email&#160;protected]</span></a></p>
+          </div>
+          <div class="office">
+            <div class="lbl">BÜRO · DEUTSCHLAND</div>
+            <h5>Dresden</h5>
+            <p>Zweites Standbein in Sachsen.<br/>Termine nach Vereinbarung.<br/><a href="/cdn-cgi/l/email-protection#d8b5bdbcb1b998bda0aebdb6acadaabdf6bbb7"><span class="__cf_email__" data-cfemail="563b33323f3716332e20333822232433783539">[email&#160;protected]</span></a></p>
+          </div>
+          <div class="office">
+            <div class="lbl">AUSBILDUNG · SÜDOST­ASIEN</div>
+            <h5>Südost­asien</h5>
+            <p>Ausbildungs­standort der EX·Academy.<br/>Kein Kunden­büro.<br/><a href="ex-academy.html">ex-academy.html</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-final">
+  <div class="wrap-n">
+    <div class="kicker"><span class="n">·</span>Schreiben Sie uns</div>
+    <h2 class="sec">Kurze E-Mail. <em>Freund­liche Antwort.</em></h2>
+    <p class="lead">Kunden­anfragen, Partner­gespräche, Bewerbungen, Presse­anfragen — alles auf denselben Weg. Wir sortieren intern.</p>
+    <div class="links">
+      <a href="/cdn-cgi/l/email-protection#046961606d6544617c72616a707176612a676b" class="btn-d"><span class="__cf_email__" data-cfemail="432e26272a2203263b35262d373631266d202c">[email&#160;protected]</span> <span class="arr">→</span></a>
+    </div>
+    <div class="phone">Werktags Antwort am selben Tag, spätestens am nächsten · Deutsch und Englisch</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="about-foot">
+        <a href="index.html" class="wm">EX<span class="sep"></span>AI</a>
+        <p>EX Venture Group ist die Mutter­gruppe von EX·AI, EX·Marketing, EX·Finance, EX·Fördermittel, EX·Engineering und EX·Academy. Inhaber­geführt aus Leipzig und Dresden.</p>
+      </div>
+      <div><h5>Seite</h5><ul>
+        <li><a href="#about">Über uns</a></li>
+        <li><a href="#group">Die Gruppe</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#jobs">Stellen</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul></div>
+      <div><h5>EX · Gruppe</h5><ul>
+        <li><a href="index.html">EX·AI — KI-Prüfung</a></li>
+        <li><a href="ex-marketing.html">EX·Marketing</a></li>
+        <li><a href="ex-finance.html">EX·Finance</a></li>
+        <li><a href="ex-foerdermittel.html">EX·Fördermittel</a></li>
+        <li><a href="ex-engineering.html">EX·Engineering</a></li>
+        <li><a href="ex-academy.html">EX·Academy</a></li>
+      </ul></div>
+      <div><h5>Kontakt</h5><ul>
+        <li><a href="/cdn-cgi/l/email-protection#abc6cecfc2caebced3ddcec5dfded9ce85c8c4"><span class="__cf_email__" data-cfemail="85e8e0e1ece4c5e0fdf3e0ebf1f0f7e0abe6ea">[email&#160;protected]</span></a></li>
+        <li>Sitz · Leipzig &amp; Dresden</li>
+        <li>Ausbildung · Südost­asien</li>
+      </ul></div>
+    </div>
+    <div class="foot-bot">
+      <div>© 2026 EX Venture Group · Inhaber­geführt · Leipzig &amp; Dresden</div>
+      <div><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9bf6fefff2fadbfee3edfef5efeee9feb5f8f4">[email&#160;protected]</a></div>
+    </div>
+  </div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
