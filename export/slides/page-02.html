@@ -1,0 +1,171 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8" />
+<title>EX · AI — IG Carousel · Data Security</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E0C0A;
+    --ink-2:#1C1915;
+    --cream:#F2ECDF;
+    --cream-2:#E8E0CE;
+    --golden:#D4A24C;
+    --ember:#B8421E;
+    --moss:#3F4A3A;
+    --line:rgba(242,236,223,0.14);
+    --line-cream:rgba(14,12,10,0.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#181512;font-family:"Inter Tight",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .page{min-height:100vh;padding:40px 20px 120px}
+  .page-head{max-width:1200px;margin:0 auto 32px;display:flex;justify-content:space-between;align-items:flex-end;color:var(--cream);font-family:"JetBrains Mono";font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+  .page-head h1{font-family:"Archivo";font-weight:800;font-size:20px;letter-spacing:-0.01em;text-transform:none;opacity:1;color:var(--golden)}
+
+  /* Carousel grid */
+  .carousel{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+
+  /* Slide — 4:5 portrait, 1080×1350 base (scaled to fit) */
+  .slide{
+    width:100%;
+    aspect-ratio:4/5;
+    position:relative;
+    overflow:hidden;
+    background:var(--ink);
+    color:var(--cream);
+    font-family:"Archivo",sans-serif;
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+  }
+  .slide .inner{
+    position:absolute;
+    inset:0;
+    padding:7.5%;
+    display:flex;
+    flex-direction:column;
+  }
+  .slide .top{display:flex;justify-content:space-between;align-items:flex-start;font-family:"JetBrains Mono";font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.55}
+  .slide .bottom{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;font-family:"JetBrains Mono";font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.55}
+  .slide .wordmark{font-family:"Archivo";font-weight:900;font-size:16px;letter-spacing:-0.05em;color:var(--golden);opacity:1}
+  .slide .wordmark .sep{display:inline-block;width:.09em;height:.09em;background:currentColor;border-radius:50%;vertical-align:.32em;margin:0 .02em}
+  .slide .num{color:var(--golden);opacity:.75}
+
+  /* subtle horizon bar on the edge */
+  .slide .horizon{position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,var(--ember),var(--golden) 70%,var(--cream-2))}
+
+  /* faint grid */
+  .grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--cream) 1px,transparent 1px),linear-gradient(90deg,var(--cream) 1px,transparent 1px);background-size:40px 40px;opacity:.03;pointer-events:none}
+
+  /* Type helpers (clamp-based so squares scale) */
+  .t-mega{font-family:"Archivo";font-weight:900;letter-spacing:-0.055em;line-height:.87;font-size:clamp(44px,9.5cqw,120px)}
+  .t-big{font-family:"Archivo";font-weight:800;letter-spacing:-0.04em;line-height:.95;font-size:clamp(28px,5.2cqw,64px)}
+  .t-med{font-family:"Archivo";font-weight:700;letter-spacing:-0.02em;line-height:1.05;font-size:clamp(20px,3.2cqw,40px)}
+  .t-body{font-family:"Inter Tight";font-weight:400;line-height:1.4;font-size:clamp(13px,1.8cqw,22px)}
+  .t-serif{font-family:"Fraunces";font-style:italic;font-weight:300;letter-spacing:-0.03em;line-height:.95}
+
+  .slide{container-type:inline-size}
+
+  .golden{color:var(--golden)}
+  .ember{color:var(--ember)}
+  .cream{color:var(--cream)}
+  .muted{opacity:.6}
+
+  /* Swipe cue */
+  .swipe{display:inline-flex;align-items:center;gap:8px;font-family:"JetBrains Mono";font-size:clamp(10px,1.2cqw,14px);letter-spacing:.14em;text-transform:uppercase;color:var(--golden)}
+  .swipe .arrow{display:inline-block;width:1.5em;height:1px;background:currentColor;position:relative}
+  .swipe .arrow::after{content:"";position:absolute;right:-1px;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+
+  /* ——— SLIDE-SPECIFIC ——— */
+
+  /* Slide 01 — Cover */
+  .s01 .inner{justify-content:space-between}
+  .s01 .title{display:flex;flex-direction:column;gap:.1em}
+  .s01 .eyebrow{font-family:"JetBrains Mono";font-size:clamp(10px,1.3cqw,15px);letter-spacing:.16em;text-transform:uppercase;color:var(--golden);margin-bottom:clamp(16px,3cqw,32px)}
+
+  /* Slide 02 — The question */
+  .s02{background:var(--cream);color:var(--ink)}
+  .s02 .top,.s02 .bottom{opacity:.55}
+  .s02 .wordmark{color:var(--ink)}
+  .s02 .horizon{background:linear-gradient(90deg,var(--ember),var(--golden) 70%,var(--ink) 100%)}
+  .s02 .num{color:var(--ember)}
+
+  /* Slide 03 — stat dominant */
+  .s03 .giant-stat{font-family:"Archivo";font-weight:900;letter-spacing:-0.08em;line-height:.8;font-size:clamp(120px,32cqw,400px);color:var(--golden)}
+
+  /* Slide 04 — List */
+  .s04 .row{display:grid;grid-template-columns:auto 1fr;gap:clamp(12px,2.4cqw,28px);padding:clamp(10px,1.8cqw,18px) 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .s04 .row:last-child{border-bottom:none}
+  .s04 .row .n{font-family:"JetBrains Mono";font-size:clamp(11px,1.4cqw,16px);color:var(--golden);opacity:.75;letter-spacing:.08em}
+  .s04 .row .t{font-family:"Archivo";font-weight:700;font-size:clamp(18px,3cqw,36px);letter-spacing:-0.02em;line-height:1.05}
+
+  /* Slide 05 — Quote slab */
+  .s05{background:var(--ember);color:var(--cream)}
+  .s05 .wordmark{color:var(--cream)}
+  .s05 .horizon{background:linear-gradient(90deg,var(--ink),var(--golden))}
+
+  /* Slide 06 — Profile reveal */
+  .s06 .profile{border:1px solid var(--line);padding:clamp(14px,2.4cqw,28px);margin-top:clamp(14px,2.4cqw,28px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.6cqw,18px) clamp(14px,2.4cqw,28px);font-family:"JetBrains Mono";font-size:clamp(10px,1.3cqw,15px);line-height:1.5}
+  .s06 .profile .k{opacity:.5;letter-spacing:.08em;text-transform:uppercase}
+  .s06 .profile .v{color:var(--cream)}
+  .s06 .profile .v.hot{color:var(--ember)}
+
+  /* Slide 07 — Three columns */
+  .s07 .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:clamp(20px,4cqw,48px);border-top:1px solid var(--line)}
+  .s07 .cols > div{padding:clamp(14px,2.6cqw,28px) clamp(10px,1.6cqw,20px) 0 0;border-right:1px solid var(--line)}
+  .s07 .cols > div:last-child{border-right:none;padding-right:0}
+  .s07 .cols .lbl{font-family:"JetBrains Mono";font-size:clamp(10px,1.2cqw,14px);letter-spacing:.12em;text-transform:uppercase;opacity:.55;margin-bottom:clamp(10px,1.6cqw,20px)}
+  .s07 .cols .head{font-family:"Archivo";font-weight:800;font-size:clamp(18px,2.8cqw,34px);letter-spacing:-0.02em;line-height:1.02;margin-bottom:clamp(8px,1.4cqw,16px)}
+  .s07 .cols .desc{font-family:"Inter Tight";font-size:clamp(11px,1.5cqw,17px);line-height:1.45;opacity:.8}
+
+  /* Slide 08 — Principle slab */
+  .s08{background:var(--golden);color:var(--ink)}
+  .s08 .wordmark{color:var(--ink)}
+  .s08 .horizon{background:linear-gradient(90deg,var(--ember),var(--ink))}
+
+  /* Slide 09 — Checklist */
+  .s09 .check{display:grid;grid-template-columns:auto 1fr;gap:clamp(10px,1.8cqw,20px);padding:clamp(10px,1.6cqw,18px) 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .s09 .check:last-child{border-bottom:none}
+  .s09 .check .box{width:clamp(14px,2cqw,22px);height:clamp(14px,2cqw,22px);border:1.5px solid var(--golden);flex-shrink:0;position:relative;transform:translateY(.25em)}
+  .s09 .check .box::after{content:"";position:absolute;inset:20%;background:var(--golden);opacity:0}
+  .s09 .check.on .box::after{opacity:1}
+  .s09 .check .t{font-family:"Archivo";font-weight:600;font-size:clamp(14px,2.2cqw,26px);letter-spacing:-0.01em;line-height:1.15}
+  .s09 .check .t .sub{display:block;font-family:"Inter Tight";font-weight:400;font-size:.72em;opacity:.6;margin-top:.2em}
+
+  /* Slide 10 — CTA */
+  .s10{background:var(--ink);color:var(--cream);text-align:left}
+  .s10 .cta{font-family:"Archivo";font-weight:900;letter-spacing:-0.05em;line-height:.9;font-size:clamp(40px,8cqw,100px)}
+  .s10 .cta em{font-family:"Fraunces";font-style:italic;font-weight:300;color:var(--golden)}
+  .s10 .domain{font-family:"JetBrains Mono";font-size:clamp(12px,1.6cqw,20px);letter-spacing:.12em;color:var(--golden);margin-top:clamp(16px,2.8cqw,32px)}
+  .s10 .sign{font-family:"Archivo";font-weight:900;font-size:clamp(48px,10cqw,140px);letter-spacing:-0.06em;color:var(--golden);margin-top:auto;line-height:.9}
+  .s10 .sign .sep{display:inline-block;width:.09em;height:.09em;background:currentColor;border-radius:50%;vertical-align:.32em;margin:0 .02em}
+
+  @media (max-width:760px){
+    .carousel{grid-template-columns:1fr}
+  }
+</style>
+
+<style>
+html,body{margin:0;padding:0;width:1080px;height:1350px;overflow:hidden;background:#000}
+.slide{width:1080px !important;height:1350px !important;aspect-ratio:auto !important;box-shadow:none !important;margin:0 !important;position:relative !important;display:block !important}
+</style>
+</head><body>
+<div class="slide s02">
+      <div class="inner">
+        <div class="top">
+          <span class="num">02 / 10</span>
+          <span>The Question</span>
+        </div>
+        <div style="margin-top:auto;margin-bottom:auto">
+          <div class="t-serif" style="font-size:clamp(30px,6.4cqw,76px);color:var(--ember)">Are you sure</div>
+          <div class="t-mega" style="margin-top:.15em">that is what<br/>you want?</div>
+          <div class="t-body" style="margin-top:clamp(20px,3.8cqw,44px);max-width:88%;opacity:.75">Every prompt is a disclosure. Every file is a copy. Every conversation is training data for something you didn't sign up for.</div>
+        </div>
+        <div class="bottom">
+          <span class="wordmark">EX<span class="sep"></span>AI</span>
+          <span>Keep swiping</span>
+        </div>
+      </div>
+      <div class="horizon"></div>
+    </div>
+</body></html>

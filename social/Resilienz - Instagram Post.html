@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>EX · Resilienz — Instagram Post</title>
+<meta name="description" content="Instagram-Post: Erfolg entsteht aus Resilienz — im Ton der EX Venture Group." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0E0C0A;
+    --ink-2:#1C1915;
+    --ink-soft:#2A2620;
+    --cream:#F2ECDF;
+    --cream-2:#E8E0CE;
+    --paper:#F7F2E6;
+    --golden:#B8853A;
+    --golden-soft:#D4A24C;
+    --ember:#8A3217;
+    --line:rgba(14,12,10,0.14);
+    --line-2:rgba(14,12,10,0.08);
+    --line-d:rgba(242,236,223,0.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#262320;min-height:100vh;font-family:'Inter Tight',sans-serif;color:var(--ink)}
+  body{
+    display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+    padding:48px 24px 120px;gap:40px;
+  }
+  .stage-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
+    color:rgba(242,236,223,0.45);
+    display:flex;gap:18px;align-items:center;
+  }
+  .stage-label span{color:rgba(242,236,223,0.8)}
+
+  /* ---------- Instagram frame ---------- */
+  .ig{
+    width:1080px;height:1350px;
+    background:var(--paper);
+    position:relative;overflow:hidden;
+    transform-origin:top center;
+    box-shadow:0 40px 120px rgba(0,0,0,0.5), 0 2px 0 rgba(255,255,255,0.04) inset;
+  }
+
+  /* scale for preview — real export is 1080x1350 */
+  @media (max-width:1180px){
+    .ig{transform:scale(var(--s,0.62));margin-bottom:calc(1350px * (var(--s,0.62) - 1));}
+  }
+
+  /* ===== POST 1 — Typographic, editorial ===== */
+  .p1 .grain{
+    position:absolute;inset:0;pointer-events:none;opacity:0.35;mix-blend-mode:multiply;
+    background-image:
+      radial-gradient(1px 1px at 23% 17%, rgba(14,12,10,0.08) 50%, transparent 51%),
+      radial-gradient(1px 1px at 77% 41%, rgba(14,12,10,0.06) 50%, transparent 51%),
+      radial-gradient(1px 1px at 41% 83%, rgba(14,12,10,0.08) 50%, transparent 51%),
+      radial-gradient(1px 1px at 88% 72%, rgba(14,12,10,0.05) 50%, transparent 51%);
+    background-size:180px 180px, 220px 220px, 160px 160px, 200px 200px;
+  }
+  .p1 .frame{
+    position:absolute;inset:56px;
+    border:1px solid var(--line);
+    display:flex;flex-direction:column;
+  }
+  .p1 .top{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:28px 36px;border-bottom:1px solid var(--line);
+    font-family:'JetBrains Mono',monospace;font-size:14px;
+    letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  .p1 .top .kick{color:var(--ember)}
+  .p1 .wm{
+    font-family:'Archivo',sans-serif;font-weight:900;
+    font-size:22px;letter-spacing:-0.05em;color:var(--ink);
+    display:flex;align-items:center;gap:10px;text-transform:none;
+  }
+  .p1 .wm .dot{width:7px;height:7px;border-radius:50%;background:var(--golden);display:inline-block}
+
+  .p1 .body{
+    flex:1;display:flex;flex-direction:column;justify-content:center;
+    padding:60px 80px;position:relative;
+  }
+  .p1 .num{
+    position:absolute;top:60px;right:80px;
+    font-family:'JetBrains Mono',monospace;font-size:13px;
+    letter-spacing:0.2em;color:var(--ink-soft);opacity:0.55;
+  }
+  .p1 h1{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:120px;line-height:0.95;letter-spacing:-0.035em;
+    color:var(--ink);
+    font-variation-settings:"opsz" 144;
+  }
+  .p1 h1 em{
+    font-style:italic;font-weight:300;
+    color:var(--golden);
+  }
+  .p1 .rule{
+    width:72px;height:1px;background:var(--ink);margin:48px 0 36px;opacity:0.4;
+  }
+  .p1 .sub{
+    font-family:'Fraunces',serif;font-weight:400;
+    font-size:30px;line-height:1.32;letter-spacing:-0.01em;
+    color:var(--ink-soft);max-width:720px;
+    text-wrap:pretty;
+  }
+  .p1 .sub em{font-style:italic;color:var(--ember);font-weight:400}
+
+  .p1 .bottom{
+    border-top:1px solid var(--line);
+    padding:26px 36px;
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:'JetBrains Mono',monospace;font-size:12px;
+    letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  .p1 .bottom .right{color:var(--golden);letter-spacing:0.22em}
+
+  /* ===== POST 2 — Proof-led, dark ===== */
+  .p2{background:var(--ink)}
+  .p2 .frame{position:absolute;inset:56px;border:1px solid var(--line-d);display:flex;flex-direction:column}
+  .p2 .top{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:28px 36px;border-bottom:1px solid var(--line-d);
+    font-family:'JetBrains Mono',monospace;font-size:14px;
+    letter-spacing:0.18em;text-transform:uppercase;color:rgba(242,236,223,0.55);
+  }
+  .p2 .top .kick{color:var(--golden-soft)}
+  .p2 .wm{
+    font-family:'Archivo',sans-serif;font-weight:900;
+    font-size:22px;letter-spacing:-0.05em;color:var(--cream);
+    display:flex;align-items:center;gap:10px;text-transform:none;
+  }
+  .p2 .wm .dot{width:7px;height:7px;border-radius:50%;background:var(--golden);display:inline-block}
+
+  .p2 .body{
+    flex:1;display:grid;
+    grid-template-rows:auto 1fr auto;
+    padding:0;
+  }
+  .p2 .hdr{
+    padding:72px 80px 48px;
+  }
+  .p2 .eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:13px;
+    letter-spacing:0.2em;text-transform:uppercase;color:var(--golden-soft);
+    margin-bottom:32px;
+  }
+  .p2 h1{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:88px;line-height:1;letter-spacing:-0.03em;
+    color:var(--cream);
+    font-variation-settings:"opsz" 144;
+    text-wrap:balance;
+  }
+  .p2 h1 em{font-style:italic;font-weight:300;color:var(--golden-soft)}
+
+  .p2 .grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    border-top:1px solid var(--line-d);
+    border-left:1px solid var(--line-d);
+    margin:0 80px;
+  }
+  .p2 .cell{
+    border-right:1px solid var(--line-d);
+    border-bottom:1px solid var(--line-d);
+    padding:36px 32px;display:flex;flex-direction:column;gap:14px;
+  }
+  .p2 .cell .n{
+    font-family:'Archivo',sans-serif;font-weight:600;
+    font-size:52px;letter-spacing:-0.03em;color:var(--cream);
+    line-height:1;
+  }
+  .p2 .cell .n em{font-style:italic;font-weight:400;color:var(--golden-soft);font-family:'Fraunces',serif}
+  .p2 .cell .lbl{
+    font-family:'JetBrains Mono',monospace;font-size:11px;
+    letter-spacing:0.2em;text-transform:uppercase;color:rgba(242,236,223,0.6);
+    line-height:1.5;
+  }
+
+  .p2 .ftr{
+    padding:44px 80px 60px;
+    display:flex;flex-direction:column;gap:22px;
+  }
+  .p2 .ftr .line{
+    font-family:'Fraunces',serif;font-weight:400;font-style:italic;
+    font-size:28px;line-height:1.35;letter-spacing:-0.01em;
+    color:rgba(242,236,223,0.82);max-width:720px;
+    text-wrap:pretty;
+  }
+  .p2 .ftr .meta{
+    font-family:'JetBrains Mono',monospace;font-size:11px;
+    letter-spacing:0.2em;text-transform:uppercase;color:rgba(242,236,223,0.5);
+  }
+
+  .p2 .bottom{
+    border-top:1px solid var(--line-d);
+    padding:26px 36px;
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:'JetBrains Mono',monospace;font-size:12px;
+    letter-spacing:0.2em;text-transform:uppercase;color:rgba(242,236,223,0.55);
+  }
+  .p2 .bottom .right{color:var(--golden-soft);letter-spacing:0.22em}
+
+  /* ===== POST 3 — Quiet photo / duotone style plate ===== */
+  .p3{background:var(--cream)}
+  .p3 .plate{
+    position:absolute;inset:56px;
+    display:grid;grid-template-rows:auto 1fr auto;
+    border:1px solid var(--line);
+    background:var(--paper);
+  }
+  .p3 .top{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:28px 36px;border-bottom:1px solid var(--line);
+    font-family:'JetBrains Mono',monospace;font-size:14px;
+    letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  .p3 .top .kick{color:var(--ember)}
+  .p3 .wm{
+    font-family:'Archivo',sans-serif;font-weight:900;
+    font-size:22px;letter-spacing:-0.05em;color:var(--ink);
+    display:flex;align-items:center;gap:10px;
+  }
+  .p3 .wm .dot{width:7px;height:7px;border-radius:50%;background:var(--golden);display:inline-block}
+
+  .p3 .main{
+    display:grid;grid-template-columns:1fr;
+    position:relative;overflow:hidden;
+  }
+  .p3 .artboard{
+    position:relative;
+    background:
+      linear-gradient(180deg, rgba(184,133,58,0.10) 0%, rgba(138,50,23,0.14) 100%),
+      repeating-linear-gradient(90deg, rgba(14,12,10,0.04) 0 1px, transparent 1px 80px),
+      repeating-linear-gradient(0deg, rgba(14,12,10,0.04) 0 1px, transparent 1px 80px),
+      var(--cream-2);
+    padding:80px;
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+  /* abstract mountain / resilience mark */
+  .p3 .mark{
+    position:absolute;right:-60px;bottom:-40px;
+    width:640px;height:520px;opacity:0.85;
+  }
+
+  .p3 .eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:13px;
+    letter-spacing:0.2em;text-transform:uppercase;color:var(--ember);
+  }
+  .p3 h1{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:96px;line-height:0.98;letter-spacing:-0.03em;
+    color:var(--ink);margin-top:48px;max-width:720px;
+    font-variation-settings:"opsz" 144;
+    text-wrap:balance;
+  }
+  .p3 h1 em{font-style:italic;font-weight:300;color:var(--golden)}
+  .p3 .attrib{
+    font-family:'Inter Tight',sans-serif;font-weight:400;
+    font-size:16px;letter-spacing:0;color:var(--ink-soft);
+    display:flex;align-items:center;gap:14px;margin-top:auto;
+    position:relative;z-index:2;
+  }
+  .p3 .attrib .bar{width:32px;height:1px;background:var(--ink);opacity:0.5}
+  .p3 .attrib strong{font-weight:600}
+
+  .p3 .bottom{
+    border-top:1px solid var(--line);
+    padding:26px 36px;
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:'JetBrains Mono',monospace;font-size:12px;
+    letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  .p3 .bottom .right{color:var(--golden);letter-spacing:0.22em}
+
+  /* caption block */
+  .caption{
+    width:min(1080px, 92vw);
+    background:var(--ink-2);
+    border:1px solid var(--line-d);
+    padding:32px 36px;
+    color:var(--cream);
+    font-family:'Inter Tight',sans-serif;
+    font-size:15px;line-height:1.6;
+    display:flex;flex-direction:column;gap:16px;
+  }
+  .caption .label{
+    font-family:'JetBrains Mono',monospace;font-size:11px;
+    letter-spacing:0.22em;text-transform:uppercase;
+    color:var(--golden-soft);
+  }
+  .caption .hl{color:var(--cream)}
+  .caption em{font-family:'Fraunces',serif;font-style:italic;color:var(--golden-soft);font-weight:400;font-size:17px}
+  .caption .tags{color:rgba(242,236,223,0.55);font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.05em}
+  .caption hr{border:none;border-top:1px solid var(--line-d);margin:4px 0}
+</style>
+<template id="__bundler_thumbnail" data-bg-color="#262320">
+  <svg viewBox="0 0 1080 1350" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1080" height="1350" fill="#F7F2E6"/>
+    <rect x="60" y="60" width="960" height="1230" fill="none" stroke="#0E0C0A" stroke-width="2"/>
+    <text x="540" y="620" font-family="Georgia, serif" font-size="180" font-weight="300" text-anchor="middle" fill="#0E0C0A">Wer bleibt,</text>
+    <text x="540" y="820" font-family="Georgia, serif" font-size="200" font-style="italic" font-weight="300" text-anchor="middle" fill="#B8853A">gewinnt.</text>
+    <circle cx="540" cy="960" r="6" fill="#B8853A"/>
+  </svg>
+</template>
+</head>
+<body>
+
+  <div class="stage-label"><span>Instagram · 1080 × 1350</span> · 3 Varianten · Resilienz</div>
+
+  <!-- ===================== POST 1 ===================== -->
+  <div class="ig p1" data-screen-label="01 Post · Typografisch">
+    <div class="grain"></div>
+    <div class="frame">
+      <div class="top">
+        <div class="wm">EX<span class="dot"></span>AI</div>
+        <div><span class="kick">Notiz</span> &nbsp;·&nbsp; Nr. 07 / 2026</div>
+      </div>
+
+      <div class="body">
+        <div class="num">01</div>
+        <h1>Wer bleibt,<br/>
+          <em>gewinnt.</em></h1>
+
+        <div class="rule"></div>
+
+        <p class="sub">
+          Erfolg ist selten das Ergebnis eines guten Jahres.
+          Er ist das Ergebnis <em>vieler stiller Dienstage</em>,
+          an denen andere aufgehört haben.
+        </p>
+      </div>
+
+      <div class="bottom">
+        <div>Leipzig · Dresden</div>
+        <div class="right">Über Resilienz</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== POST 2 ===================== -->
+  <div class="ig p2" data-screen-label="02 Post · Beweislage">
+    <div class="frame">
+      <div class="top">
+        <div class="wm">EX<span class="dot"></span>AI</div>
+        <div><span class="kick">Feld­bericht</span> &nbsp;·&nbsp; Mittel­stand 2026</div>
+      </div>
+
+      <div class="body">
+        <div class="hdr">
+          <div class="eyebrow">02 · Was wirklich trägt</div>
+          <h1>Die Firmen, die bleiben,<br/>
+            sind nicht die<br/>
+            <em>lautesten.</em></h1>
+        </div>
+
+        <div class="grid">
+          <div class="cell">
+            <div class="n">10<em> Jahre</em></div>
+            <div class="lbl">Kein Exit.<br/>Kein Pivot ins Nichts.<br/>Nur Arbeit.</div>
+          </div>
+          <div class="cell">
+            <div class="n">~60</div>
+            <div class="lbl">KI-Projekte<br/>in Deutschland,<br/>Stück für Stück.</div>
+          </div>
+          <div class="cell">
+            <div class="n">67<em>/260</em></div>
+            <div class="lbl">Bewilligte<br/>Förder­anträge.<br/>Aus 260 Versuchen.</div>
+          </div>
+          <div class="cell">
+            <div class="n">84</div>
+            <div class="lbl">Team­mitglieder,<br/>die am Montag<br/>wieder da sind.</div>
+          </div>
+        </div>
+
+        <div class="ftr">
+          <div class="line">
+            „Resilienz ist kein Plakat&shy;spruch.
+            Es ist die Fähigkeit, nach einem <em>verlorenen Quartal</em>
+            trotzdem den Dienst­plan zu schreiben."
+          </div>
+          <div class="meta">— Haltung EX Venture Group</div>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <div>EX Venture Group</div>
+        <div class="right">Über Resilienz</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== POST 3 ===================== -->
+  <div class="ig p3" data-screen-label="03 Post · Artboard">
+    <div class="plate">
+      <div class="top">
+        <div class="wm">EX<span class="dot"></span>AI</div>
+        <div><span class="kick">Aus der Werkstatt</span> &nbsp;·&nbsp; 04 · 2026</div>
+      </div>
+
+      <div class="main">
+        <div class="artboard">
+          <!-- abstract "resilience" mark: layered mountain ranges -->
+          <svg class="mark" viewBox="0 0 640 520" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#B8853A" stop-opacity="0.22"/>
+                <stop offset="100%" stop-color="#B8853A" stop-opacity="0.05"/>
+              </linearGradient>
+              <linearGradient id="g2" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#8A3217" stop-opacity="0.28"/>
+                <stop offset="100%" stop-color="#8A3217" stop-opacity="0.08"/>
+              </linearGradient>
+              <linearGradient id="g3" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#0E0C0A" stop-opacity="0.55"/>
+                <stop offset="100%" stop-color="#0E0C0A" stop-opacity="0.35"/>
+              </linearGradient>
+            </defs>
+            <!-- far range -->
+            <path d="M0,380 L90,300 L170,340 L240,260 L330,320 L420,230 L510,290 L590,250 L640,280 L640,520 L0,520 Z" fill="url(#g1)" stroke="#B8853A" stroke-opacity="0.35" stroke-width="1"/>
+            <!-- mid range -->
+            <path d="M0,430 L70,360 L160,400 L250,330 L340,390 L430,310 L520,370 L610,340 L640,360 L640,520 L0,520 Z" fill="url(#g2)" stroke="#8A3217" stroke-opacity="0.4" stroke-width="1"/>
+            <!-- near range -->
+            <path d="M0,480 L80,420 L180,460 L260,400 L360,450 L460,390 L560,440 L640,420 L640,520 L0,520 Z" fill="url(#g3)" stroke="#0E0C0A" stroke-opacity="0.7" stroke-width="1"/>
+            <!-- tiny sun -->
+            <circle cx="480" cy="210" r="34" fill="none" stroke="#B8853A" stroke-opacity="0.45" stroke-width="1"/>
+            <circle cx="480" cy="210" r="16" fill="#B8853A" fill-opacity="0.25"/>
+          </svg>
+
+          <div class="eyebrow">03 · Über Erfolg</div>
+          <h1>Nicht der <em>Sprint.</em><br/>
+            Die nächste<br/>
+            Runde.</h1>
+
+          <div class="attrib">
+            <span class="bar"></span>
+            <span><strong>Resilienz</strong> · die Fähigkeit, nach einem schlechten Quartal weiterzuarbeiten, als wäre es Montag.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <div>Leipzig · Dresden · exventure.co</div>
+        <div class="right">@exventuregroup</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== CAPTION ===================== -->
+  <div class="caption">
+    <div class="label">Bildunter&shy;schrift · Instagram</div>
+
+    <div>
+      <span class="hl">Resilienz ist kein Plakatspruch.</span><br/>
+      Es ist die Fähigkeit, nach einem verlorenen Quartal trotzdem den Dienstplan zu schreiben.
+    </div>
+
+    <div>
+      Die Firmen, die wir seit zehn Jahren begleiten, haben selten das beste Jahr vor sich. Sie hatten oft das schlechteste hinter sich. Was sie eint, ist nicht Genie. Es ist <em>Wieder­kommen.</em>
+    </div>
+
+    <div>
+      — 10 Jahre EX Venture Group.<br/>
+      — ~60 KI-Projekte, einzeln abgearbeitet.<br/>
+      — 67 bewilligte Förderanträge aus 260 Versuchen.<br/>
+      — 84 Kolleginnen und Kollegen, die am Montag wieder da sind.
+    </div>
+
+    <div>
+      Erfolg entsteht nicht an den lauten Tagen.<br/>
+      Er entsteht an den <em>stillen Dienstagen</em>, an denen andere aufhören.
+    </div>
+
+    <hr/>
+
+    <div class="tags">
+      #Mittelstand #Resilienz #EXVenture #EXAI #Leipzig #Dresden #Unternehmertum #Handwerk #KünstlicheIntelligenz #Industrie #Anlagenbau
+    </div>
+  </div>
+
+</body>
+</html>
